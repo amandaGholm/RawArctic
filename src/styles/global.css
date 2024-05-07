@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+}
+
+:root {
+  /* primitive colors */
+  --blue25: #ffffff;
+  --blue50: #e6e8ef;
+  --blue300: #00175c;
+  --blue400: #001040;
+
+  --orange300: #ff5000;
+  --orange400: ;
+
+  /* sizes */
+  --size-1: 1px;
+  --size-2: 2px;
+  --size-3: 3px;
+  --size-4: 4px;
+  --size-8: 8px;
+  --size-12: 12px;
+  --size-16: 16px;
+  --size-20: 20px;
+  --size-24: 24px;
+  --size-32: 32px;
+  --size-40: 40px;
+  --size-48: 48px;
+  --size-56: 56px;
+  --size-64: 64px;
+  --size-72: 72px;
+  --size-80: 80px;
+  --size-88: 88px;
+  --size-96: 96px;
+  --size-104: 104px;
+  --size-112: 112px;
+  --size-120: 120px;
+  --size-128: 128px;
+  --size-136: 136px;
+  --size-144: 144px;
+  --size-152: 152px;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src: url("/Switzer-Variable.ttf");
+}
+
+h1,
+h2,
+h3 {
+  font-family: Switzer;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 4rem;
+  color: var(--blue25);
+  
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+.titel {
+  color: var(--blue25);
+  font-family: "Open Sans";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.body20 {
+  font-family: "Open Sans";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.36rem;
+}
+
+@media (min-width: 600px){
+  h1{
+    font-size: 6rem;
+    line-height: 6.5rem;
+  }
+}
+
+@media (min-width: 800px) {
+  h1 {
+    font-size: 8rem;
+    line-height: 8.375rem;
+  }
+
+  h2 {
+    font-size: 4rem;
+  }
+
+  .body16 {
+    font-family: "Open Sans";
+    font-size: 1.25rem;
+    line-height: 1.7rem;
+  }
+}

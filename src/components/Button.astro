@@ -1,0 +1,60 @@
+---
+const { style, label, href } = Astro.props;
+---
+
+<div class="button" style-variant={style}>
+  <a href={href} class="button_label" label-variant={style}>{label}</a>
+</div>
+
+<style>
+  .button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 135px;
+    border-radius: 1.25rem;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .button_label {
+    font-family: Switzer;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  /* style */
+
+  [style-variant="primary"] {
+    background-color: var(--orange300);
+  }
+
+  [label-variant="primary"] {
+    color: var(--blue25);
+  }
+
+  [style-variant="primary-outline"] {
+    background-color: var(--orange300);
+    border: 2px solid var(--blue25);
+  }
+
+  [label-variant="primary-outline"] {
+    color: var(--blue25);
+  }
+
+  [style-variant="secondary"] {
+    background-color: var(--blue25);
+    border: 2px solid var(--blue300);
+  }
+
+  [label-variant="secondary"] {
+    color: var(--blue300);
+  }
+
+  [label-variant="tertiary"] {
+    color: var(--blue25);
+  }
+</style>

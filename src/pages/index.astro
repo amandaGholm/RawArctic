@@ -1,15 +1,127 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/Button.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <section class="hero-container">
+    <div class="hero-content-video">
+      <div class="hero-content">
+        <h1>Oplev det unikke Grønland</h1>
+        <p class="titel heroTitel">
+          Uovertruffent fluefiskeri og nærvær i naturen
+        </p>
+        <div class="CTAer">
+          <Button class="knap" heref="/" label="Læs mere" style="primary" />
+          <Button class="knap" heref="/" label="Læs mere" style="secondary" />
+        </div>
+      </div>
+      <video autoplay loop muted class="hero-video gsapVideo">
+        <source src="/video/Kasterbagfra4.mp4" />
+      </video>
+    </div>
+
+    <div class="emptySpace"></div>
+  </section>
+
+  <section class="content-section">
+    <h1>Overskrift</h1>
+    <h2>Underoverskrift</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed neque in
+      libero pulvinar ultricies. Donec eu lacus massa. Sed lacinia risus eget
+      mauris dignissim, vitae malesuada justo hendrerit. Nam ut justo nec nisi
+      consectetur convallis. Integer tempus lacus ut nisl viverra, quis
+      efficitur eros semper. Vivamus lacinia consectetur massa, ac tristique
+      purus sodales nec. Vestibulum euismod massa in dui dictum tempus.
+    </p>
+  </section>
+
+  <section class="content-section">
+    <h1>Overskrift</h1>
+    <h2>Underoverskrift</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed neque in
+      libero pulvinar ultricies. Donec eu lacus massa. Sed lacinia risus eget
+      mauris dignissim, vitae malesuada justo hendrerit. Nam ut justo nec nisi
+      consectetur convallis. Integer tempus lacus ut nisl viverra, quis
+      efficitur eros semper. Vivamus lacinia consectetur massa, ac tristique
+      purus sodales nec. Vestibulum euismod massa in dui dictum tempus.
+    </p>
+  </section>
+
+  <section class="content-section">
+    <h1>Overskrift</h1>
+    <h2>Underoverskrift</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed neque in
+      libero pulvinar ultricies. Donec eu lacus massa. Sed lacinia risus eget
+      mauris dignissim, vitae malesuada justo hendrerit. Nam ut justo nec nisi
+      consectetur convallis. Integer tempus lacus ut nisl viverra, quis
+      efficitur eros semper. Vivamus lacinia consectetur massa, ac tristique
+      purus sodales nec. Vestibulum euismod massa in dui dictum tempus.
+    </p>
+  </section>
+</BaseLayout>
+
+<script>
+  import { gsap } from "gsap/dist/gsap";
+  import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to(".gsapVideo", {
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".gsapVideo",
+      pin: true,
+      /*  markers: true, */
+    },
+  });
+</script>
+
+<style>
+  .emptySpace {
+    height: 100vh;
+  }
+  .heroTitel {
+    padding-top: var(--size-24);
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    padding: 40px;
+  }
+  .CTAer {
+    display: flex;
+    padding-top: var(--size-48);
+  }
+
+  .hero-content-video {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+  .hero-video {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  @media (min-aspect-ratio: 16/9) {
+    .hero-video {
+      width: 100%;
+      height: auto;
+    }
+  }
+  @media (max-aspect-ratio: 16/9) {
+    .hero-video {
+      width: auto;
+      height: 100%;
+    }
+  }
+</style>
