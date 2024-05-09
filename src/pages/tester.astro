@@ -5,26 +5,26 @@ import Nav from "../components/Nav.astro";
 ---
 
 <BaseLayout>
-    <div class="hero-container">
-      <div class="hero-content-video">
-        <div class="hero-content">
-          <h1>Oplev det unikke Grønland</h1>
-          <p class="titel heroTitel">
-            Uovertruffent fluefiskeri og nærvær i naturen
-          </p>
-          <div class="CTAer">
-            <Button class="knap" heref="/" label="Læs mere" style="primary" />
-            <Button class="knap" heref="/" label="Læs mere" style="secondary" />
-          </div>
-        </div>
-  
-        <video autoplay loop muted class="videoBackground gsapVideo">
-          <source src="/public/video/kasterBagfra.mov" />
-        </video>
+  <div class="hero-content-video">
+    <div class="video-sticky">
+      <video autoplay loop muted class="hero-video">
+        <source src="/public/video/kasterBagfra.mov" />
+      </video>
+    </div>
+
+    <div class="hero-content">
+      <h1>Oplev det unikke Grønland</h1>
+      <p class="titel heroTitel">
+        Uovertruffent fluefiskeri og nærvær i naturen
+      </p>
+      <div class="CTAer">
+        <Button class="knap" heref="/" label="Læs mere" style="primary" />
+        <Button class="knap" heref="/" label="Læs mere" style="secondary" />
       </div>
     </div>
-  
-    <section class="content-section">
+  </div>
+
+  <!--     <section class="content-section">
       <h1>Overskrift</h1>
       <h2>Underoverskrift</h2>
       <p>
@@ -61,86 +61,61 @@ import Nav from "../components/Nav.astro";
         efficitur eros semper. Vivamus lacinia consectetur massa, ac tristique
         purus sodales nec. Vestibulum euismod massa in dui dictum tempus.
       </p>
-    </section>
-  </BaseLayout>
-  
-  <script>
-    import { gsap } from "gsap/dist/gsap";
-    import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-    gsap.registerPlugin(ScrollTrigger);
-  
-    gsap.to(".gsapVideo", {
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".gsapVideo",
-        pin: true,
-        markers: true,
-      },
-    });
-  
-    gsap.from(".hero-container", {
-      scrollTrigger: {
-        trigger: ".hero-container",
-        start: "start center ",
-        end: "bottom top",
-        //markers: true,
-      },
-      y: 400,
-      scale: 1,
-      duration: 1,
-    });
-  </script>
-  
-  <style>
-    .hero-absolute {
-    }
-    .heroTitel {
-      padding-top: var(--size-24);
-    }
-  
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      max-width: 1200px;
-      padding: 40px;
-    }
-    .CTAer {
-      display: flex;
-      padding-top: var(--size-48);
-    }
-  
-    .hero-container {
-      background-image: linear-gradient(
-        rgba(13, 16, 50, 0.241),
-        rgba(19, 13, 49, 0.3)
-      );
-    }
-  
-    .hero-content-video {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100vh;
-    }
-    .videoBackground {
-      position: absolute;
-      bottom: 0;
-      z-index: -1;
-    }
-  
-    @media (min-aspect-ratio: 16/9) {
-      .videoBackground {
-        width: 100%;
-        height: auto;
-      }
-    }
-    @media (max-aspect-ratio: 16/9) {
-      .videoBackground {
-        width: auto;
-        height: 100%;
-      }
-    }
-  </style>
-  
+    </section> -->
+</BaseLayout>
+
+<script>
+  import { gsap } from "gsap/dist/gsap";
+  import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to(".hero-video", {
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".hero-video",
+      pin: true,
+      markers: true,
+    },
+  });
+
+  /*   ScrollTrigger.create({
+    trigger: ".hero-content-video",
+    start: "top top",
+    endTrigger: ".section2",
+    end: "bottom top",
+    pin: true,
+    pinSpacing: false,
+    onLeave: () => {
+      gsap.to(window, { scrollTo: ".section2", duration: 1 });
+    },
+  }); */
+</script>
+
+<style>
+  .heroTitel {
+    padding-top: var(--size-24);
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    padding: 250px var(--size-56);
+    z-index: 2;
+  }
+  .CTAer {
+    display: flex;
+    padding-top: var(--size-48);
+  }
+
+  .hero-content-video {
+    position: relative;
+    display: flex;
+    height: 100vh;
+  }
+  .hero-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

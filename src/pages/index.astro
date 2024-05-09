@@ -6,6 +6,10 @@ import Button from "../components/Button.astro";
 <BaseLayout>
   <section class="hero-container">
     <div class="hero-content-video">
+      <video autoplay loop muted class="hero-video gsapVideo">
+        <source src="/video/Kasterbagfra4.mp4" />
+      </video>
+
       <div class="hero-content">
         <h1>Oplev det unikke Grønland</h1>
         <p class="titel heroTitel">
@@ -16,41 +20,12 @@ import Button from "../components/Button.astro";
           <Button class="knap" heref="/" label="Læs mere" style="secondary" />
         </div>
       </div>
-      <video autoplay loop muted class="hero-video gsapVideo">
-        <source src="/video/Kasterbagfra4.mp4" />
-      </video>
     </div>
 
     <div class="emptySpace"></div>
   </section>
 
-  <section class="content-section">
-    <h1>Overskrift</h1>
-    <h2>Underoverskrift</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed neque in
-      libero pulvinar ultricies. Donec eu lacus massa. Sed lacinia risus eget
-      mauris dignissim, vitae malesuada justo hendrerit. Nam ut justo nec nisi
-      consectetur convallis. Integer tempus lacus ut nisl viverra, quis
-      efficitur eros semper. Vivamus lacinia consectetur massa, ac tristique
-      purus sodales nec. Vestibulum euismod massa in dui dictum tempus.
-    </p>
-  </section>
-
-  <section class="content-section">
-    <h1>Overskrift</h1>
-    <h2>Underoverskrift</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed neque in
-      libero pulvinar ultricies. Donec eu lacus massa. Sed lacinia risus eget
-      mauris dignissim, vitae malesuada justo hendrerit. Nam ut justo nec nisi
-      consectetur convallis. Integer tempus lacus ut nisl viverra, quis
-      efficitur eros semper. Vivamus lacinia consectetur massa, ac tristique
-      purus sodales nec. Vestibulum euismod massa in dui dictum tempus.
-    </p>
-  </section>
-
-  <section class="content-section">
+  <section class="sketion2">
     <h1>Overskrift</h1>
     <h2>Underoverskrift</h2>
     <p>
@@ -74,14 +49,26 @@ import Button from "../components/Button.astro";
     scrollTrigger: {
       trigger: ".gsapVideo",
       pin: true,
-      /*  markers: true, */
+      markers: true,
     },
   });
+
+  /*   ScrollTrigger.create({
+    trigger: ".hero-content-video",
+    start: "top top",
+    endTrigger: ".section2",
+    end: "bottom top",
+    pin: true,
+    pinSpacing: false,
+    onLeave: () => {
+      gsap.to(window, { scrollTo: ".section2", duration: 1 });
+    },
+  }); */
 </script>
 
 <style>
   .emptySpace {
-    height: 100vh;
+    height: 50vh;
   }
   .heroTitel {
     padding-top: var(--size-24);
@@ -102,17 +89,18 @@ import Button from "../components/Button.astro";
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
+   align-items: center;
     width: 100%;
     height: 100vh;
   }
   .hero-video {
     position: absolute;
+    height: 100vh;
     bottom: 0;
     z-index: -1;
   }
 
-  @media (min-aspect-ratio: 16/9) {
+/*   @media (min-aspect-ratio: 9/16) {
     .hero-video {
       width: 100%;
       height: auto;
@@ -123,5 +111,5 @@ import Button from "../components/Button.astro";
       width: auto;
       height: 100%;
     }
-  }
+  } */
 </style>
