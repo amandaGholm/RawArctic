@@ -51,79 +51,78 @@ import billede3 from "../assets/images/IMG_3574.webp";
               Vi tager dig med til afsidesliggende og eksklusive destinationer i
               Grønland, som kun de lokale guides kender.
             </p>
-
-            <div class="RA-card">
-              <Image src={billede3} alt="billede3" class="RA-billede" />
-              <h3 class="titelDark">Unikke fiske oplevelser</h3>
-              <p class="body">
-                Udforsk en verden af spændende fiskeoplevelser, fra kystfiskeri
-                efter arktisk char til fluefiskeri efter atlantisk laks i
-                maleriske floder.
-              </p>
-            </div>
+          </div>
+          <div class="RA-card">
+            <Image src={billede3} alt="billede3" class="RA-billede" />
+            <h3 class="titelDark">Unikke fiske oplevelser</h3>
+            <p class="body">
+              Udforsk en verden af spændende fiskeoplevelser, fra kystfiskeri
+              efter arktisk char til fluefiskeri efter atlantisk laks i
+              maleriske floder.
+            </p>
           </div>
         </div>
-
-        <script>
-          import { gsap } from "gsap/dist/gsap";
-          import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-          gsap.registerPlugin(ScrollTrigger);
-
-          gsap.to(".hero-video", {
-            duration: 1,
-            scrollTrigger: {
-              trigger: ".hero-video",
-              pin: true,
-              markers: true,
-            },
-          });
-        </script>
-
-        <style>
-          .RA-content {
-            display: flex;
-            flex-direction: row;
-          }
-
-          .RA-billede {
-            max-width: 100%;
-            width: 400px;
-            height: 333px;
-          }
-          .RA-sekction {
-            display: flex;
-            flex-direction: column;
-          }
-
-          /* Hero styling */
-          .heroTitel {
-            padding-top: var(--size-24);
-          }
-
-          .hero-content {
-            display: flex;
-            flex-direction: column;
-            padding: 250px var(--size-56);
-            z-index: 2;
-          }
-          .CTAer {
-            display: flex;
-            padding-top: var(--size-48);
-          }
-
-          .hero-content-video {
-            position: relative;
-            display: flex;
-            height: 100vh;
-          }
-          .hero-video {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-        </style>
       </h2>
+
+      <script>
+        import { gsap } from "gsap/dist/gsap";
+        import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".hero-video", {
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".hero-video",
+            pin: true,
+            markers: true,
+          },
+        });
+      </script>
+
+      <style>
+        .RA-content {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+
+        .RA-billede {
+          height: auto;
+          max-width: 100%;
+        }
+        .RA-sekction {
+          height: auto;
+          display: flex;
+          flex-direction: column;
+        }
+
+        /* Hero styling */
+        .heroTitel {
+          padding-top: var(--size-24);
+        }
+
+        .hero-content {
+          display: flex;
+          flex-direction: column;
+          padding: 250px var(--size-56);
+          z-index: 2;
+        }
+        .CTAer {
+          display: flex;
+          padding-top: var(--size-48);
+        }
+
+        .hero-content-video {
+          position: relative;
+          display: flex;
+          height: 100vh;
+        }
+        .hero-video {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      </style>
     </h2>
   </section>
 </BaseLayout>
