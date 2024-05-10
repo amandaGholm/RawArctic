@@ -81,6 +81,7 @@ h2 {
 }
 
 .body {
+  padding-top: var(--size-8) ;
   color: var(--blue400);
   font-family: "Open Sans";
   font-size: 1rem;
