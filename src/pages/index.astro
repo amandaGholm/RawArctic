@@ -6,11 +6,11 @@ import { Image } from "astro:assets";
 import billede1 from "../assets/images/IMG_3035.webp";
 import billede2 from "../assets/images/IMG_3490.webp";
 import billede3 from "../assets/images/IMG_3574.webp";
+import webfeatur from "../assets/images/webfeatur.webp";
 ---
 
 <BaseLayout>
   <!-- Hero -->
-
   <div class="hero-content-video">
     <video autoplay loop muted playsinline class="hero-video">
       <source src="/video/Kasterbagfra4.mp4" />
@@ -27,9 +27,10 @@ import billede3 from "../assets/images/IMG_3574.webp";
       </div>
     </div>
   </div>
-
   <div class="emptyContainer"></div>
+  <!-- ------------------------------- -->
 
+  <!-- Om Raw Arctic -->
   <section class="RA-sekction">
     <h2 class="blue RA-h2">Hvem er RawArctic?</h2>
     <div class="RA-content-button">
@@ -71,11 +72,13 @@ import billede3 from "../assets/images/IMG_3574.webp";
       </div>
     </div>
   </section>
+  <!-- ----------- -->
 
+  <!-- Om turen -->
   <section class="TUR-section">
     <div class="TUR-content">
       <h2 class="blue">Oplev komfort i vildmarken</h2>
-      <p class="body">
+      <p class="body TUR-text">
         Nyd en uforglemmelig uge langs Grønlands elve og overnat under bekvemme
         forhold
       </p>
@@ -91,6 +94,32 @@ import billede3 from "../assets/images/IMG_3574.webp";
     <video autoplay loop muted class="TUR-video">
       <source src="/video/vandfald1.mp4" />
     </video>
+  </section>
+  <!-- -------------- -->
+
+  <!-- Webfeatur -->
+  <section class="WEB-section">
+    <Image
+      src={webfeatur}
+      alt="Her skal der stå en alt tekst"
+      class="WEB-billede"
+    />
+    <div class="WEB-content">
+      <h2 class="WEB-h2 white">Med grønlandske guides</h2>
+      <p class="body WEB-text">
+        Dyk ned i Iviks historie og opdag, hvordan den lokale grønlandske
+        befolkning spiller en central rolle i at skabe en uforglemmelig
+        fiskeoplevelse med Raw Arctic.
+      </p>
+      <div>
+        <Button
+          class="knap"
+          heref="/"
+          label="Læs mere om turen"
+          style="secondary"
+        />
+      </div>
+    </div>
   </section>
 </BaseLayout>
 
@@ -112,19 +141,44 @@ import billede3 from "../assets/images/IMG_3574.webp";
 </script>
 
 <style>
-  .blue {
-    color: var(--RA-blue400);
-  }
   .emptyContainer {
     height: 100vh;
   }
 
+  .WEB-billede,
+  .WEB-content {
+    grid-area: 1/1;
+  }
+  .WEB-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--RA-size-16);
+    place-self: start center;
+    padding-top: var(--RA-size-56);
+    max-width: 740px;
+  }
+
+  .WEB-billede {
+    height: auto;
+  }
+  .WEB-text {
+    color: var(--RA-blue25);
+  }
+  /* Webfeatur */
+
+  .WEB-section {
+    display: grid;
+  }
+
+  /* ---------- */
+
   /* TUR sektion */
+
   .TUR-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 100vh;
     align-items: center;
+    justify-items: center;
   }
   .TUR-video {
     height: auto;
@@ -137,6 +191,7 @@ import billede3 from "../assets/images/IMG_3574.webp";
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 450px;
     padding: var(--RA-size-56);
     gap: var(--RA-size-16);
   }
@@ -146,7 +201,7 @@ import billede3 from "../assets/images/IMG_3574.webp";
     padding-left: var(--RA-size-56);
   }
   .RA-billede {
-    padding-bottom: var(--size-32);
+    padding-bottom: var(--RA-size-32);
     height: auto;
     max-width: 100%;
   }
@@ -178,6 +233,13 @@ import billede3 from "../assets/images/IMG_3574.webp";
   /* ------------- */
 
   /* Hero */
+
+  .hero-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
   .heroTitel {
     padding-top: var(--RA-size-24);
   }
@@ -187,20 +249,14 @@ import billede3 from "../assets/images/IMG_3574.webp";
     padding: 250px var(--RA-size-56);
     z-index: 2;
   }
-  .CTAer {
-    display: flex;
-    padding-top: var(--RA-size-48);
-  }
   .hero-content-video {
     position: relative;
     display: flex;
     height: 100vh;
   }
-  .hero-video {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .CTAer {
+    display: flex;
+    padding-top: var(--RA-size-48);
   }
   /* ------------------ */
 
@@ -219,36 +275,32 @@ import billede3 from "../assets/images/IMG_3574.webp";
       display: grid;
       grid-template-columns: 1fr;
     }
-
     .RA-billede {
       padding-bottom: var(--size-32);
     }
-
     .RA-sekction {
       margin: 32px 0 32px 0;
     }
-
     .RA-text {
       padding: var(--RA-size-24);
     }
-
     .RA-h2 {
       padding-left: var(--RA-size-24);
     }
+    /* ------------- */
 
     /* Turen  */
     .TUR-section {
       display: grid;
       grid-template-columns: 1fr;
-      height: 100vh;
       align-items: center;
     }
-
     .TUR-content {
       padding: var(--RA-size-24);
     }
     .TUR-video {
       order: -1;
     }
+    /* ------------- */
   }
 </style>
