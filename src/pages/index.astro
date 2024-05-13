@@ -31,42 +31,44 @@ import billede3 from "../assets/images/IMG_3574.webp";
   <div class="emptyContainer"></div>
 
   <section class="RA-sekction">
-    <h2 class="blue spacing">Hvem er RawArctic?</h2>
-    <div class="RA-content">
-      <div class="RA-card">
-        <Image src={billede1} alt="billede1" class="RA-billede" />
-        <div class="RA-text">
-          <h3 class="titelDark">Eksklusive faciliteter</h3>
-          <p class="body">
-            Nyd førsteklasses indkvartering og faciliteter efter en dag med
-            spændende fiskeri, hvor komfort og afslapning er i højsædet.
-          </p>
+    <h2 class="blue RA-h2">Hvem er RawArctic?</h2>
+    <div class="RA-content-button">
+      <div class="RA-content">
+        <div class="RA-card">
+          <Image src={billede1} alt="billede1" class="RA-billede" />
+          <div class="RA-text">
+            <h3 class="titelDark">Eksklusive faciliteter</h3>
+            <p class="body">
+              Nyd førsteklasses indkvartering og faciliteter efter en dag med
+              spændende fiskeri, hvor komfort og afslapning er i højsædet.
+            </p>
+          </div>
+        </div>
+        <div class="RA-card">
+          <Image src={billede2} alt="billede2" class="RA-billede" />
+          <div class="RA-text">
+            <h3 class="titelDark">Grønlandske rødder</h3>
+            <p class="body">
+              Vi tager dig med til afsidesliggende og eksklusive destinationer i
+              Grønland, som kun de lokale guides kender.
+            </p>
+          </div>
+        </div>
+        <div class="RA-card">
+          <Image src={billede3} alt="billede3" class="RA-billede" />
+          <div class="RA-text">
+            <h3 class="titelDark">Unikke fiske oplevelser</h3>
+            <p class="body">
+              Udforsk en verden af spændende fiskeoplevelser, fra kystfiskeri
+              efter arktisk char til fluefiskeri efter atlantisk laks i
+              maleriske floder.
+            </p>
+          </div>
         </div>
       </div>
-      <div class="RA-card">
-        <Image src={billede2} alt="billede2" class="RA-billede" />
-        <div class="RA-text">
-          <h3 class="titelDark">Grønlandske rødder</h3>
-          <p class="body">
-            Vi tager dig med til afsidesliggende og eksklusive destinationer i
-            Grønland, som kun de lokale guides kender.
-          </p>
-        </div>
+      <div>
+        <Button class="knap" heref="/" label="Læs mere" style="secondary" />
       </div>
-      <div class="RA-card">
-        <Image src={billede3} alt="billede3" class="RA-billede" />
-        <div class="RA-text">
-          <h3 class="titelDark">Unikke fiske oplevelser</h3>
-          <p class="body">
-            Udforsk en verden af spændende fiskeoplevelser, fra kystfiskeri
-            efter arktisk char til fluefiskeri efter atlantisk laks i maleriske
-            floder.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <Button class="knap" heref="/" label="Læs mere" style="secondary" />
     </div>
   </section>
 
@@ -110,9 +112,6 @@ import billede3 from "../assets/images/IMG_3574.webp";
 </script>
 
 <style>
-  .spacing {
-    padding-left: var(--RA-size-56);
-  }
   .blue {
     color: var(--RA-blue400);
   }
@@ -128,37 +127,46 @@ import billede3 from "../assets/images/IMG_3574.webp";
     align-items: center;
   }
   .TUR-video {
-  height: auto;
+    height: auto;
     max-width: 100%;
     display: block;
-     max-height: 800px; 
+    max-height: 800px;
   }
 
-  .TUR-content{
+  .TUR-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: var(--RA-size-56);
+    gap: var(--RA-size-16);
   }
 
-  /* RawArctic section */
+  /* Om RawArctic section */
+  .RA-h2 {
+    padding-left: var(--RA-size-56);
+  }
+  .RA-billede {
+    padding-bottom: var(--size-32);
+    height: auto;
+    max-width: 100%;
+  }
+  .RA-text {
+    max-width: 400px;
+    padding-top: var(--RA-size-16);
+  }
   .RA-card {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .RA-text {
-    max-width: 400px;
-  }
   .RA-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
-
-  .RA-billede {
-    padding-bottom: var(--size-32);
-    height: auto;
-    max-width: 100%;
+  .RA-content-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .RA-sekction {
     margin: 130px 0 130px 0;
@@ -169,11 +177,10 @@ import billede3 from "../assets/images/IMG_3574.webp";
   }
   /* ------------- */
 
-  /* Hero styling */
+  /* Hero */
   .heroTitel {
     padding-top: var(--RA-size-24);
   }
-
   .hero-content {
     display: flex;
     flex-direction: column;
@@ -184,7 +191,6 @@ import billede3 from "../assets/images/IMG_3574.webp";
     display: flex;
     padding-top: var(--RA-size-48);
   }
-
   .hero-content-video {
     position: relative;
     display: flex;
@@ -199,40 +205,50 @@ import billede3 from "../assets/images/IMG_3574.webp";
   /* ------------------ */
 
   @media (max-width: 800px) {
+    /* Hero */
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      padding: 250px 0 250px var(--RA-size-24);
+      z-index: 2;
+    }
+    /* ------------ */
+
+    /* Om RawArctic section */
     .RA-content {
       display: grid;
       grid-template-columns: 1fr;
     }
 
     .RA-billede {
-    padding-bottom: var(--size-32);
+      padding-bottom: var(--size-32);
+    }
 
-  }
+    .RA-sekction {
+      margin: 32px 0 32px 0;
+    }
 
-  .RA-sekction {
-    margin: 32px 0 32px 0;
-  
-  }
+    .RA-text {
+      padding: var(--RA-size-24);
+    }
 
+    .RA-h2 {
+      padding-left: var(--RA-size-24);
+    }
 
+    /* Turen  */
     .TUR-section {
-    display: grid;
-    grid-template-columns: 1fr;
-    height: 100vh;
-    align-items: center;
-  }
-  .TUR-video {
-order: -1;
-  }
+      display: grid;
+      grid-template-columns: 1fr;
+      height: 100vh;
+      align-items: center;
+    }
 
-
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    padding: 250px 0 250px var(--RA-size-32);
-    z-index: 2;
-  }
-
-
+    .TUR-content {
+      padding: var(--RA-size-24);
+    }
+    .TUR-video {
+      order: -1;
+    }
   }
 </style>
