@@ -145,6 +145,7 @@ import webfeatur from "../assets/images/webfeatur.webp";
     height: 100vh;
   }
 
+  /* Webfeatur */
   .WEB-billede,
   .WEB-content {
     grid-area: 1/1;
@@ -164,8 +165,6 @@ import webfeatur from "../assets/images/webfeatur.webp";
   .WEB-text {
     color: var(--RA-blue25);
   }
-  /* Webfeatur */
-
   .WEB-section {
     display: grid;
   }
@@ -233,7 +232,6 @@ import webfeatur from "../assets/images/webfeatur.webp";
   /* ------------- */
 
   /* Hero */
-
   .hero-video {
     position: absolute;
     width: 100%;
@@ -302,5 +300,19 @@ import webfeatur from "../assets/images/webfeatur.webp";
       order: -1;
     }
     /* ------------- */
+    .WEB-billede {
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+
+    .WEB-content {
+      padding: var(--RA-size-56) var(--RA-size-24);
+    }
+
+    @media (max-width: 400px) {
+      .WEB-billede {
+        aspect-ratio: 9/16;
+      }
+    }
   }
 </style>
