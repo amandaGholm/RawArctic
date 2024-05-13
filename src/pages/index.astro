@@ -13,7 +13,7 @@ import billede3 from "../assets/images/IMG_3574.webp";
 
   <div class="hero-content-video">
     <video autoplay loop muted class="hero-video">
-      <source src="/video/kasterBagfra.mov" />
+      <source src="/video/Kasterbagfra4.mp4" />
     </video>
 
     <div class="hero-content">
@@ -31,9 +31,9 @@ import billede3 from "../assets/images/IMG_3574.webp";
   <div class="emptyContainer"></div>
 
   <section class="RA-sekction">
-    <h2 class="blue">Hvem er RawArctic?</h2>
+    <h2 class="blue spacing">Hvem er RawArctic?</h2>
     <div class="RA-content">
-      <div class="RA-card ">
+      <div class="RA-card">
         <Image src={billede1} alt="billede1" class="RA-billede" />
         <div class="RA-text">
           <h3 class="titelDark">Eksklusive faciliteter</h3>
@@ -68,7 +68,27 @@ import billede3 from "../assets/images/IMG_3574.webp";
     <div>
       <Button class="knap" heref="/" label="Læs mere" style="secondary" />
     </div>
-   
+  </section>
+
+  <section class="TUR-section">
+    <div class="TUR-content">
+      <h2 class="blue">Oplev komfort i vildmarken</h2>
+      <p class="body">
+        Nyd en uforglemmelig uge langs Grønlands elve og overnat under bekvemme
+        forhold
+      </p>
+      <div>
+        <Button
+          class="knap"
+          heref="/"
+          label="Læs mere om turen"
+          style="secondary"
+        />
+      </div>
+    </div>
+    <video autoplay loop muted class="TUR-video">
+      <source src="/video/vandfald1.mp4" />
+    </video>
   </section>
 </BaseLayout>
 
@@ -84,21 +104,44 @@ import billede3 from "../assets/images/IMG_3574.webp";
       start: "top top",
       end: "+=700",
       pin: true,
-      markers: true,
+      // markers: true,
     },
   });
 </script>
 
 <style>
-  h2 {
-    padding-left: var(--size-56);
+  .spacing {
+    padding-left: var(--RA-size-56);
+  }
+  .blue {
+    color: var(--RA-blue400);
   }
   .emptyContainer {
     height: 100vh;
   }
-  .blue {
-    color: var(--blue400);
+
+  /* TUR sektion */
+  .TUR-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    align-items: center;
   }
+  .TUR-video {
+  height: auto;
+    max-width: 100%;
+    display: block;
+     max-height: 800px; 
+  }
+
+  .TUR-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--RA-size-56);
+  }
+
+  /* RawArctic section */
   .RA-card {
     display: flex;
     flex-direction: column;
@@ -124,21 +167,22 @@ import billede3 from "../assets/images/IMG_3574.webp";
     display: flex;
     flex-direction: column;
   }
+  /* ------------- */
 
   /* Hero styling */
   .heroTitel {
-    padding-top: var(--size-24);
+    padding-top: var(--RA-size-24);
   }
 
   .hero-content {
     display: flex;
     flex-direction: column;
-    padding: 250px var(--size-56);
+    padding: 250px var(--RA-size-56);
     z-index: 2;
   }
   .CTAer {
     display: flex;
-    padding-top: var(--size-48);
+    padding-top: var(--RA-size-48);
   }
 
   .hero-content-video {
@@ -151,5 +195,28 @@ import billede3 from "../assets/images/IMG_3574.webp";
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  /* ------------------ */
+  @media (max-width: 800px) {
+    .RA-content {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .RA-billede {
+    padding-bottom: var(--size-32);
+
+  }
+
+    .TUR-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    align-items: center;
+  }
+  .TUR-video {
+order: -1;
+  }
+
   }
 </style>

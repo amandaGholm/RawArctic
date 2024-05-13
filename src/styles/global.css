@@ -4,40 +4,40 @@
 
 :root {
   /* primitive colors */
-  --blue25: #ffffff;
-  --blue50: #e6e8ef;
-  --blue300: #00175c;
-  --blue400: #001040;
+  --RA-blue25: #ffffff;
+  --RA-blue50: #e6e8ef;
+  --RA-blue300: #00175c;
+  --RA-blue400: #001040;
 
-  --orange300: #ff5000;
+  --RA-orange300: #ff5000;
   --orange400: ;
 
   /* sizes */
-  --size-1: 1px;
-  --size-2: 2px;
-  --size-3: 3px;
-  --size-4: 4px;
-  --size-8: 8px;
-  --size-12: 12px;
-  --size-16: 16px;
-  --size-20: 20px;
-  --size-24: 24px;
-  --size-32: 32px;
-  --size-40: 40px;
-  --size-48: 48px;
-  --size-56: 56px;
-  --size-64: 64px;
-  --size-72: 72px;
-  --size-80: 80px;
-  --size-88: 88px;
-  --size-96: 96px;
-  --size-104: 104px;
-  --size-112: 112px;
-  --size-120: 120px;
-  --size-128: 128px;
-  --size-136: 136px;
-  --size-144: 144px;
-  --size-152: 152px;
+  --RA-size-1: 1px;
+  --RA-size-2: 2px;
+  --RA-size-8: 8px;
+  --RA-size-4: 4px;
+  --RA-size-3: 3px;
+  --RA-size-12: 12px;
+  --RA-size-16: 16px;
+  --RA-size-20: 20px;
+  --RA-size-24: 24px;
+  --RA-size-32: 32px;
+  --RA-size-40: 40px;
+  --RA-size-48: 48px;
+  --RA-size-56: 56px;
+  --RA-size-64: 64px;
+  --RA-size-72: 72px;
+  --RA-size-80: 80px;
+  --RA-size-88: 88px;
+  --RA-size-96: 96px;
+  --RA-size-104: 104px;
+  --RA-size-112: 112px;
+  --RA-size-120: 120px;
+  --RA-size-128: 128px;
+  --RA-size-136: 136px;
+  --RA-size-144: 144px;
+  --RA-size-152: 152px;
 }
 
 @font-face {
@@ -55,7 +55,7 @@ h3 {
 
 h1 {
   font-size: 4rem;
-  color: var(--blue25);
+  color: var(--RA-blue25);
 }
 
 h2 {
@@ -63,7 +63,7 @@ h2 {
 }
 
 .titelLight {
-  color: var(--blue25);
+  color: var(--RA-blue25);
   font-family: "Open Sans";
   font-size: 1.5rem;
   font-style: normal;
@@ -72,7 +72,7 @@ h2 {
 }
 
 .titelDark {
-  color: var(--blue400);
+  color: var(--RA-blue400);
   font-family: "Open Sans";
   font-size: 1.5rem;
   font-style: normal;
@@ -81,8 +81,8 @@ h2 {
 }
 
 .body {
-  padding-top: var(--size-8) ;
-  color: var(--blue400);
+  padding-top: var(--RA-size-8);
+  color: var(--RA-blue400);
   font-family: "Open Sans";
   font-size: 1rem;
   font-weight: 400;
@@ -106,8 +106,8 @@ h2 {
     font-size: 4rem;
   }
 
-  .body {   
-  color: var(--blue400);
+  .body {
+    color: var(--RA-blue400);
     font-family: "Open Sans";
     font-size: 1.25rem;
     line-height: 1.7rem;

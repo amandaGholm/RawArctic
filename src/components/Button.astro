@@ -15,6 +15,7 @@ const { style, label, href } = Astro.props;
     border-radius: 1.25rem;
     height: 40px;
     cursor: pointer;
+    padding: 0 12px;
   }
 
   .button_label {
@@ -29,32 +30,32 @@ const { style, label, href } = Astro.props;
   /* style */
 
   [style-variant="primary"] {
-    background-color: var(--orange300);
+    background-color: var(--RA-orange300);
   }
 
   [label-variant="primary"] {
-    color: var(--blue25);
+    color: var(--RA-blue25);
   }
 
   [style-variant="primary-outline"] {
-    background-color: var(--orange300);
-    border: 2px solid var(--blue25);
+    background-color: var(--RA-orange300);
+    border: 2px solid var(--RA-blue25);
   }
 
   [label-variant="primary-outline"] {
-    color: var(--blue25);
+    color: var(--RA-blue25);
   }
 
   [style-variant="secondary"] {
-    background-color: var(--blue25);
-    border: 2px solid var(--blue300);
+    background-color: var(--RA-blue25);
+    border: 2px solid var(--RA-blue300);
   }
 
   [label-variant="secondary"] {
-    color: var(--blue300);
+    color: var(--RA-blue300);
   }
 
   [label-variant="tertiary"] {
-    color: var(--blue25);
+    color: var(--RA-blue25);
   }
 </style>
