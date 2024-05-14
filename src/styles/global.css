@@ -90,9 +90,18 @@ h2 {
   line-height: 2rem;
 }
 
-.body {
+.bodyDark {
   padding-top: var(--RA-size-8);
   color: var(--RA-blue400);
+  font-family: "Open Sans";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.36rem;
+}
+
+.bodyLight {
+  padding-top: var(--RA-size-8);
+  color: var(--RA-blue25);
   font-family: "Open Sans";
   font-size: 1rem;
   font-weight: 400;
@@ -116,9 +125,12 @@ h2 {
     font-size: 4rem;
   }
 
-  .body {
-    color: var(--RA-blue400);
-    font-family: "Open Sans";
+  .bodyDark {
+    font-size: 1.25rem;
+    line-height: 1.7rem;
+  }
+
+  .bodyLight {
     font-size: 1.25rem;
     line-height: 1.7rem;
   }

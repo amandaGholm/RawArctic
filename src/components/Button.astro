@@ -27,16 +27,19 @@ const { style, label, href } = Astro.props;
     text-align: center;
   }
 
-  /* style */
+  /* style  label-variant bestemmer farven på teksten og style-variant bestemmer fraven på baggrunden*/
 
+  /* primary-outline button  */
   [style-variant="primary"] {
     background-color: var(--RA-orange300);
   }
-
   [label-variant="primary"] {
     color: var(--RA-blue25);
   }
 
+  /* --------------------- */
+
+  /* primary-outline button  */
   [style-variant="primary-outline"] {
     background-color: var(--RA-orange300);
     border: 2px solid var(--RA-blue25);
@@ -45,17 +48,21 @@ const { style, label, href } = Astro.props;
   [label-variant="primary-outline"] {
     color: var(--RA-blue25);
   }
+  /* ------------------- */
 
+  /* secondary button  */
   [style-variant="secondary"] {
     background-color: var(--RA-blue25);
     border: 2px solid var(--RA-blue300);
   }
-
   [label-variant="secondary"] {
     color: var(--RA-blue300);
   }
+  /* ------------------------- */
 
+  /* tertiary button  */
   [label-variant="tertiary"] {
     color: var(--RA-blue25);
   }
+  /* ------------------ */
 </style>
