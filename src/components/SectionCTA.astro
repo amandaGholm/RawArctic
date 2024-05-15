@@ -4,25 +4,197 @@ import Input from "./Input.astro";
 ---
 
 <section>
-<div class="newsletter">
-<h3>
-    Tilmeld dig og hold dig opdateret
-</h3>
+  <div class="grid-12">
+    <a href="/" id="orange" class="orange-content">
+      <div class="orange-content-top">
+        <p class="body38">Tag det første skridt</p>
+        <div class="arrow">&rarr;</div>
+      </div>
+      <div class="orange-content-buttom">
+        <h2 class="tekst95">Tag med os</h2>
+        <div class="button">Kontakt os</div>
+      </div>
+    </a>
+    <div id="newsletter" class="newsletter-content">
+      <h3>Tilmeld dig vores nyhedsbrev</h3>
 
-<div class="input-conatiner">
-    <Input label="Fornavn" type="text" autocomplete="given-name" placeholder="" />
-</div>
-
-</div>
-
-<div class="OrangeCTA">
-<h2>Tag med os</h2>
-<p>Tag det første skridt</p>
-
-<Button class="knap" heref="/" label="Læs mere" style="primary" />
-
-</div>
-
-
-
+      <div class="inputField-conatiner">
+        <Input
+          label="Navn"
+          type="text"
+          autocomplete="given-name"
+          placeholder="Anne Jensen"
+        />
+        <Input
+          label="E-mail"
+          type="email"
+          autocomplete="email"
+          placeholder="Anne@mail.com"
+        />
+        <div class="button-div">
+          <Button class="knap" heref="/" label="Læs mere" style="secondary" />
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<style>
+  section {
+    width: 100%;
+  }
+  /* Gridet rund om newsletter og orange */
+  .grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100%;
+    position: relative;
+    grid-auto-columns: 1fr;
+  }
+  /* Newsletter */
+  #newsletter {
+    grid-row-start: span 1;
+    grid-column-start: span 5;
+    grid-row-end: span 1;
+  }
+
+  .newsletter-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--RA-size-40);
+    margin: var(--RA-size-32);
+  }
+  .inputField-conatiner {
+    display: flex;
+    padding: var(--RA-size-40) var(--RA-size-24);
+    flex-direction: column;
+    gap: 32px;
+    border-radius: 20px;
+    background: rgba(43, 62, 120, 0.2);
+    backdrop-filter: blur(20px);
+  }
+  /* -------------- */
+
+  /*  a-taget rund om diverne */
+  #orange {
+    order: 2;
+    grid-row-start: span 1;
+    grid-column-start: span 7;
+    grid-row-end: span 1;
+    height: 30em;
+  }
+  /* ------------- */
+  .orange-content {
+    background-color: var(--RA-orange300);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    padding: var(--RA-size-64) var(--RA-size-48);
+    transition: padding 0.3s ease, transform 0.3s ease;
+  }
+
+  .orange-content:hover {
+    background-color: #db3600;
+    padding: var(--RA-size-64) 52px;
+  }
+  .orange-content-buttom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--RA-size-8);
+  }
+  .orange-content-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* font, kanp og pil */
+  .button-div {
+    display: flex;
+    justify-content: center;
+  }
+  .arrow {
+    color: var(--RA-blue25);
+    font-size: 3em;
+    font-weight: bold;
+  }
+  .button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 135px;
+    border-radius: 1.25rem;
+    height: 40px;
+    cursor: pointer;
+    padding: 0 12px;
+    border: 2px solid var(--RA-blue25);
+    color: var(--RA-blue25);
+
+    font-family: Switzer;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .button:hover {
+    align-items: flex-start;
+  }
+  .tekst95 {
+    font-weight: 600;
+    font-size: 6rem;
+    color: var(--RA-blue25);
+  }
+  .body38 {
+    color: var(--RA-blue25);
+    font-family: Switzer;
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+    font-family: "Switzer Variable";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 3.75rem;
+    color: var(--RA-blue400);
+  }
+  /* ----------- */
+  @media (max-width: 1050px) {
+    .tekst95 {
+      font-weight: 600;
+      font-size: 4rem;
+      color: var(--RA-blue25);
+    }
+  }
+  @media (max-width: 800px) {
+    .grid-12 {
+      display: grid;
+      grid-template-columns: 1fr;
+      width: 100%;
+      position: relative;
+    }
+    #orange {
+      height: 30em;
+    }
+
+    #newsletter {
+      order: 2;
+      grid-column-start: span 7;
+    }
+    .tekst95 {
+      font-weight: 600;
+      font-size: 4rem;
+      color: var(--RA-blue25);
+    }
+  }
+</style>
