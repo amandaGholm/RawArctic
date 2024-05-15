@@ -16,6 +16,7 @@ const { style, label, href } = Astro.props;
     height: 40px;
     cursor: pointer;
     padding: 0 12px;
+    transition: background-color 0.5s ease, transform 0.3s ease;
   }
 
   .button_label {
@@ -25,6 +26,7 @@ const { style, label, href } = Astro.props;
     font-weight: 600;
     text-decoration: none;
     text-align: center;
+    transition: text-decoration 0.9s ease, transform 0.9s ease;
   }
 
   /* style  label-variant bestemmer farven på teksten og style-variant bestemmer fraven på baggrunden*/
@@ -32,6 +34,9 @@ const { style, label, href } = Astro.props;
   /* primary-outline button  */
   [style-variant="primary"] {
     background-color: var(--RA-orange300);
+  }
+  [style-variant="primary"]:hover {
+    background-color: var(--RA-orange400);
   }
   [label-variant="primary"] {
     color: var(--RA-blue25);
@@ -55,14 +60,16 @@ const { style, label, href } = Astro.props;
     background-color: var(--RA-blue25);
     border: 2px solid var(--RA-blue300);
   }
-  [label-variant="secondary"] {
-    color: var(--RA-blue300);
-  }
+
   /* ------------------------- */
 
   /* tertiary button  */
   [label-variant="tertiary"] {
     color: var(--RA-blue25);
+  
+  }
+  [label-variant="tertiary"]:hover {
+    text-decoration: underline;
   }
   /* ------------------ */
 </style>

@@ -2,7 +2,7 @@
   margin: 0;
 }
 
-img{
+img {
   max-width: 100%;
 }
 
@@ -14,7 +14,7 @@ img{
   --RA-blue400: #001040;
 
   --RA-orange300: #ff5000;
-  --orange400: ;
+  --RA-orange400: #db3600;
 
   /* sizes */
   --RA-size-1: 1px;
@@ -52,7 +52,7 @@ img{
 .blue {
   color: var(--RA-blue400);
 }
-.white{
+.white {
   color: var(--RA-blue25);
 }
 h1,
