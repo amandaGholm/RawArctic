@@ -1,73 +1,35 @@
 ---
-const { label, placeholder, type, autocomplete, fontWeight,inputId } = Astro.props;
+const { label, placeholder, type, autocomplete, inputId } = Astro.props;
 ---
 
-<div class="inputFieldContainer">
-  <div class="label">
-    <label for={inputId} class="inputLabel" label-thickness={fontWeight}>{label}</label>
-  </div>
-  <div class="Field">
-    <input type={type} autocomplete={autocomplete} id={inputId} class="inputField" placeholder={placeholder} name="userInfo" />
-  </div>
+<div class="inputField">
+  <label for={inputId} class="inputLabel"> {label}</label>
+  <input
+    type={type}
+    autocomplete={autocomplete}
+    placeholder={placeholder}
+    id={inputId}
+    name="userInfo"
+    class="inputClass"
+  />
 </div>
 
 <style>
-  .inputFieldContainer {
+  .inputField {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    width: 100%;
-    max-width: 320px;
   }
-  .label {
-    display: flex;
-    gap: 4px;
-  }
-  .inputLabel {
-    font-family: Rubik;
-    font-size: 16px;
-    font-style: normal;
-    line-height: normal;
-  }
-
-  .Field {
-    border-radius: 4px;
-    border: 1px solid var(--color-stroke-gray-300, #cacdd5);
-    background: var(--color-surface-white, #fff);
-
-    display: flex;
-    justify-content: space-between;
-  }
-  .inputField {
-    padding: 10px 0 10px 20px;
-    border-radius: 4px;
-
+  .inputClass {
+    padding: 12px;
     border: none;
-    width: 100%;
-    font-family: Rubik;
-    font-size: 16px;
+    border-radius: 10px;
+  }
+
+  .inputLabel {
+    font-family: "Open Sans";
+    font-size: 14px;
     font-style: normal;
-    line-height: normal;
-    color: var(--color-text-gray400);
-  }
-
-  .inputField::placeholder {
-    color: var(--color-text-gray400);
-  }
-  #unit {
-    color: var(--color-text-gray500);
-    padding: 10px 20px;
-  }
-  /* ----------- Variants ----------- */
-
-  /* label styling */
-  [label-thickness="regular"] {
-    font-weight: 400;
-    color: var(--color-text-gray500);
-  }
-
-  [label-thickness="semiBold"] {
     font-weight: 600;
-    color: var(--color-text-gray900);
+    line-height: normal;
   }
 </style>
