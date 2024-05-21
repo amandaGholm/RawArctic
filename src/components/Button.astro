@@ -60,6 +60,13 @@ const { style, label, href } = Astro.props;
     background-color: var(--RA-blue25);
     border: 2px solid var(--RA-blue300);
   }
+  a,
+  [style-variant="secondary"] {
+    color: var(--RA-blue400);
+  }
+  [style-variant="secondary"]:hover {
+    text-decoration: underline;
+  }
 
   /* ------------------------- */
 
