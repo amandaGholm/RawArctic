@@ -1,0 +1,547 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Input from "../components/Input.astro";
+import Button from "../components/Button.astro";
+import { Image } from "astro:assets";
+import Kalender from "../assets/images/kalender.svg";
+import Kalender2 from "../assets/images/kalender2.svg";
+---
+
+<BaseLayout>
+  <div id="kontakt-side">
+    <div class="k-headline">
+      <h1>Reserver din rejse</h1>
+    </div>
+    <div class="k-container">
+      <div class="k-grid">
+        <div class="season">
+          <p class="titelLight">Oversigt over sæsonen</p>
+          <p class="bodyLight">
+            Vores fluefiskesæson strækker sig fra marts til slutningen af
+            september. En tur varer en uge fra mandag til søndag, hvilket giver
+            rig mulighed for at opleve forskellige fiskeforhold.
+          </p>
+          <Image
+            id="kalenderImg"
+            src={Kalender}
+            alt="billede af kalender overledige månder"
+            class="kalender"
+          />
+        </div>
+        <div class="form">
+          <h2 class="white">Kontakt os for reserver din rejse</h2>
+          <div class="form-flex">
+            <div id="overlay" onclick="off()">
+              <div id="overlay-text" class="titelDark">
+                <p>Tak for din besked, vi svare dig inden for 24 timer</p>
+              </div>
+            </div>
+            <div class="form-flex1">
+              <Input
+                label="Fornavn"
+                type="text"
+                autocomplete="given-name"
+                placeholder="Anne"
+                style="light"
+              />
+            </div>
+            <div class="form-flex1">
+              <Input
+                label="Efternavn"
+                type="text"
+                autocomplete="given-name"
+                placeholder="Jensen"
+                style="light"
+              />
+            </div>
+          </div>
+          <Input
+            label="E-mail"
+            type="email"
+            autocomplete="email"
+            placeholder="Anne@mail.com"
+            style="light"
+          />
+          <div class="form-flex">
+            <div class="form-flex1">
+              <Input
+                label="Telefon nummer"
+                type="tel"
+                autocomplete="tel"
+                placeholder="+45 12 34 56 78"
+                style="light"
+              />
+            </div>
+            <div class="inputField form-flex1">
+              <label for="inputID" class="inputLabel white"> Vælg uge</label>
+              <select name="week" id="week" class="selectClass">
+                <option value="uge 26">Uge 26</option>
+                <option value="uge 27">Uge 27</option>
+                <option value="uge 28">Uge 28</option>
+                <option value="uge 29">Uge 29</option>
+                <option value="uge 30">Uge 30</option>
+                <option value="uge 31">Uge 31</option>
+                <option value="uge 32">Uge 32</option>
+                <option value="uge 33">Uge 33</option>
+              </select>
+            </div>
+          </div>
+          <div class="inputField">
+            <label for="inputID" class="inputLabel white"> Din besked</label>
+            <textarea
+              name="userMessage"
+              id="messageId"
+              placeholder="Tilføj kommentar "
+              class="inputClass"></textarea>
+          </div>
+          <div onclick="on()">
+            <Button class="knap" label="Send" style="primary" />
+          </div>
+        </div>
+        <div class="faq">
+          <h3 class="titelLight">Ofte stillede spørgsmål - FAQ</h3>
+          <!-- FAQ-1 -->
+          <div class="faq_item">
+            <div class="faq_item_header">
+              <p class="bodyLight">Hvornår bør jeg tage afsted?</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                color="#ffffff"
+                class="lucide lucide-chevron-down faq_item_header_icon"
+              >
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </div>
+            <div class="fag_item_beskrivelse_wrapper">
+              <div class="faq_item_beskrivelse">
+                <p class="white bodyLight">
+                  Den bedste sæson er i juli og august. I slutningen af juni
+                  begynder fjeldørreden at trække op i floderne, og mellem
+                  slutningen af august og begyndelsen af september bliver de så
+                  fokuserede på gydning, at de bør lades i fred. Desuden kan
+                  vejret blive ret barskt, når vi når godt ind i september.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- FAQ-2- -->
+          <div class="faq_item">
+            <div class="faq_item_header">
+              <p class="bodyLight">Hvem er bedst egnet til denne rejse?</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                color="#ffffff"
+                class="lucide lucide-chevron-down faq_item_header_icon"
+              >
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </div>
+            <div class="fag_item_beskrivelse_wrapper">
+              <div class="faq_item_beskrivelse">
+                <p class="bodyLight">
+                  Enhver i rimelig form, med nogen erfaring i fluefiskeri, og
+                  som er lidt selvstændig. Selvom nogle dage er bedre end andre,
+                  er fiskeriet sjældent svært, og der er ikke behov for at have
+                  en guide ved din side hele tiden. Efter introduktion til
+                  fiskeriet klarer de fleste lystfiskere sig fint med en eller
+                  to andre gæster, og kun lejlighedsvis, når de udforsker et nyt
+                  område, beder de en af de unge guider om hjælp.
+                </p>
+                <p class="bodyLight">
+                  Fiskeriet foregår til fods, så for at få fuldt udbytte af
+                  mulighederne bør lystfiskere være i rimelig form. Terrænet er
+                  let at vandre i, men du skal være forberedt på at tilbagelægge
+                  fire til otte kilometer de fleste dage.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- FAQ-3- -->
+          <div class="faq_item">
+            <div class="faq_item_header">
+              <p class="bodyLight">Hvordan er vejret?</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                color="#ffffff"
+                class="lucide lucide-chevron-down faq_item_header_icon"
+              >
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </div>
+            <div class="fag_item_beskrivelse_wrapper">
+              <div class="faq_item_beskrivelse">
+                <p class="bodyLight">
+                  Temperaturerne kan variere fra lidt under frysepunktet til
+                  cirka 20 grader Celsius. Vejret kan ændre sig hurtigt, hvilket
+                  betyder, at du skal være forberedt på voldsomme
+                  temperaturændringer, vind og nedbør i løbet af en fiskedag.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- FAQ-4- -->
+          <div class="faq_item">
+            <div class="faq_item_header">
+              <p class="bodyLight">Økonomi</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                color="#ffffff"
+                class="lucide lucide-chevron-down faq_item_header_icon"
+              >
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </div>
+            <div class="fag_item_beskrivelse_wrapper">
+              <div class="faq_item_beskrivelse">
+                <p class="bodyLight">
+                  Kontakt os for at få mere information om priser og
+                  betalingsmuligheder.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- FAQ-5- -->
+          <div class="faq_item">
+            <div class="faq_item_header">
+              <p class="bodyLight">Tilbyde i fluer?</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                color="#ffffff"
+                class="lucide lucide-chevron-down faq_item_header_icon"
+              >
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </div>
+            <div class="fag_item_beskrivelse_wrapper">
+              <div class="faq_item_beskrivelse">
+                <p class="bodyLight">
+                  Ja, vi kan tilbyde fluer. For at sikre, at vi har alt, hvad du
+                  har brug for på lager, beder vi venligst om en
+                  forudbestilling.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- FAQ-6- -->
+          <div class="faq_item">
+            <div class="faq_item_header">
+              <p class="bodyLight">Udleverer I udstyr?</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                color="#ffffff"
+                class="lucide lucide-chevron-down faq_item_header_icon"
+              >
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </div>
+            <div class="fag_item_beskrivelse_wrapper">
+              <div class="faq_item_beskrivelse">
+                <p class="bodyLight">Nej, du skal medbringe dit eget.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  /*----- FAQ ------*/
+  .faq {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+  }
+
+  .faq_item {
+    border-bottom: 1px solid var(--RA-blue25);
+  }
+
+  .faq_item_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--RA-size-20);
+    cursor: pointer;
+  }
+
+  .fag_item_beskrivelse_wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    padding: 0 var(--RA-size-12) var(--RA-size-12) var(--RA-size-20);
+    transition: all 0.2s ease;
+  }
+  .faq_item_beskrivelse {
+    min-height: 0;
+  }
+
+  .faq .faq_item.open .fag_item_beskrivelse_wrapper {
+    visibility: visible;
+    grid-template-rows: 1fr;
+  }
+
+  .faq .faq_item.open .faq_item_header .faq_item_header_icon {
+    transform: rotate(-180deg);
+  }
+
+  /* -------------- */
+
+  .season {
+    max-width: 600px;
+    padding-top: var(--RA-size-56);
+  }
+  .kalender {
+    padding-top: var(--RA-size-32);
+    cursor: pointer;
+  }
+
+  /* Formular sektioen */
+  .form {
+    top: 68px;
+    position: sticky;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--RA-size-32);
+    padding: var(--RA-size-72) var(--RA-size-64);
+    background: rgba(43, 62, 120, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: var(--RA-size-20);
+  }
+  .form-flex {
+    display: flex;
+    gap: var(--RA-size-32);
+  }
+
+  .form-flex1 {
+    flex: 1;
+  }
+
+  #overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  #overlay-text {
+    padding: var(--RA-size-56);
+    border-radius: var(--RA-size-8);
+    background-color: var(--RA-blue25);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: var(--RA-blue400);
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    min-width: 200px;
+  }
+
+  /* textarea */
+
+  .inputField {
+    display: flex;
+    flex-direction: column;
+  }
+  .inputClass {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    min-height: var(--RA-size-120);
+  }
+
+  .selectClass {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .inputLabel {
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  /* --------------- */
+
+  /* helesiden container */
+
+  #kontakt-side {
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 11.4%,
+        rgba(0, 0, 0, 0.79) 49.4%
+      ),
+      url(../../public/video/IMG_1530.webp) lightgray no-repeat center center;
+  }
+
+  .k-container {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--RA-size-32);
+    padding-right: var(--RA-size-32);
+    display: block;
+  }
+  .k-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    justify-content: space-between;
+    padding-left: var(--RA-size-56);
+    gap: var(--RA-size-8);
+  }
+
+  /* Knapper, font og svg */
+
+  .k-headline {
+    display: flex;
+    height: 500px;
+    padding: var(--RA-size-120) var(--RA-size-88) 0 var(--RA-size-88);
+    align-items: center;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+
+  @media (max-width: 850px) {
+    .k-grid {
+      gap: var(--RA-size-48);
+      grid-template-columns: 1fr;
+      padding: 0;
+    }
+
+    .k-left {
+      width: 100%;
+      padding: 0;
+    }
+
+    .k-headline {
+      padding: var(--RA-size-120) var(--RA-size-32) var(--RA-size-32);
+      height: 200px;
+    }
+
+    .form {
+      top: 0;
+      position: relative;
+      padding: var(--RA-size-32) var(--RA-size-20);
+    }
+
+    .form-flex {
+      flex-direction: column;
+      gap: var(--RA-size-12);
+    }
+
+    #overlay-text {
+      padding: var(--RA-size-32);
+    }
+    .form-flex1 {
+      flex: 1;
+    }
+  }
+</style>
+
+<script>
+  /* Overlay */
+  function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+
+  function off() {
+    document.getElementById("overlay").style.display = "none";
+  }
+  window.on = on;
+  window.off = off;
+  /* ------- */
+
+  /* Billede skift */
+  document.addEventListener("DOMContentLoaded", () => {
+    const myImg = document.getElementById("kalenderImg");
+    const kalender1 = new URL("../assets/images/kalender.svg", import.meta.url)
+      .href;
+    const kalender2 = new URL("../assets/images/kalender2.svg", import.meta.url)
+      .href;
+
+    myImg.addEventListener("click", () => {
+      if (myImg.src === kalender1) {
+        myImg.src = kalender2;
+      } else {
+        myImg.src = kalender1;
+      }
+    });
+  });
+
+  /* FAQ */
+  document.querySelectorAll(".faq_item").forEach((item) => {
+    item.querySelector(".faq_item_header").addEventListener("click", () => {
+      item.classList.toggle("open");
+    });
+  });
+</script>

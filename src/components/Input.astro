@@ -1,9 +1,9 @@
 ---
-const { label, placeholder, type, autocomplete, inputId } = Astro.props;
+const { label, placeholder, type, autocomplete, inputId, style } = Astro.props;
 ---
 
 <div class="inputField">
-  <label for={inputId} class="inputLabel"> {label}</label>
+  <label for={inputId} class="inputLabel" style-variant={style}> {label}</label>
   <input
     type={type}
     autocomplete={autocomplete}
@@ -15,9 +15,17 @@ const { label, placeholder, type, autocomplete, inputId } = Astro.props;
 </div>
 
 <style>
+  [style-variant="light"] {
+    color: var(--RA-blue25);
+  }
+
+  [style-variant="dark"] {
+    color: var(--RA-blue400);
+  }
   .inputField {
     display: flex;
     flex-direction: column;
+    gap: var(--RA-size-4)
   }
   .inputClass {
     padding: 12px;
