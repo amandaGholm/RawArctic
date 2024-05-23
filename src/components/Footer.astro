@@ -1,37 +1,84 @@
 ---
-import Button from "./Button.astro"
+import Button from "./Button.astro";
+import { Image } from "astro:assets";
+import logoFisk from "../assets/images/logoFisk.svg";
 ---
 
-
 <footer>
+  <div class="logo">
+    <a href="/"><Image src={logoFisk} alt="logofsik" class="titelLight" /></a>
+    <p class="titelLight">Arctic Flyfishing</p>
+  </div>
+  <div class="footer-flex">
     <div class="buttons">
-        <Button class="knap" heref="/" label="Hjem" style="tertiary" />
-        <Button class="knap" heref="/" label="Om Raw Arctic" style="tertiary" />
-        <Button class="knap" heref="/" label="Læsre mere om turen" style="tertiary" />
-        <Button class="knap" heref="/" label="Med grønlandske rødder" style="tertiary" />
+      <Button class="knap" heref="/" label="Hjem" style="footer" />
+      <Button class="knap" heref="/" label="Camp Qussuk" style="footer" />
+      <Button
+        class="knap"
+        heref="/"
+        label="Arctic Flyfishning"
+        style="footer"
+      />
+      <Button class="knap" heref="/" label="FAQ" style="footer" />
+      <Button class="knap" heref="/" label="Læs om Malik" style="footer" />
     </div>
-<p class="bodyLight">© Copyright 2024 - Amanda og Amanda</p>
 
+    <div>
+      <Button
+        class="knap"
+        href="mailto:arctic@outlook.dk"
+        label="arctic.flyfishing@outlook.dk"
+        style="secondary"
+      />
+    </div>
+  </div>
+  <p>© Copyright 2024 - Amanda og Amanda</p>
 </footer>
 
 <style>
-
-.buttons{
-  
+  .buttons {
     display: flex;
+    gap: var(--RA-size-24);
+    padding: 0 var(--RA-size-12);
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+
+  .footer-flex {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    height: 260px;
-}
-
-footer{
+    padding: var(--RA-size-56) var(--RA-size-56);
+  }
+  footer {
     background-color: var(--RA-blue400);
+  }
+
+  p {
+    color: var(--RA-blue25);
+    white-space: nowrap;
+  }
+  .logo {
     display: flex;
-    flex-direction: column;
-}
+    justify-content: left;
+    padding: var(--RA-size-56) var(--RA-size-56);
+  }
 
-p{
-color: var(--RA-blue25);
-}
-
+  @media (max-width: 800px) {
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: var(--RA-size-24);
+      padding: var(--RA-size-12) var(--RA-size-12);
+    }
+    .footer-flex {
+      flex-direction: column;
+      gap: var(--RA-size-24);
+      padding: var(--RA-size-24) var(--RA-size-56);
+    }
+    .logo {
+      justify-content: center;
+      padding: var(--RA-size-56) var(--RA-size-56) 0;
+    }
+  }
 </style>
