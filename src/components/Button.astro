@@ -77,17 +77,16 @@ const { style, label, href } = Astro.props;
 
   /* tertiary button  */
   [style-variant="tertiary"] {
-    min-width: 135px;
-    border-radius: 1.25rem;
     height: 40px;
-    padding: 0 12px;
+    padding: 0 var(--RA-size-20);
   }
   [label-variant="tertiary"] {
     color: var(--RA-blue25);
+    font-size: 1rem;
   }
   [label-variant="tertiary"]:hover {
     text-decoration: underline;
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 600;
   }
