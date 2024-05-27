@@ -1,15 +1,16 @@
 ---
 import Button from "../components/Button.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import billede1 from "../assets/images/IMG_3035.webp";
+import billede2 from "../assets/images/IMG_3490.webp";
+import billede4 from"../assets/images/"
 ---
 
 <BaseLayout>
   <!-- Hero -->
   <div class="hero-content-video">
-    <video autoplay loop muted playsinline class="hero-video">
-      <source src="/video/Kasterbagfra4.mp4" />
-    </video>
-
+    <Image src={billede1} alt="billede1" class="hero-video" />
     <div class="hero-content">
       <h1>Oplev det unikke Grønland</h1>
       <p class="titelLight heroTitel">
@@ -19,8 +20,175 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </div>
   <div class="emptyContainer"></div>
   <!-- ------------------------------- -->
+  <section class="om-section">
+    <div class="intro-container">
+      <h2 class="blue">Hvad står Arctic Flyfishing for?</h2>
+      <p class="bodyDark">
+        Arctic Flyfishing er ikke kun fluefiskeri; det er en rejse ind i
+        eksklusive og unikke eventyr. Vi stræber efter at skabe enestående
+        øjeblikke. Og hvordan gør vi det?
+      </p>
+    </div>
+
+    <div class="first-grid">
+      <div class="grid-tekst">
+        <h3 class="blue">Adgang til ubevandrede farvande</h3>
+        <p class="bodyDark">
+          Grønland byder på elve med klare vandløb og isfyldte floder, og
+          naturen her tilbyder desuden et væld af oplevelser ud over fiskeri af
+          fjeldørred. Med vores egne camps har vi fuld kontrol og frihed til at
+          udforske ubevandrede flodsystemer, hvor fiskeriet er intensivt og
+          naturen er tæt på uberørt.
+        </p>
+      </div>
+      <Image src={billede1} alt="billede1" class="billede-grid image-order" />
+    </div>
+
+    <div class="second-grid">
+      <Image src={billede1} alt="billede1" class="billede-grid hidden" />
+      <div class="grid-tekst order">
+        <h3 class="blue">Luksuriøse Faciliteter</h3>
+        <p class="bodyDark">
+          Nyd førsteklasses indkvartering i glampingtelte, hvor komfort og
+          fællesskab er i højsædet og oplev en spændende gastronomisk cocktail,
+          hvor den traditionelle grønlandske madkultur møder skandinaviens.
+        </p>
+      </div>
+      <Image src={billede1} alt="billede1" class="billede-grid" />
+    </div>
+    <div class="third-grid">
+      <div class="grid-tekst">
+        <h3 class="blue">Kulturel Berigelse</h3>
+        <p class="bodyDark">
+          Vores guides er alle med grønlandsk oprindelse, og de sikrer, med
+          deres dybdegående lokale kendskab til naturen, de mest optimale
+          forhold for dit fiskeri.
+        </p>
+      </div>
+      <Image src={billede1} alt="billede1" class="billede-grid" />
+      <Image src={billede2} alt="billede1" class="billede-grid hidden" />
+    </div>
+  </section>
+
+  <!-- Om Raw Arctic -->
+  <section class="RA-sekction">
+    <h2 class="blue RA-h2">Hvem er RawArctic?</h2>
+    <div class="RA-content-button">
+      <div class="RA-content">
+        <div class="RA-card">
+          <Image src={billede1} alt="billede1" class="RA-billede" />
+          <div class="RA-text">
+            <h3 class="titelDark">Eksklusive faciliteter</h3>
+            <p class="bodyDark">
+              Nyd førsteklasses indkvartering og faciliteter efter en dag med
+              spændende fiskeri, hvor komfort og afslapning er i højsædet.
+            </p>
+          </div>
+        </div>
+        <div class="RA-card">
+          <Image src={billede1} alt="billede1" class="RA-billede" />
+          <div class="RA-text">
+            <h3 class="titelDark">Eksklusive faciliteter</h3>
+            <p class="bodyDark">
+              Nyd førsteklasses indkvartering og faciliteter efter en dag med
+              spændende fiskeri, hvor komfort og afslapning er i højsædet.
+            </p>
+          </div>
+        </div>
+        <div class="RA-card">
+          <Image src={billede1} alt="billede1" class="RA-billede" />
+          <div class="RA-text">
+            <h3 class="titelDark">Eksklusive faciliteter</h3>
+            <p class="bodyDark">
+              Nyd førsteklasses indkvartering og faciliteter efter en dag med
+              spændende fiskeri, hvor komfort og afslapning er i højsædet.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <Button class="knap" heref="/" label="Læs mere" style="secondary" />
+      </div>
+    </div>
+  </section>
+  <!-- ----------- -->
 </BaseLayout>
 <style>
+  .intro-container {
+    padding: var(--RA-padding-mobil);
+  }
+  .first-grid,
+  .second-grid,
+  .third-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  .billede-grid {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-height: 600px;
+    overflow: hidden;
+  }
+
+  .grid-tekst {
+    display: flex;
+    flex-direction: column;
+    gap: var(--RA-size-8);
+    padding: var(--RA-size-64) var(--RA-padding-mobil) var(--RA-padding-mobil)
+      var(--RA-padding-mobil);
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* Om RawArctic section */
+  .RA-h2 {
+    padding-left: var(--RA-size-56);
+  }
+  .RA-billede {
+    height: 100%;
+    max-width: 60%;
+    object-fit: cover;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    filter: brightness(0);
+  }
+  .RA-text {
+    max-width: 400px;
+    padding: var(--RA-padding-mobil);
+  }
+  .RA-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .RA-content {
+    display: grid;
+  }
+
+  .RA-content-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .RA-sekction {
+    margin: 130px 0;
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  /* ------------- */
+
+  /* Hele om-sectioen */
+  .om-section {
+    margin: 130px 0 130px 0;
+  }
+
   /* Hero */
   .hero-video {
     position: absolute;
@@ -28,34 +196,83 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     height: 100%;
     object-fit: cover;
   }
+
   .heroTitel {
-    padding-top: var(--RA-size-24);
+    padding-top: var(--RA-padding-mobil);
   }
+
   .hero-content {
     display: flex;
     flex-direction: column;
-    padding: 250px var(--RA-size-56);
+    padding: 250px var(--RA-padding-mobil);
     z-index: 2;
   }
+
   .hero-content-video {
     position: relative;
     display: flex;
     height: 100vh;
   }
+
   .CTAer {
     display: flex;
     padding-top: var(--RA-size-48);
   }
-  /* ------------------ */
 
-  @media (max-width: 800px) {
-    /* Hero */
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      padding: 250px 0 250px var(--RA-size-24);
-      z-index: 2;
+  .emptyContainer {
+    height: 100vh;
+  }
+
+  /* Tablet og Desktop */
+  @media (min-width: 800px) {
+    .hidden {
+      display: block;
     }
-    /* ------------ */
+    .first-grid {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    .second-grid,
+    .third-grid {
+      grid-template-columns: repeat(3, 33.3%);
+    }
+
+    .grid-tekst {
+      padding: var(--RA-padding-desktop);
+    }
+
+    .hero-content {
+      padding: 250px var(--RA-padding-desktop);
+    }
+
+    .order {
+      order: 1;
+    }
+
+    .intro-container {
+      padding: var(--RA-padding-desktop);
+    }
+
+    .RA-content {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--RA-size-20);
+    }
   }
 </style>
+
+<script>
+  import { gsap } from "gsap/dist/gsap";
+  import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to(".hero-video", {
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".hero-video",
+      start: "top top",
+      end: "+=700",
+      pin: true,
+      // markers: true,
+    },
+  });
+</script>
