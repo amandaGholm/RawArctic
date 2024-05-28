@@ -17,7 +17,7 @@ import SectionCTA from "../components/SectionCTA.astro";
 <BaseLayout>
   <!-- Hero -->
   <div class="hero-content-video">
-    <Image src={hero} alt="billede1" class="hero-video" />
+    <Image src={hero} alt="" class="hero-video" />
     <div class="hero-content">
       <h1>Oplev det unikke Grønland</h1>
       <p class="titelLight heroTitel">
@@ -28,13 +28,15 @@ import SectionCTA from "../components/SectionCTA.astro";
   <div class="emptyContainer"></div>
   <!-- ------------------------------- -->
   <section class="om-section">
-    <div class="intro-container">
-      <h2 class="blue">Hvad står Arctic Flyfishing for?</h2>
-      <p class="bodyDark">
-        Arctic Flyfishing er ikke kun fluefiskeri; det er en rejse ind i
-        eksklusive og unikke eventyr. Vi stræber efter at skabe enestående
-        øjeblikke. Og hvordan gør vi det?
-      </p>
+    <div class="max-width">
+      <div class="intro-container">
+        <h2 class="blue">Hvad står Arctic Flyfishing for?</h2>
+        <p class="bodyDark">
+          Arctic Flyfishing er ikke kun fluefiskeri; det er en rejse ind i
+          eksklusive og unikke eventyr. Vi stræber efter at skabe enestående
+          øjeblikke. Og hvordan gør vi det?
+        </p>
+      </div>
     </div>
 
     <div class="first-grid">
@@ -95,54 +97,58 @@ import SectionCTA from "../components/SectionCTA.astro";
   </section>
 
   <!-- Om Raw Arctic -->
-  <section class="RA-sekction">
-    <h2 class="blue RA-h2">Hvem er RawArctic?</h2>
-    <div class="RA-content">
-      <div class="RA-card">
-        <div class="RA-billede-div">
-          <Image src={casper} alt="billede1" class="RA-billede" />
+  <section class="max-width">
+    <div class="RA-sekction">
+      <h2 class="blue RA-h2 verticalAppear">Hvem er RawArctic?</h2>
+      <div class="RA-content">
+        <div class="RA-card verticalAppear3">
+          <div class="RA-billede-div">
+            <Image src={casper} alt="billede1" class="RA-billede" />
+          </div>
+          <div class="RA-text">
+            <h3 class="titelDark">Casper - Guide</h3>
+            <p class="bodyDark">
+              Mød Casper, vores erfarne fiskeri-guide fra Grønland med en unik
+              forståelse for farvandene omkring Nuuk og Qussuk.
+            </p>
+          </div>
         </div>
-        <div class="RA-text">
-          <h3 class="titelDark">Casper - Guide</h3>
-          <p class="bodyDark">
-            Mød Casper, vores erfarne fiskeri-guide fra Grønland med en unik
-            forståelse for farvandene omkring Nuuk og Qussuk.
-          </p>
+        <div class="RA-card verticalAppear2">
+          <div class="RA-billede-div">
+            <Image src={isak} alt="billede1" class="RA-billede" />
+          </div>
+          <div class="RA-text">
+            <h3 class="titelDark">Isak - Guide</h3>
+            <p class="bodyDark">
+              Isak, en erfaren fiskeri-guide med en dyb forståelse for Grønlands
+              farvande, vil ledsage dig på dit eventyr og dele sit lokale
+              kendskab til naturen på Grønland.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="RA-card">
-        <div class="RA-billede-div">
-          <Image src={isak} alt="billede1" class="RA-billede" />
-        </div>
-        <div class="RA-text">
-          <h3 class="titelDark">Isak - Guide</h3>
-          <p class="bodyDark">
-            Isak, en erfaren fiskeri-guide med en dyb forståelse for Grønlands
-            farvande, vil ledsage dig på dit eventyr og dele sit lokale kendskab
-            til naturen på Grønland.
-          </p>
-        </div>
-      </div>
-      <div class="RA-card">
-        <div class="RA-billede-div">
-          <Image src={rasmus} alt="billede1" class="RA-billede" />
-        </div>
-        <div class="RA-text">
-          <h3 class="titelDark">Rasmus - Guide</h3>
-          <p class="bodyDark">
-            Træd ind i Rasmus' verden af fiskeri, hvor enkelhed og tålmodighed
-            er nøgleordene for en vellykket dag på vandet. Som bosat på Grønland
-            deler Rasmus sin lokale viden med glæde.
-          </p>
+        <div class="RA-card verticalAppear3">
+          <div class="RA-billede-div">
+            <Image src={rasmus} alt="billede1" class="RA-billede" />
+          </div>
+          <div class="RA-text">
+            <h3 class="titelDark">Rasmus - Guide</h3>
+            <p class="bodyDark">
+              Træd ind i Rasmus' verden af fiskeri, hvor enkelhed og tålmodighed
+              er nøgleordene for en vellykket dag på vandet. Som bosat på
+              Grønland deler Rasmus sin lokale viden med glæde.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
   <!-- ----------- -->
   <SectionCTA />
 </BaseLayout>
 
 <script>
+  /* Animation */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       console.log(entry);
@@ -153,9 +159,12 @@ import SectionCTA from "../components/SectionCTA.astro";
       }
     });
   });
-  const hiddenElements = document.querySelectorAll(".hidden , .hidden2");
+  const hiddenElements = document.querySelectorAll(
+    ".hidden , .hidden2, .verticalAppear, .verticalAppear2, .verticalAppear3"
+  );
   hiddenElements.forEach((el) => observer.observe(el));
-
+  /* -------------- */
+  /*----------- Hero --------------*/
   import { gsap } from "gsap/dist/gsap";
   import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
@@ -173,8 +182,104 @@ import SectionCTA from "../components/SectionCTA.astro";
 </script>
 
 <style>
+  /* Hero */
+  .hero-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .heroTitel {
+    padding-top: var(--RA-padding-mobil);
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    padding: 250px var(--RA-padding-mobil);
+    z-index: 2;
+    position: relative;
+    animation-name: smooth-appear;
+    animation-duration: 1.5s;
+  }
+
+  .hero-content-video {
+    position: relative;
+    display: flex;
+    height: 100vh;
+  }
+
+  .CTAer {
+    display: flex;
+    padding-top: var(--RA-size-48);
+  }
+
+  .emptyContainer {
+    height: 100vh;
+  }
+  /* Hele om-sectioen */
+  .om-section {
+    margin: 130px 0 130px 0;
+    overflow: hidden;
+  }
+  .order {
+    order: -1;
+  }
+
+  /* Om RawArctic section */
+
+  .RA-h2 {
+    padding-left: var(--RA-padding-mobil);
+    position: relative;
+    animation-name: smooth-appear;
+    animation-duration: 1.5s;
+  }
+
+  .RA-billede {
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .RA-billede-div {
+    max-height: 400px;
+    position: relative;
+    animation-name: smooth-appear;
+    animation-duration: 1.5s;
+  }
+  .RA-text {
+    max-width: 400px;
+    padding: var(--RA-padding-mobil);
+  }
+  .RA-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .RA-content {
+    display: grid;
+  }
+
+  .RA-content-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .RA-sekction {
+    margin: 130px 0;
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ------------- */
+
+  /* -------------------------- slide in fra siden --------------------------*/
   .intro-container {
     padding: var(--RA-padding-mobil);
+    display: flex;
+    flex-direction: column;
   }
   .first-grid,
   .second-grid,
@@ -202,90 +307,6 @@ import SectionCTA from "../components/SectionCTA.astro";
 
   .hidden-image {
     display: none;
-  }
-
-  /* Om RawArctic section */
-
-  .RA-h2 {
-    padding-left: var(--RA-padding-mobil);
-  }
-
-  .RA-billede {
-    height: 100%;
-    max-width: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  .RA-billede-div {
-    max-height: 400px;
-  }
-  .RA-text {
-    max-width: 400px;
-    padding: var(--RA-padding-mobil);
-  }
-  .RA-card {
-    display: flex;
-    flex-direction: column;
-  }
-  .RA-content {
-    display: grid;
-  }
-
-  .RA-content-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .RA-sekction {
-    margin: 130px 0;
-    position: relative;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-  }
-  /* ------------- */
-
-  /* Hele om-sectioen */
-  .om-section {
-    margin: 130px 0 130px 0;
-    overflow: hidden;
-  }
-  .order {
-    order: -1;
-  }
-
-  /* Hero */
-  .hero-video {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .heroTitel {
-    padding-top: var(--RA-padding-mobil);
-  }
-
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    padding: 250px var(--RA-padding-mobil);
-    z-index: 2;
-  }
-
-  .hero-content-video {
-    position: relative;
-    display: flex;
-    height: 100vh;
-  }
-
-  .CTAer {
-    display: flex;
-    padding-top: var(--RA-size-48);
-  }
-
-  .emptyContainer {
-    height: 100vh;
   }
 
   /* Tablet og Desktop */
@@ -360,7 +381,46 @@ import SectionCTA from "../components/SectionCTA.astro";
 
     .RA-h2 {
       padding-left: var(--RA-size-56);
+      transition-delay: 5s;
     }
+    .verticalAppear {
+      opacity: 0;
+      transition: opacity 1s ease-in, transform 1s ease-in;
+      transform: translateY(10%);
+      will-change: opacity, transform;
+    }
+
+    .verticalAppear2 {
+      opacity: 0;
+      transition: opacity 1s ease-in, transform 1s ease-in;
+      transform: translateY(10%);
+      will-change: opacity, transform;
+    }
+    .verticalAppear3 {
+      opacity: 0;
+      transition: opacity 1s ease-in 7s, transform 1s ease-in;
+      transform: translateY(10%);
+      transition-delay: 2s;
+      will-change: opacity, transform, transition-delay;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translate(0);
+      transition: opacity 1s ease-out, filter 1s ease-out, transform 1s ease-out;
+    }
+
+    .RA-content :nth-child(1) {
+      transition-delay: 700ms;
+    }
+
+    .RA-content :nth-child(2) {
+      transition-delay: 900ms;
+    }
+    .RA-content :nth-child(3) {
+      transition-delay: 1100ms;
+    }
+
     /* --------------------------- */
   }
 </style>
