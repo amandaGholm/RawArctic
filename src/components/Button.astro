@@ -11,19 +11,11 @@ const { style, label, href } = Astro.props;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    min-width: 135px;
-    border-radius: 1.25rem;
-    height: 40px;
     cursor: pointer;
-    padding: 0 12px;
     transition: background-color 0.5s ease, transform 0.3s ease;
   }
-
   .button_label {
     font-family: Switzer;
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 600;
     text-decoration: none;
     text-align: center;
     transition: text-decoration 0.9s ease, transform 0.9s ease;
@@ -34,12 +26,19 @@ const { style, label, href } = Astro.props;
   /* primary-outline button  */
   [style-variant="primary"] {
     background-color: var(--RA-orange300);
+    min-width: 135px;
+    border-radius: 1.25rem;
+    height: 40px;
+    padding: 0 12px;
   }
   [style-variant="primary"]:hover {
     background-color: var(--RA-orange400);
   }
   [label-variant="primary"] {
     color: var(--RA-blue25);
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
   }
 
   /* --------------------- */
@@ -49,7 +48,6 @@ const { style, label, href } = Astro.props;
     background-color: var(--RA-orange300);
     border: 2px solid var(--RA-blue25);
   }
-
   [label-variant="primary-outline"] {
     color: var(--RA-blue25);
   }
@@ -59,10 +57,17 @@ const { style, label, href } = Astro.props;
   [style-variant="secondary"] {
     background-color: var(--RA-blue25);
     border: 2px solid var(--RA-blue300);
+    min-width: 135px;
+    border-radius: 1.25rem;
+    height: 40px;
+    padding: 0 12px;
   }
   a,
-  [style-variant="secondary"] {
+  [style-label="secondary"] {
     color: var(--RA-blue400);
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
   }
   [style-variant="secondary"]:hover {
     text-decoration: underline;
@@ -71,12 +76,31 @@ const { style, label, href } = Astro.props;
   /* ------------------------- */
 
   /* tertiary button  */
+  [style-variant="tertiary"] {
+    height: 40px;
+    padding: 0 var(--RA-size-20);
+  }
   [label-variant="tertiary"] {
     color: var(--RA-blue25);
-  
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    
   }
   [label-variant="tertiary"]:hover {
     text-decoration: underline;
   }
   /* ------------------ */
+
+  /* Nav */
+  [label-variant="footer"] {
+    color: var(--RA-blue25);
+    padding: 0 12px;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+  }
+  [label-variant="footer"]:hover {
+    text-decoration: underline;
+  }
 </style>

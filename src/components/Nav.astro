@@ -1,23 +1,42 @@
 ---
 import { Image } from "astro:assets";
-import logoFisk from "../assets/images/logoFisk.svg";
-import Button from "./Button.astro";
+import logoFisk from "../assets/images/Logo-AF.svg";
+import Button from "../components/Button.astro";
 ---
 
 <header>
   <nav class="nav-desktop">
-    <div>
-      <a href="/"><Image src={logoFisk} alt="logofsik" /></a>
+    <div class="logo">
+      <a class="svg" href="/"><Image src={logoFisk} alt="logofsik" /></a>
+      <p class="logo-text">Arctic Flyfishing</p>
     </div>
     <ul class="ul-desktop">
       <li>
-        <Button class="knap" heref="/" label="Læs mere" style="tertiary" />
+        <Button
+          class="knap"
+          href="/campqussuk/"
+          label="Camp Qusuk"
+          style="tertiary"
+        />
       </li>
       <li>
-        <Button class="knap" heref="/" label="Læs mere" style="tertiary" />
+        <Button
+          class="knap"
+          href="/omarcticflyfishing/"
+          label="Arctic Flyfishing"
+          style="tertiary"
+        />
       </li>
       <li>
-        <Button class="knap" heref="/" label="Læs mere" style="primary" />
+        <Button
+          class="knap"
+          href="/kontakt/#faq"
+          label="FAQ"
+          style="tertiary"
+        />
+      </li>
+      <li>
+        <Button class="knap" href="/" label="Læs om Malik" style="tertiary" />
       </li>
     </ul>
   </nav>
@@ -32,13 +51,31 @@ import Button from "./Button.astro";
 
     <div class="overlay-content">
       <li>
-        <Button class="knap" heref="/ctatester" label="Læs mere" style="tertiary" />
+        <Button
+          class="knap"
+          href="/campqussuk/"
+          label="Camp Qusuk"
+          style="tertiary"
+        />
       </li>
       <li>
-        <Button class="knap" heref="/" label="Læs mere" style="tertiary" />
+        <Button
+          class="knap"
+          href="/omarcticflyfishing/"
+          label="Arctic Flyfishing"
+          style="tertiary"
+        />
       </li>
       <li>
-        <Button class="knap" heref="/" label="Læs mere" style="primary" />
+        <Button
+          class="knap"
+          href="/kontakt/#faq"
+          label="FAQ"
+          style="tertiary"
+        />
+      </li>
+      <li>
+        <Button class="knap" href="/" label="Læs om Malik" style="tertiary" />
       </li>
     </div>
   </div>
@@ -50,7 +87,7 @@ import Button from "./Button.astro";
   }
 
   #openNavBtn {
-    font-size: 30px;
+    font-size: 35px;
     cursor: pointer;
     color: white;
   }
@@ -98,9 +135,13 @@ import Button from "./Button.astro";
 
   .nav-mobil {
     display: flex;
+    background: rgba(0, 14, 56, 0.5);
+    backdrop-filter: blur(20px);
+    border-radius: 2.5rem;
     justify-content: space-between;
-    padding: 16px;
-    margin: 40px 24px 40px 24px;
+    align-items: center;
+    padding: var(--RA-size-12) var(--RA-size-20);
+    margin: var(--RA-size-24) var(--RA-size-8);
   }
   header {
     position: fixed;
@@ -109,7 +150,7 @@ import Button from "./Button.astro";
     width: 100%;
   }
 
-  @media (min-width: 699px) {
+  @media (min-width: 899px) {
     .nav-mobil {
       display: none;
     }
@@ -126,17 +167,31 @@ import Button from "./Button.astro";
     }
     .nav-desktop {
       display: flex;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(0, 14, 56, 0.5);
       backdrop-filter: blur(20px);
       border-radius: 2.5rem;
       justify-content: space-between;
       padding: var(--RA-size-12);
-      margin: 40px 65px 40px 65px;
+      margin: var(--RA-size-40) var(--RA-size-48);
     }
     .ul-desktop {
       list-style: none;
       display: flex;
       flex-direction: row;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--RA-size-8);
+    }
+    .logo-text {
+      color: var(--RA-blue25);
+      font-family: Switzer, "Open Sans";
+      font-size: 1.25rem;
+      font-style: normal;
+      font-weight: 600;
     }
   }
 </style>
