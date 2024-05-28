@@ -1,0 +1,776 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/Button.astro";
+import SectionCTA from "../components/SectionCTA.astro";
+import { Image } from "astro:assets";
+import CampImage from "../assets/images/campsite.png";
+import HTImage from "../assets/images/heroTuren.webp";
+import OverskyetElv from "../assets/images/overskyetElv.webp";
+import OverskyetLandskab from "../assets/images/overskyetLandskab.webp";
+import Dinghy from "../assets/images/carroussel.png";
+import Casper from "../assets/images/casper.webp";
+import BøjetFisk from "../assets/images/bøjetFisk.webp";
+import FiskSide from "../assets/images/fiskSide.webp";
+import PigeFisk from "../assets/images/pigeFisk.webp";
+import UdvidetFisk from "../assets/images/udvidetFisk.webp";
+import PresentFiskStor from "../assets/images/presentFiskStor.webp";
+import Stromflod from "../assets/images/stromflod.webp";
+import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
+---
+
+<BaseLayout>
+  <section class="hero-content-section">
+    <div class="hero-image">
+      <Image src={HTImage} alt="Fluefisker paa Grønland" class="RA-billede" />
+    </div>
+    <div class="hero-content">
+      <h1>Camp Qussuk</h1>
+      <p class="titelLight heroTitel">
+        Syv dage med eksklusiv overnatning og mad i verdensklasse
+      </p>
+    </div>
+  </section>
+  <div class="emptyContainer"></div>
+  <section class="CQ-section">
+    <div class="overview">
+      <h2>Overblik over din rejse</h2>
+      <div class="bodytext">
+        <p class="bodyDark">
+          Vores camp ligger nord for Nuuk i den smukke fjord Qussuk. En tur
+          varer en uge fra mandag til søndag. Vores fluefiske sæson er fra marts
+          til slut september.
+        </p>
+        <div>
+          <p class="bodyFat">Inkluderet i din rejse:</p>
+          <ul class="bodyDark">
+            <li>fly tur/retur</li>
+            <li>kost og logi i 7 dage (6 nætter)</li>
+            <li>personlige guidede ture til lokale fiskesteder.</li>
+          </ul>
+        </div>
+        <p class="bodyDark">
+          Tjek vores kalender for ledige rejsetidspunkter på knappen herunder
+          eller scroll ned for at se dagsprogram for rejsen.
+        </p>
+      </div>
+      <div class="overview-button">
+        <Button
+          class="knap"
+          heref="/"
+          label="Reservér din rejse"
+          style="primary"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="container-mobile">
+    <div class="card">
+      <div class="text-wrapper">
+        <h2>Dag 1</h2>
+        <h2>Indlogering</h2>
+
+        <p class="bodyDark p-scrollTrigger">
+          Afgang fra Danmark og 4 timer senere ankomst i Grønland. Transport fra
+          Nuuk til Camp Qussuk.
+        </p>
+      </div>
+      <Image src={CampImage} alt="Fluefisker paa Grønland" class="IMG" />
+    </div>
+    <div class="card">
+      <div class="text-wrapper">
+        <h2>Dag 2-6</h2>
+        <h2>Camp Qussuk</h2>
+        <p class="bodyDark p-scrollTrigger">
+          Fluefiskeri i uberørte floder og elve, efterfulgt af luksuriøs
+          overnatning i førsteklasses glampingtelte og en professionel
+          kulinarisk oplevelse hver dag.
+        </p>
+      </div>
+      <Image
+        src={OverskyetLandskab}
+        alt="Fluefisker paa Grønland"
+        class="IMG"
+      />
+    </div>
+    <div class="card">
+      <div class="text-wrapper">
+        <h2>Dag 7</h2>
+        <h2>Hjemrejse</h2>
+        <p class="bodyDark p-scrollTrigger">
+          Transport fra Camp Qussuk til Nuuk. Afgang fra Grønland og 4 timer
+          senere ankomst i CPH-Lufthavn.
+        </p>
+      </div>
+      <Image src={Dinghy} alt="Fluefisker paa Grønland" class="IMG" />
+    </div>
+  </section>
+
+  <section class="container-desktop">
+    <div class="slide IMG">
+      <Image src={CampImage} alt="Fluefisker paa Grønland" class="IMG" />
+    </div>
+    <div class="slide IMG">
+      <Image
+        src={OverskyetLandskab}
+        alt="Fluefisker paa Grønland"
+        class="IMG"
+      />
+    </div>
+    <div class="slide IMG">
+      <Image src={Dinghy} alt="Fluefisker paa Grønland" class="IMG" />
+    </div>
+
+    <div class="line">
+      <div class="text-wrapper">
+        <h2>Dag 1</h2>
+        <h2>Indlogering</h2>
+
+        <p class="bodyDark p-scrollTrigger">
+          Afgang fra Danmark og 4 timer senere ankomst i Grønland. Transport fra
+          Nuuk til Camp Qussuk.
+        </p>
+      </div>
+      <div class="text-wrapper">
+        <h2>Dag 2-6</h2>
+        <h2>Camp Qussuk</h2>
+        <p class="bodyDark p-scrollTrigger">
+          Fluefiskeri i uberørte floder og elve, efterfulgt af luksuriøs
+          overnatning i førsteklasses glampingtelte og en professionel
+          kulinarisk oplevelse hver dag.
+        </p>
+      </div>
+      <div class="text-wrapper">
+        <h2>Dag 7</h2>
+        <h2>Hjemrejse</h2>
+        <p class="bodyDark p-scrollTrigger">
+          Transport fra Camp Qussuk til Nuuk. Afgang fra Grønland og 4 timer
+          senere ankomst i CPH-Lufthavn.
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="emptyContainerCQ"></div>
+  <!-- Testimonials -->
+  <!-- <section class="testimonials-container">
+    <div class="testimonial">
+      <div class="testi-content">
+        <div class="slide">
+          <Image src={Dinghy} alt="Fluefisker paa Grønland" class="IMG" />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            recusandae minus odit soluta nobis ex id, voluptas non optio.
+            Repellendus vitae enim amet dolores commodi cumque quos est aperiam
+            eum!
+          </p>
+
+          <i class="bx bxs-quote-alt-left quote-icon"></i>
+          <div class="details">
+            <span class="profile">Peter, 45 - København</span>
+            <span class="trip"> August 2024 - Qussuk, 45 - København</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- The dots/circles -->
+  <!-- <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div> -->
+  <!-- <section class="common">
+    <section class="gallery-container">
+      <div class="wrapper">
+        <Image
+          src={OverskyetElv}
+          alt="Fluefisker paa Grønland"
+          class="IMG galleryIMG"
+        />
+      </div>
+      <div class="wrapper">
+        <Image
+          src={Dinghy}
+          alt="Fluefisker paa Grønland"
+          class="IMG galleryIMG"
+        />
+      </div>
+      <div class="wrapper">
+        <Image
+          src={OverskyetLandskab}
+          alt="Fluefisker paa Grønland"
+          class="IMG galleryIMG"
+        />
+      </div>
+    </section>
+
+    <section class="gallery-container2">
+      <div class="wrapper2">
+        <Image
+          src={Dinghy}
+          alt="Fluefisker paa Grønland"
+          class="IMG galleryIMG"
+        />
+      </div>
+      <div class="wrapper2">
+        <Image
+          src={Dinghy}
+          alt="Fluefisker paa Grønland"
+          class="IMG galleryIMG"
+        />
+      </div>
+      <div class="wrapper2">
+        <Image
+          src={OverskyetLandskab}
+          alt="Fluefisker paa Grønland"
+          class="IMG galleryIMG"
+        />
+      </div>
+    </section>
+  </section> -->
+  <section class="common">
+    <section class="gallery-container">
+      <div class="wrapper">
+        <Image
+          src={BøjetFisk}
+          alt="Fluefisker paa Grønland"
+          class="galleryIMG"
+        />
+      </div>
+      <div class="wrapper">
+        <Image src={Casper} alt="Fluefisker paa Grønland" class="galleryIMG" />
+      </div>
+      <div class="wrapper">
+        <Image
+          src={IsakHolderFisk}
+          alt="Fluefisker paa Grønland"
+          class="galleryIMG"
+        />
+      </div>
+      <div class="wrapper">
+        <Image
+          src={CampImage}
+          alt="Fluefisker paa Grønland"
+          class="galleryIMG"
+        />
+      </div>
+    </section>
+
+    <section class="gallery-container2">
+      <div class="wrapper2">
+        <Image
+          src={OverskyetElv}
+          alt="Fluefisker paa Grønland"
+          class="IMG galleryIMG"
+        />
+      </div>
+      <div class="wrapper2">
+        <Image
+          src={PigeFisk}
+          alt="Fluefisker paa Grønland"
+          class="IMG galleryIMG pigeFisk"
+        />
+      </div>
+      <div class="wrapper2">
+        <Image
+          src={UdvidetFisk}
+          alt="Fluefisker paa Grønland"
+          class="IMG galleryIMG presentFisk"
+        />
+      </div>
+    </section>
+  </section>
+
+  <SectionCTA class="next-section" />
+</BaseLayout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  // -------------------------------------------------------- Hero --------------------------------------------------------
+  gsap.to(".hero-image", {
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".hero-image",
+      start: "top top",
+      end: "+=750",
+      pin: true,
+      // markers: true,
+    },
+  });
+  // -----------------------------------------------------------------------------------------------------------------------------
+
+  // -------------------------------------------------------- Dagsprogram --------------------------------------------------------
+  var allSlides = gsap.utils.toArray(".slide"); // Samler alle elementer med klassen ".slide" i et array.
+  gsap.set(allSlides, { yPercent: 50 }); //   Indstiller startpositionen for alle slides til 50% y-akse
+
+  var allTextWrappers = gsap.utils.toArray(".line .text-wrapper"); //   Samler alle ".text-wrapper"-elementer indenfor ".line"-elementer i en array.
+  gsap.set(allTextWrappers, { yPercent: 0 }); //   Indstiller startpositionen for alle tekstwrappere til 100% y-akse (udenfor viewporten).
+
+  gsap.set(".container-desktop", { autoAlpha: 1 }); //   Sætter ".container-desktop" til fuld synlighed (1) efter initialisering.
+
+  var dur = 1, //Varighed af en enkelt animation er 1 sek.
+    next = 1.5, //Tid mellem animationerne er 1.5 sek.
+    fade = 0.3, //Varighed af fade-effekter er 0.3 sek.
+    tt = 3500; // Total længde af scroll-animationen i px.
+
+  //Opretter en GSAP-timeline til at koordinere flere animationer.
+  var action = gsap
+    .timeline({
+      defaults: {
+        // default variabler indstiller standardværdier for animationerne.
+        ease: "none", //Ingen easing på animationerne.
+        stagger: next, //Tidsforsinkelse mellem animationerne er next(1,5 sek).
+      },
+      paused: true, // Timeline er paused fra starten, så animationerne ikke kører automatisk
+    })
+    .to(allSlides, { yPercent: -50, duration: dur }) // Animerer og flytter slides op med -60% på y-aksen over varigheden dur(1 sek).
+    .to(
+      allTextWrappers,
+      { yPercent: 0, opacity: 1, duration: fade * 2 }, //Animerer og flytter tekstwrappere til 0% på y-akse og gør dem synlige over varigheden fade * 2 (0,6 sek).
+      dur - fade //Starter animationen dur (1 sek) - fade (0,3 sek) sekunder efter den forrige animation.
+    )
+    .to(
+      allTextWrappers,
+      { yPercent: -200, opacity: 0, duration: fade }, // Animerer ud og flytter tekstwrappere til -200% på y-akse og gør dem usynlige over varigheden fade(0,3 sek).
+      dur * 2 //Starter animationen dur * 2 sekunder efter den forrige animation.
+    );
+
+  // Animation som starter når det første staggered item er synligt og går igennem indtil det sidste item er fuldt synligt.
+  const slider = gsap.fromTo(
+    action,
+    { time: dur },
+    { time: action.duration() - dur, paused: true }
+  );
+
+  ScrollTrigger.create({
+    animation: slider, //binder slider animationen ovenover til scrolltrigger.
+    trigger: ".container-desktop", //Elementet der trigger animationen.
+    start: "top top", // Starter når toppen af .container-desktop elementet møder toppen af viewport.
+    end: "=+" + tt, // Slutter 4000px efter start
+    pin: true, //Pinner .container-desktop i viewport under animation
+    scrub: 0.3, // Synkroniserer animationen med scrolling (0,3 sek forsinkelse)
+    // markers: true,
+  });
+  // ----------------------------------------------------------------------------------------------------------------------
+
+  // -------------------------------------------------------- Testimonials --------------------------------------------------------
+
+  // ----------------------------------------------------------------------------------------------------------------
+
+  // -------------------------------------------------------- Gallery --------------------------------------------------------
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+      const wrappers = document.querySelectorAll(".wrapper");
+      const wrapper2 = document.querySelectorAll(".wrapper2");
+
+      let totalWidth = 0;
+      let totalWidth2 = 0;
+      const windowWidth = window.innerWidth;
+      let scrollDistance;
+
+      if (windowWidth < 800) {
+        // Mobile
+        scrollDistance = 2000; // Set the scroll distance for mobile
+      } else {
+        // Desktop
+        scrollDistance = 3000;
+      }
+
+      // Udregning af den samlede bredde mellem content og viewport
+      wrappers.forEach((wrapper) => {
+        totalWidth += wrapper.offsetWidth;
+      });
+      wrapper2.forEach((wrapper) => {
+        totalWidth2 += wrapper.offsetWidth;
+      });
+
+      // Giver den rigtige længde animationen skal vare for at det passer med billeder
+      const amountToScroll = totalWidth - window.innerWidth;
+      const amountToScroll2 = totalWidth2 - window.innerWidth;
+
+      // Lave tween animation for wrappers
+      const tween = gsap.to(wrappers, {
+        x: -amountToScroll,
+        delay: 5,
+        ease: "none",
+      });
+      const tween2 = gsap.to(wrapper2, {
+        x: -amountToScroll2,
+        ease: "none",
+      });
+
+      //  Scrolltrigger for hver af containersne
+      ScrollTrigger.create({
+        animation: tween,
+        trigger: ".common",
+        start: "top top",
+        end: "+=" + scrollDistance,
+        scrub: 3,
+        pin: true,
+        // markers: true,
+        pinSpacing: true,
+      });
+      ScrollTrigger.create({
+        animation: tween2,
+        trigger: ".common",
+        start: "bottom bottom",
+        end: "+=" + scrollDistance,
+        scrub: 3,
+        pin: true,
+        pinSpacing: true,
+      });
+    }
+    // tester
+  );
+
+  // ----------------------------------------------------------------------------------------------------------------
+</script>
+
+<style>
+  /*--------------------------- Galleri Mobile ----------------------------*/
+  .gallery-container,
+  .gallery-container2 {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+    margin: 0; /* Ingen margin i top og bund */
+    padding: 0; /* Ingen padding */
+  }
+
+  .wrapper,
+  .wrapper2 {
+    display: flex;
+    width: 100vw;
+    height: 50vh;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .galleryIMG {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  .presentFisk {
+    height: 120vh;
+    max-width: 80%;
+    object-fit: cover;
+  }
+
+  /*----------------------------------------------------------------------*/
+
+  /* .testimonials-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .testimonial {
+    position: relative;
+    width: 100%;
+  }
+
+  .testi-content {
+    margin: var(--RA-size-32);
+  }
+
+  .testimonial .slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .slide p {
+    text-align: center;
+  }
+
+  .slide.details {
+    display: flex;
+    flex-direction: ;
+  } */
+  /*--------------------------- Hero Mobile ----------------------------*/
+  .hero-image {
+    position: absolute;
+    width: 100vw;
+    filter: brightness(60%);
+  }
+
+  .hero-image img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+  .heroTitel {
+    padding-top: var(--RA-size-24);
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    padding: 350px var(--RA-size-56);
+    z-index: 2;
+  }
+  .hero-content-section {
+    position: relative;
+    display: flex;
+    height: 100vh;
+  }
+
+  .emptyContainer {
+    height: 100vh;
+    background-color: #ffeee6;
+  }
+  /* ------------------------------------------------------------------- */
+  /*------------------------- Camp Qussuk section Mobile ------------------------*/
+
+  .CQ-section {
+    display: flex;
+    justify-content: center;
+    background-color: #ffeee6;
+  }
+
+  .overview {
+    display: flex;
+    flex-direction: column;
+    gap: var(--RA-size-32);
+    padding-left: var(--RA-size-32);
+    padding-right: var(--RA-size-32);
+    margin-bottom: var(--RA-size-64);
+  }
+
+  .bodytext {
+    display: flex;
+    flex-direction: column;
+    gap: var(--RA-size-16);
+  }
+  .bodyFat {
+    padding-top: var(--RA-size-8);
+    color: var(--RA-blue400);
+    font-family: "Open Sans";
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.36rem;
+  }
+
+  p {
+    max-width: 64ch;
+  }
+
+  /* --------------------------- Dagsprogram mobile ---------------------------*/
+  .container-mobile {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #ffeee6;
+  }
+
+  .container-desktop {
+    display: none;
+  }
+
+  .card {
+    width: 100vw;
+    max-height: 100vh;
+    padding-top: var(--RA-size-64);
+  }
+
+  .IMG {
+    max-width: 100vw;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .text-wrapper {
+    width: 90vw;
+    padding-left: var(--RA-size-32);
+    padding-bottom: var(--RA-size-32);
+  }
+
+  .p-scrollTrigger {
+    max-width: 64ch;
+  }
+  /* ---------------------------------------------------------------- */
+
+  @media (min-width: 800px) {
+    /*--------------------------- Hero ----------------------------*/
+    .hero-image {
+      position: absolute;
+      width: 100vw;
+      filter: brightness(60%);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100vh;
+    }
+    .heroTitel {
+      padding-top: var(--RA-size-24);
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      padding: 350px var(--RA-size-56);
+      z-index: 2;
+    }
+    .hero-content-section {
+      position: relative;
+      display: flex;
+      height: 100vh;
+    }
+
+    .emptyContainer {
+      height: 100vh;
+      background-color: #ffeee6;
+    }
+    /* ------------------------------------------------------------------- */
+    /*------------------------- Camp Qussuk section ------------------------*/
+
+    .CQ-section {
+      display: flex;
+      justify-content: center;
+      background-color: #ffeee6;
+    }
+
+    .overview {
+      display: flex;
+      flex-direction: column;
+      gap: var(--RA-size-32);
+      margin-bottom: var(--RA-size-48);
+    }
+
+    .bodytext {
+      display: flex;
+      flex-direction: column;
+      gap: var(--RA-size-16);
+    }
+    .bodyFat {
+      padding-top: var(--RA-size-8);
+      color: var(--RA-blue400);
+      font-family: "Open Sans";
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.36rem;
+    }
+
+    p {
+      max-width: 64ch;
+    }
+
+    .overview-button {
+      padding-bottom: var(--RA-size-32);
+    }
+    /* ----------------------------------------------------------------------- */
+    /* ------------------------- Dagsprogram desktop ------------------------- */
+    .container-mobile {
+      display: none;
+    }
+    .container-desktop {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      visibility: hidden;
+      background-color: #ffeee6;
+    }
+
+    .slide {
+      position: absolute;
+      top: 50%;
+      width: 50vw;
+      max-height: 100vh;
+      margin-left: 50%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .IMG {
+      max-width: 100vw;
+      aspect-ratio: 9/16;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .line {
+      position: absolute;
+      top: 30vh;
+      left: 0;
+      width: 40vw;
+      height: 50px;
+    }
+
+    .text-wrapper {
+      position: absolute;
+      top: 0px;
+      left: 20px;
+      width: 100%;
+      opacity: 0;
+      padding-left: var(--RA-size-56);
+    }
+
+    .p-scrollTrigger {
+      max-width: 50ch;
+    }
+
+    .emptyContainerCQ {
+      display: block;
+      height: 4325px;
+    }
+
+    /* ---------------------- Galleri */
+    .common {
+      display: flex;
+      flex-direction: column;
+      padding-top: var(--RA-size-64);
+      padding: 0;
+      position: relative;
+    }
+
+    .wrapper,
+    .wrapper2 {
+      display: flex;
+      width: 50vw;
+      height: 50vh;
+      padding: 0;
+      margin: 0;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .galleryIMG {
+      display: block;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      object-fit: cover;
+    }
+
+    .pigeFisk {
+      width: 100%;
+      height: 50vh;
+      object-fit: cover;
+    }
+    .next-section {
+      height: 100vh;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  /* ---------------------------------------------------------------- */
+</style>
