@@ -159,12 +159,6 @@ import Button from "../components/Button.astro";
       display: none;
     }
 
-    header {
-      position: fixed;
-      z-index: 100;
-      overflow: hidden;
-      width: 100%;
-    }
     .nav-desktop {
       display: flex;
       background: rgba(0, 14, 56, 0.5);
@@ -172,7 +166,7 @@ import Button from "../components/Button.astro";
       border-radius: 2.5rem;
       justify-content: space-between;
       padding: var(--RA-size-12);
-      margin: var(--RA-size-40) var(--RA-size-48);
+      margin: var(--RA-size-24) var(--RA-size-48);
     }
     .ul-desktop {
       list-style: none;
@@ -197,6 +191,7 @@ import Button from "../components/Button.astro";
 </style>
 
 <script>
+  /* ------------Mobil menu---------- */
   document.addEventListener("DOMContentLoaded", function () {
     // Definer funktionen openNav
     function openNav() {

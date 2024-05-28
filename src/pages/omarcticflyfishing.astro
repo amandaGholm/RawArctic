@@ -28,13 +28,15 @@ import SectionCTA from "../components/SectionCTA.astro";
   <div class="emptyContainer"></div>
   <!-- ------------------------------- -->
   <section class="om-section">
-    <div class="intro-container">
-      <h2 class="blue">Hvad står Arctic Flyfishing for?</h2>
-      <p class="bodyDark">
-        Arctic Flyfishing er ikke kun fluefiskeri; det er en rejse ind i
-        eksklusive og unikke eventyr. Vi stræber efter at skabe enestående
-        øjeblikke. Og hvordan gør vi det?
-      </p>
+    <div class="max-width">
+      <div class="intro-container">
+        <h2 class="blue">Hvad står Arctic Flyfishing for?</h2>
+        <p class="bodyDark">
+          Arctic Flyfishing er ikke kun fluefiskeri; det er en rejse ind i
+          eksklusive og unikke eventyr. Vi stræber efter at skabe enestående
+          øjeblikke. Og hvordan gør vi det?
+        </p>
+      </div>
     </div>
 
     <div class="first-grid">
@@ -95,54 +97,58 @@ import SectionCTA from "../components/SectionCTA.astro";
   </section>
 
   <!-- Om Raw Arctic -->
-  <section class="RA-sekction">
-    <h2 class="blue RA-h2">Hvem er RawArctic?</h2>
-    <div class="RA-content">
-      <div class="RA-card">
-        <div class="RA-billede-div">
-          <Image src={casper} alt="billede1" class="RA-billede" />
+  <section class="max-width">
+    <div class="RA-sekction">
+      <h2 class="blue RA-h2">Hvem er RawArctic?</h2>
+      <div class="RA-content">
+        <div class="RA-card">
+          <div class="RA-billede-div">
+            <Image src={casper} alt="billede1" class="RA-billede" />
+          </div>
+          <div class="RA-text">
+            <h3 class="titelDark">Casper - Guide</h3>
+            <p class="bodyDark">
+              Mød Casper, vores erfarne fiskeri-guide fra Grønland med en unik
+              forståelse for farvandene omkring Nuuk og Qussuk.
+            </p>
+          </div>
         </div>
-        <div class="RA-text">
-          <h3 class="titelDark">Casper - Guide</h3>
-          <p class="bodyDark">
-            Mød Casper, vores erfarne fiskeri-guide fra Grønland med en unik
-            forståelse for farvandene omkring Nuuk og Qussuk.
-          </p>
+        <div class="RA-card">
+          <div class="RA-billede-div">
+            <Image src={isak} alt="billede1" class="RA-billede" />
+          </div>
+          <div class="RA-text">
+            <h3 class="titelDark">Isak - Guide</h3>
+            <p class="bodyDark">
+              Isak, en erfaren fiskeri-guide med en dyb forståelse for Grønlands
+              farvande, vil ledsage dig på dit eventyr og dele sit lokale
+              kendskab til naturen på Grønland.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="RA-card">
-        <div class="RA-billede-div">
-          <Image src={isak} alt="billede1" class="RA-billede" />
-        </div>
-        <div class="RA-text">
-          <h3 class="titelDark">Isak - Guide</h3>
-          <p class="bodyDark">
-            Isak, en erfaren fiskeri-guide med en dyb forståelse for Grønlands
-            farvande, vil ledsage dig på dit eventyr og dele sit lokale kendskab
-            til naturen på Grønland.
-          </p>
-        </div>
-      </div>
-      <div class="RA-card">
-        <div class="RA-billede-div">
-          <Image src={rasmus} alt="billede1" class="RA-billede" />
-        </div>
-        <div class="RA-text">
-          <h3 class="titelDark">Rasmus - Guide</h3>
-          <p class="bodyDark">
-            Træd ind i Rasmus' verden af fiskeri, hvor enkelhed og tålmodighed
-            er nøgleordene for en vellykket dag på vandet. Som bosat på Grønland
-            deler Rasmus sin lokale viden med glæde.
-          </p>
+        <div class="RA-card">
+          <div class="RA-billede-div">
+            <Image src={rasmus} alt="billede1" class="RA-billede" />
+          </div>
+          <div class="RA-text">
+            <h3 class="titelDark">Rasmus - Guide</h3>
+            <p class="bodyDark">
+              Træd ind i Rasmus' verden af fiskeri, hvor enkelhed og tålmodighed
+              er nøgleordene for en vellykket dag på vandet. Som bosat på
+              Grønland deler Rasmus sin lokale viden med glæde.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
   <!-- ----------- -->
   <SectionCTA />
 </BaseLayout>
 
 <script>
+  /* Animation */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       console.log(entry);
@@ -155,7 +161,8 @@ import SectionCTA from "../components/SectionCTA.astro";
   });
   const hiddenElements = document.querySelectorAll(".hidden , .hidden2");
   hiddenElements.forEach((el) => observer.observe(el));
-
+  /* -------------- */
+  /*----------- Hero --------------*/
   import { gsap } from "gsap/dist/gsap";
   import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
@@ -175,6 +182,8 @@ import SectionCTA from "../components/SectionCTA.astro";
 <style>
   .intro-container {
     padding: var(--RA-padding-mobil);
+    display: flex;
+    flex-direction: column;
   }
   .first-grid,
   .second-grid,

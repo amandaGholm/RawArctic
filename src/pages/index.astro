@@ -2,70 +2,73 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Button from "../components/Button.astro";
 import { Image } from "astro:assets";
+import gronland from "../assets/images/iconGrønland.svg";
+import guides from "../assets/images/iconGuides.svg";
+import telt from "../assets/images/iconTelt.svg";
 import webfeatur from "../assets/images/overskyetLandskab.webp";
 import SectionCTA from "../components/SectionCTA.astro";
+import ScrollArrow from "../components/ScrollArrow.astro";
 ---
 
 <BaseLayout>
   <!-- Hero -->
   <div class="hero-content-video">
     <video autoplay loop muted playsinline class="hero-video">
-      <source src="/video/Kasterbagfra4.mp4" />
+      <source src="/video/heroVideo.mp4" />
     </video>
 
     <div class="hero-content">
-      <h1>Oplev det unikke Grønland</h1>
+      <h1>Fluefisk på unikke Grønland</h1>
       <p class="titelLight heroTitel">
-        Uovertruffent fluefiskeri og nærvær i naturen
+        Uovertruffet fluefiskeri og nærvær i naturen
       </p>
       <div class="CTAer">
-        <Button class="knap" heref="/" label="Læs mere" style="primary" />
-        <Button class="knap" heref="/" label="Læs mere" style="secondary" />
+        <Button class="knap" heref="/" label="Tag med os" style="primary" />
+        <Button
+          class="knap"
+          heref="/"
+          label="Læs mere om turen"
+          style="secondary"
+        />
       </div>
     </div>
   </div>
-  <div class="emptyContainer"></div>
+  <div class="emptyContainer"><ScrollArrow /></div>
   <!-- ------------------------------- -->
 
   <!-- Om Raw Arctic -->
-  <section class="RA-sekction">
-    <h2 class="blue RA-h2">Hvem er RawArctic?</h2>
-    <div class="RA-content-button">
-      <div class="RA-content">
-        <div class="RA-card">
-          <Image src={webfeatur} alt="billede1" class="RA-billede" />
-          <div class="RA-text">
-            <h3 class="titelDark">Eksklusive faciliteter</h3>
-            <p class="bodyDark">
-              Nyd førsteklasses indkvartering og faciliteter efter en dag med
-              spændende fiskeri, hvor komfort og afslapning er i højsædet.
-            </p>
+  <section class="max-width">
+    <div class="RA-sekction">
+      <h2 class="blue RA-h2 smooth-appear">Hvem er RawArctic?</h2>
+      <div class="RA-content-button">
+        <div class="RA-content">
+          <div class="RA-card">
+            <Image src={gronland} alt="billede1" class="RA-billede" />
+            <div class="RA-text">
+              <h3 class="titelDark">Lokal og autentisk natur</h3>
+            </div>
+          </div>
+          <div class="RA-card">
+            <Image src={guides} alt="billede2" class="RA-billede" />
+            <div class="RA-text">
+              <h3 class="titelDark">Samarbejde med grønlandske guides</h3>
+            </div>
+          </div>
+          <div class="RA-card">
+            <Image src={telt} alt="billede3" class="RA-billede" />
+            <div class="RA-text">
+              <h3 class="titelDark">Eksklusiv indkvartering og gastronomi</h3>
+            </div>
           </div>
         </div>
-        <div class="RA-card">
-          <Image src={webfeatur} alt="billede2" class="RA-billede" />
-          <div class="RA-text">
-            <h3 class="titelDark">Grønlandske rødder</h3>
-            <p class="bodyDark">
-              Vi tager dig med til afsidesliggende og eksklusive destinationer i
-              Grønland, som kun de lokale guides kender.
-            </p>
-          </div>
+        <div>
+          <Button
+            class="knap"
+            heref="/"
+            label="Læs mere om Arctic Flyfishing"
+            style="secondary"
+          />
         </div>
-        <div class="RA-card">
-          <Image src={webfeatur} alt="billede3" class="RA-billede" />
-          <div class="RA-text">
-            <h3 class="titelDark">Unikke fiske oplevelser</h3>
-            <p class="bodyDark">
-              Udforsk en verden af spændende fiskeoplevelser, fra kystfiskeri
-              efter arktisk char til fluefiskeri efter atlantisk laks i
-              maleriske floder.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div>
-        <Button class="knap" heref="/" label="Læs mere" style="secondary" />
       </div>
     </div>
   </section>
@@ -140,10 +143,6 @@ import SectionCTA from "../components/SectionCTA.astro";
 </script>
 
 <style>
-  .emptyContainer {
-    height: 100vh;
-  }
-
   /* Webfeatur */
   .WEB-billede,
   .WEB-content {
@@ -204,8 +203,9 @@ import SectionCTA from "../components/SectionCTA.astro";
     max-width: 100%;
   }
   .RA-text {
-    max-width: 400px;
     padding-top: var(--RA-size-16);
+    max-width: 400px;
+    text-align: center;
   }
   .RA-card {
     display: flex;
@@ -214,21 +214,23 @@ import SectionCTA from "../components/SectionCTA.astro";
   }
   .RA-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
   }
   .RA-content-button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: var(--RA-size-32);
   }
   .RA-sekction {
     margin: 130px 0 130px 0;
-    position: relative;
-    height: auto;
     display: flex;
     flex-direction: column;
+    gap: var(--RA-size-56);
   }
   /* ------------- */
+
+  /* Max-width */
 
   /* Hero */
   .hero-video {
@@ -244,7 +246,7 @@ import SectionCTA from "../components/SectionCTA.astro";
     display: flex;
     flex-direction: column;
     padding: 250px var(--RA-size-56);
-    z-index: 2;
+    z-index: 3;
   }
   .hero-content-video {
     position: relative;
@@ -254,6 +256,13 @@ import SectionCTA from "../components/SectionCTA.astro";
   .CTAer {
     display: flex;
     padding-top: var(--RA-size-48);
+    gap: var(--RA-size-24);
+  }
+  .emptyContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-15%);
   }
   /* ------------------ */
 
@@ -265,6 +274,19 @@ import SectionCTA from "../components/SectionCTA.astro";
       padding: 250px 0 250px var(--RA-size-24);
       z-index: 2;
     }
+
+    .emptyContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+transform: translateY(-5%);
+  }
+  
+  .CTAer {
+    display: flex;
+    padding-top: var(--RA-size-48);
+    gap: var(--RA-size-8);
+  }
     /* ------------ */
 
     /* Om RawArctic section */

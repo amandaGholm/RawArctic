@@ -53,6 +53,15 @@ img {
   src: url("/Switzer-Variable.ttf");
 }
 
+.max-width{
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .blue {
   color: var(--RA-blue400);
 }
@@ -117,6 +126,23 @@ h3 {
   line-height: 1.36rem;
 }
 
+.smooth-appear{
+  animation: smooth-appear 1s ease forwards;
+  bottom: -100%;
+}
+
+@keyframes smooth-appear {
+  0%{
+    bottom: -100%;
+    opacity: 0;
+  }
+  100%{
+    bottom: 20px;
+    opacity: 1;
+  }
+  
+}
+
 @media (min-width: 600px) {
   h1 {
     font-size: 6rem;
@@ -143,4 +169,6 @@ h3 {
     font-size: 1.25rem;
     line-height: 1.7rem;
   }
+
+
 }
