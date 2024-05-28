@@ -17,7 +17,7 @@ import SectionCTA from "../components/SectionCTA.astro";
 <BaseLayout>
   <!-- Hero -->
   <div class="hero-content-video">
-    <Image src={hero} alt="billede1" class="hero-video" />
+    <Image src={hero} alt="" class="hero-video" />
     <div class="hero-content">
       <h1>Oplev det unikke Grønland</h1>
       <p class="titelLight heroTitel">
@@ -99,9 +99,9 @@ import SectionCTA from "../components/SectionCTA.astro";
   <!-- Om Raw Arctic -->
   <section class="max-width">
     <div class="RA-sekction">
-      <h2 class="blue RA-h2">Hvem er RawArctic?</h2>
+      <h2 class="blue RA-h2 verticalAppear">Hvem er RawArctic?</h2>
       <div class="RA-content">
-        <div class="RA-card">
+        <div class="RA-card verticalAppear3">
           <div class="RA-billede-div">
             <Image src={casper} alt="billede1" class="RA-billede" />
           </div>
@@ -113,7 +113,7 @@ import SectionCTA from "../components/SectionCTA.astro";
             </p>
           </div>
         </div>
-        <div class="RA-card">
+        <div class="RA-card verticalAppear2">
           <div class="RA-billede-div">
             <Image src={isak} alt="billede1" class="RA-billede" />
           </div>
@@ -126,7 +126,7 @@ import SectionCTA from "../components/SectionCTA.astro";
             </p>
           </div>
         </div>
-        <div class="RA-card">
+        <div class="RA-card verticalAppear3">
           <div class="RA-billede-div">
             <Image src={rasmus} alt="billede1" class="RA-billede" />
           </div>
@@ -159,7 +159,9 @@ import SectionCTA from "../components/SectionCTA.astro";
       }
     });
   });
-  const hiddenElements = document.querySelectorAll(".hidden , .hidden2");
+  const hiddenElements = document.querySelectorAll(
+    ".hidden , .hidden2, .verticalAppear, .verticalAppear2, .verticalAppear3"
+  );
   hiddenElements.forEach((el) => observer.observe(el));
   /* -------------- */
   /*----------- Hero --------------*/
@@ -180,6 +182,100 @@ import SectionCTA from "../components/SectionCTA.astro";
 </script>
 
 <style>
+  /* Hero */
+  .hero-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .heroTitel {
+    padding-top: var(--RA-padding-mobil);
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    padding: 250px var(--RA-padding-mobil);
+    z-index: 2;
+    position: relative;
+    animation-name: smooth-appear;
+    animation-duration: 1.5s;
+  }
+
+  .hero-content-video {
+    position: relative;
+    display: flex;
+    height: 100vh;
+  }
+
+  .CTAer {
+    display: flex;
+    padding-top: var(--RA-size-48);
+  }
+
+  .emptyContainer {
+    height: 100vh;
+  }
+  /* Hele om-sectioen */
+  .om-section {
+    margin: 130px 0 130px 0;
+    overflow: hidden;
+  }
+  .order {
+    order: -1;
+  }
+
+  /* Om RawArctic section */
+
+  .RA-h2 {
+    padding-left: var(--RA-padding-mobil);
+    position: relative;
+    animation-name: smooth-appear;
+    animation-duration: 1.5s;
+  }
+
+  .RA-billede {
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .RA-billede-div {
+    max-height: 400px;
+    position: relative;
+    animation-name: smooth-appear;
+    animation-duration: 1.5s;
+  }
+  .RA-text {
+    max-width: 400px;
+    padding: var(--RA-padding-mobil);
+  }
+  .RA-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .RA-content {
+    display: grid;
+  }
+
+  .RA-content-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .RA-sekction {
+    margin: 130px 0;
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ------------- */
+
+  /* -------------------------- slide in fra siden --------------------------*/
   .intro-container {
     padding: var(--RA-padding-mobil);
     display: flex;
@@ -211,90 +307,6 @@ import SectionCTA from "../components/SectionCTA.astro";
 
   .hidden-image {
     display: none;
-  }
-
-  /* Om RawArctic section */
-
-  .RA-h2 {
-    padding-left: var(--RA-padding-mobil);
-  }
-
-  .RA-billede {
-    height: 100%;
-    max-width: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  .RA-billede-div {
-    max-height: 400px;
-  }
-  .RA-text {
-    max-width: 400px;
-    padding: var(--RA-padding-mobil);
-  }
-  .RA-card {
-    display: flex;
-    flex-direction: column;
-  }
-  .RA-content {
-    display: grid;
-  }
-
-  .RA-content-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .RA-sekction {
-    margin: 130px 0;
-    position: relative;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-  }
-  /* ------------- */
-
-  /* Hele om-sectioen */
-  .om-section {
-    margin: 130px 0 130px 0;
-    overflow: hidden;
-  }
-  .order {
-    order: -1;
-  }
-
-  /* Hero */
-  .hero-video {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .heroTitel {
-    padding-top: var(--RA-padding-mobil);
-  }
-
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    padding: 250px var(--RA-padding-mobil);
-    z-index: 2;
-  }
-
-  .hero-content-video {
-    position: relative;
-    display: flex;
-    height: 100vh;
-  }
-
-  .CTAer {
-    display: flex;
-    padding-top: var(--RA-size-48);
-  }
-
-  .emptyContainer {
-    height: 100vh;
   }
 
   /* Tablet og Desktop */
@@ -369,7 +381,46 @@ import SectionCTA from "../components/SectionCTA.astro";
 
     .RA-h2 {
       padding-left: var(--RA-size-56);
+      transition-delay: 5s;
     }
+    .verticalAppear {
+      opacity: 0;
+      transition: opacity 1s ease-in, transform 1s ease-in;
+      transform: translateY(10%);
+      will-change: opacity, transform;
+    }
+
+    .verticalAppear2 {
+      opacity: 0;
+      transition: opacity 1s ease-in, transform 1s ease-in;
+      transform: translateY(10%);
+      will-change: opacity, transform;
+    }
+    .verticalAppear3 {
+      opacity: 0;
+      transition: opacity 1s ease-in 7s, transform 1s ease-in;
+      transform: translateY(10%);
+      transition-delay: 2s;
+      will-change: opacity, transform, transition-delay;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translate(0);
+      transition: opacity 1s ease-out, filter 1s ease-out, transform 1s ease-out;
+    }
+
+    .RA-content :nth-child(1) {
+      transition-delay: 700ms;
+    }
+
+    .RA-content :nth-child(2) {
+      transition-delay: 900ms;
+    }
+    .RA-content :nth-child(3) {
+      transition-delay: 1100ms;
+    }
+
     /* --------------------------- */
   }
 </style>
