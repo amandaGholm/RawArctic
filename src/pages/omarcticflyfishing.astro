@@ -2,16 +2,22 @@
 import Button from "../components/Button.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-import billede1 from "../assets/images/IMG_3035.webp";
-import billede2 from "../assets/images/IMG_3490.webp";
-import billede4 from "../assets/images/IMG_3273.png";
+import camp from "../assets/images/campsite.png";
+import flod from "../assets/images/stromflod.webp";
+import hero from "../assets/images/solnedgang.webp";
+import fisk from "../assets/images/bøjetFisk.webp";
+import casperstang from "../assets/images/casperFiskStang.webp";
+import zoomFisk from "../assets/images/zoomFiskBlink.webp";
+import casper from "../assets/images/casper.webp";
+import isak from "../assets/images/isakHolderFisk.webp";
+import rasmus from "../assets/images/rasmus.webp";
 import SectionCTA from "../components/SectionCTA.astro";
 ---
 
 <BaseLayout>
   <!-- Hero -->
   <div class="hero-content-video">
-    <Image src={billede1} alt="billede1" class="hero-video" />
+    <Image src={hero} alt="billede1" class="hero-video" />
     <div class="hero-content">
       <h1>Oplev det unikke Grønland</h1>
       <p class="titelLight heroTitel">
@@ -43,7 +49,7 @@ import SectionCTA from "../components/SectionCTA.astro";
         </p>
       </div>
       <Image
-        src={billede1}
+        src={flod}
         alt="billede1"
         class="billede-grid image-order hidden2"
       />
@@ -51,12 +57,12 @@ import SectionCTA from "../components/SectionCTA.astro";
 
     <div class="second-grid">
       <Image
-        src={billede1}
+        src={fisk}
         alt="billede1"
         class="slide billede-grid hidden-image hidden"
       />
 
-      <Image src={billede1} alt="billede1" class="slide billede-grid hidden" />
+      <Image src={camp} alt="billede1" class="slide billede-grid hidden" />
       <div class="slide grid-tekst order hidden">
         <h3 class="blue">Luksuriøse Faciliteter</h3>
         <p class="bodyDark">
@@ -75,9 +81,13 @@ import SectionCTA from "../components/SectionCTA.astro";
           forhold for dit fiskeri.
         </p>
       </div>
-      <Image src={billede1} alt="billede1" class="billede-grid hidden2 slide" />
       <Image
-        src={billede2}
+        src={casperstang}
+        alt="billede1"
+        class="billede-grid hidden2 slide"
+      />
+      <Image
+        src={zoomFisk}
         alt="billede1"
         class="billede-grid hidden-image hidden2 slide"
       />
@@ -90,7 +100,7 @@ import SectionCTA from "../components/SectionCTA.astro";
     <div class="RA-content">
       <div class="RA-card">
         <div class="RA-billede-div">
-          <Image src={billede4} alt="billede1" class="RA-billede" />
+          <Image src={casper} alt="billede1" class="RA-billede" />
         </div>
         <div class="RA-text">
           <h3 class="titelDark">Casper - Guide</h3>
@@ -102,7 +112,7 @@ import SectionCTA from "../components/SectionCTA.astro";
       </div>
       <div class="RA-card">
         <div class="RA-billede-div">
-          <Image src={billede4} alt="billede1" class="RA-billede" />
+          <Image src={isak} alt="billede1" class="RA-billede" />
         </div>
         <div class="RA-text">
           <h3 class="titelDark">Isak - Guide</h3>
@@ -115,7 +125,7 @@ import SectionCTA from "../components/SectionCTA.astro";
       </div>
       <div class="RA-card">
         <div class="RA-billede-div">
-          <Image src={billede4} alt="billede1" class="RA-billede" />
+          <Image src={rasmus} alt="billede1" class="RA-billede" />
         </div>
         <div class="RA-text">
           <h3 class="titelDark">Rasmus - Guide</h3>
