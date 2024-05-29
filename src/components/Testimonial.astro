@@ -1,0 +1,229 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import citat from "../assets/images/Citationstegn.png";
+---
+
+<section class="carousel-section">
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="testimonial">
+        <Image
+          src={citat}
+          alt="billede1"
+          class="billede-grid image-order hidden2"
+        />
+        <p class="bodyDark">
+          En uforglemmelig oplevelse! Arctic Flyfishing skabte magiske øjeblikke
+          i den arktiske vildmark, som jeg vil huske for evigt.
+        </p>
+        <div class="person">
+          <p class="labelName">Jørgen 66, Løgstør</p>
+          <p class="labelDate">Maj 2024 - Qussuk</p>
+        </div>
+      </div>
+      <div class="testimonial">
+        <Image
+          src={citat}
+          alt="billede1"
+          class="billede-grid image-order hidden2"
+        />
+        <p class="bodyDark">
+          Fantastisk service og ekspertise! Takket være Arctic Flyfishing
+          oplevede jeg Grønlands enestående skønhed på en helt unik måde.
+        </p>
+        <div class="person">
+          <p class="labelName">Peter 45, København</p>
+          <p class="labelDate">August 2024 - Qussuk</p>
+        </div>
+      </div>
+      <div class="testimonial">
+        <Image
+          src={citat}
+          alt="billede1"
+          class="billede-grid image-order hidden2"
+        />
+        <p class="bodyDark">
+          En drøm, der gik i opfyldelse! Arctic Flyfishing leverede en eksklusiv
+          og eventyrlig rejse, der overgik alle forventninger.
+        </p>
+        <div class="person">
+          <p class="labelName">Henrik 53, Roskilde</p>
+          <p class="labelDate">Maj 2024 - Qussuk</p>
+        </div>
+      </div>
+
+      <div class="testimonial1">
+        <Image
+          src={citat}
+          alt="billede1"
+          class="billede-grid image-order hidden2"
+        />
+        <p class="bodyDark">
+          En drøm, der gik i opfyldelse! Arctic Flyfishing leverede en eksklusiv
+          og eventyrlig rejse, der overgik alle forventninger.
+        </p>
+        <div class="person">
+          <p class="labelName">Henrik 53, Roskilde</p>
+          <p class="labelDate">Maj 2024 - Qussuk</p>
+        </div>
+      </div>
+
+      <div class="testimonial1">
+        <Image
+          src={citat}
+          alt="billede1"
+          class="billede-grid image-order hidden2"
+        />
+        <p class="bodyDark">
+          En drøm, der gik i opfyldelse! Arctic Flyfishing leverede en eksklusiv
+          og eventyrlig rejse, der overgik alle forventninger.
+        </p>
+        <div class="person">
+          <p class="labelName">Henrik 53, Roskilde</p>
+          <p class="labelDate">Maj 2024 - Qussuk</p>
+        </div>
+      </div>
+    </div>
+    <button class="nav-button1 prev" onclick="prevTestimonial()"></button>
+    <button class="nav-button2 next" onclick="nextTestimonial()"></button>
+  </div>
+</section>
+
+<style>
+  .carousel-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .carousel-container {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .carousel {
+    display: flex;
+    overflow-x: hidden;
+  }
+
+  .testimonial {
+    padding: var(--RA-size-20) var(--RA-size-48);
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+
+  .testimonial1 {
+    display: none;
+  }
+
+  .person {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .nav-button1 {
+    position: absolute;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    border-left: 3px solid var(--RA-blue25);
+    border-bottom: 3px solid var(--RA-blue25);
+    transform: rotate(225deg);
+    cursor: pointer;
+  }
+  .nav-button2 {
+    position: absolute;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    border-left: 3px solid var(--RA-blue25);
+    border-bottom: 3px solid var(--RA-blue25);
+    transform: rotate(45deg);
+    cursor: pointer;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  /* Tilpasninger til skærmstørrelse over 800px */
+  @media (min-width: 800px) {
+    .carousel-container {
+      display: flex;
+      max-width: 100%;
+    }
+    .testimonial1 {
+      padding: var(--RA-size-20) var(--RA-size-48);
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      display: block;
+    }
+    .carousel-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .carousel {
+      width: auto;
+      max-width: none;
+    }
+
+    .nav-button1,
+    .nav-button2 {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+
+  function off() {
+    document.getElementById("overlay").style.display = "none";
+  }
+  window.on = on;
+  window.off = off;
+  /* ------- */
+
+  /* Testimonial Carousel */
+  document.addEventListener("DOMContentLoaded", () => {
+    const testimonials = document.querySelectorAll(".testimonial");
+    let currentIndex = 0;
+
+    function showTestimonial(index) {
+      testimonials.forEach((testimonial, i) => {
+        testimonial.style.display = i === index ? "block" : "none";
+      });
+    }
+
+    function prevTestimonial() {
+      currentIndex =
+        currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1;
+      showTestimonial(currentIndex);
+    }
+
+    function nextTestimonial() {
+      currentIndex =
+        currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1;
+      showTestimonial(currentIndex);
+    }
+
+    // Show the first testimonial initially
+    showTestimonial(currentIndex);
+
+    // Event listeners for testimonial navigation buttons
+    document.querySelector(".prev").addEventListener("click", prevTestimonial);
+    document.querySelector(".next").addEventListener("click", nextTestimonial);
+  });
+  /* ------- */
+</script>"
