@@ -12,6 +12,7 @@ import casper from "../assets/images/casper.webp";
 import isak from "../assets/images/isakHolderFisk.webp";
 import rasmus from "../assets/images/rasmus.webp";
 import SectionCTA from "../components/SectionCTA.astro";
+import ScrollArrow from "../components/ScrollArrow.astro";
 ---
 
 <BaseLayout>
@@ -25,7 +26,7 @@ import SectionCTA from "../components/SectionCTA.astro";
       </p>
     </div>
   </div>
-  <div class="emptyContainer"></div>
+  <div class="emptyContainer"><ScrollArrow /></div>
   <!-- ------------------------------- -->
   <section class="om-section">
     <div class="max-width">
@@ -214,10 +215,13 @@ import SectionCTA from "../components/SectionCTA.astro";
     display: flex;
     padding-top: var(--RA-size-48);
   }
-
   .emptyContainer {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-15%);
   }
+  
   /* Hele om-sectioen */
   .om-section {
     margin: 130px 0 130px 0;

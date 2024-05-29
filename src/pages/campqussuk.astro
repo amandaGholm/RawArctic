@@ -17,6 +17,7 @@ import PresentFiskStor from "../assets/images/presentFiskStor.webp";
 import Stromflod from "../assets/images/stromflod.webp";
 import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
 import Testimonials from "../components/Testimonial.astro";
+import ScrollArrow from "../components/ScrollArrow.astro";
 ---
 
 <BaseLayout>
@@ -31,6 +32,8 @@ import Testimonials from "../components/Testimonial.astro";
       </p>
     </div>
   </section>
+  <div class="arrow"><ScrollArrow /></div>
+
   <div class="emptyContainer"></div>
   <section class="CQ-section">
     <div class="overview">
@@ -241,14 +244,23 @@ import Testimonials from "../components/Testimonial.astro";
   }
 
   .emptyContainer {
-    height: 100vh;
-    background-color: #ffeee6;
+    height: 50vh;
+    background-color: var(--RA-orange50);
   }
+
+  .arrow {
+    display: flex;
+    justify-content: center;
+    transform: translateY(-10%);
+    height: 50vh;
+  }
+
   /* ------------------------------------------------------------------- */
 
   /*------------------------- Camp Qussuk section Mobile ------------------------*/
 
   .CQ-section {
+    padding: 130px 0;
     display: flex;
     justify-content: center;
     background-color: #ffeee6;
@@ -379,10 +391,8 @@ import Testimonials from "../components/Testimonial.astro";
       display: flex;
       height: 100vh;
     }
-
-    .emptyContainer {
-      height: 100vh;
-      background-color: #ffeee6;
+    .arrow {
+      transform: translateY(-30%);
     }
     /* ------------------------------------------------------------------- */
     /*------------------------- Camp Qussuk section ------------------------*/
