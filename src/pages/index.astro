@@ -7,7 +7,7 @@ import guides from "../assets/images/iconGuides.svg";
 import telt from "../assets/images/iconTelt.svg";
 import SectionCTA from "../components/SectionCTA.astro";
 import ScrollArrow from "../components/ScrollArrow.astro";
-import Malik from "../assets/images/Malik.webp";
+import Malik from "../assets/images/Malik.jpg";
 ---
 
 <BaseLayout>
@@ -173,6 +173,7 @@ import Malik from "../assets/images/Malik.webp";
   .WEB-content {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     gap: var(--RA-size-16);
     padding: var(--RA-size-56);
     z-index: 2;
@@ -182,8 +183,7 @@ import Malik from "../assets/images/Malik.webp";
     height: auto;
     object-fit: cover;
     width: 100%;
-    height: 100%;
-    transform: scaleX(-1);
+    height: 85vh;
     z-index: 1;
   }
   .WEB-text {
