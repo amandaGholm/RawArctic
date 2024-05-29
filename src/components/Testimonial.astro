@@ -5,6 +5,7 @@ import citat from "../assets/images/Citationstegn.png";
 ---
 
 <section class="carousel-section">
+  <h2 class="blue">Udtalelser fra tidligere gæster</h2>
   <div class="carousel-container">
     <div class="carousel">
       <div class="testimonial">
@@ -96,7 +97,7 @@ import citat from "../assets/images/Citationstegn.png";
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    flex-direction: column;
   }
   .carousel-container {
     display: flex;
@@ -112,7 +113,6 @@ import citat from "../assets/images/Citationstegn.png";
   .testimonial {
     padding: var(--RA-size-20) var(--RA-size-48);
     border-radius: 5px;
-    background-color: #f9f9f9;
   }
 
   .testimonial1 {
@@ -155,6 +155,11 @@ import citat from "../assets/images/Citationstegn.png";
 
   /* Tilpasninger til skærmstørrelse over 800px */
   @media (min-width: 800px) {
+    .carousel-section {
+      align-items: flex-start;
+      flex-direction: column;
+      padding: var(--RA-size-120) var(--RA-size-56);
+    }
     .carousel-container {
       display: flex;
       max-width: 100%;
@@ -162,7 +167,6 @@ import citat from "../assets/images/Citationstegn.png";
     .testimonial1 {
       padding: var(--RA-size-20) var(--RA-size-48);
       border-radius: 5px;
-      background-color: #f9f9f9;
       display: block;
     }
     .carousel-container {

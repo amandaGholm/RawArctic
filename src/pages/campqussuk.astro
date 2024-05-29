@@ -16,8 +16,7 @@ import UdvidetFisk from "../assets/images/udvidetFisk.webp";
 import PresentFiskStor from "../assets/images/presentFiskStor.webp";
 import Stromflod from "../assets/images/stromflod.webp";
 import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
-
-
+import Testimonials from "../components/Testimonial.astro";
 ---
 
 <BaseLayout>
@@ -155,106 +154,65 @@ import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
   <div class="emptyContainerCQ"></div>
   <!-------------------------------------------- Testimonials -------------------------------------------->
 
-<Test/>
+  <Testimonials />
 
+  <!-- ------------------------------------------------------------------------------------ -->
+  <section class="common">
+    <div class="gallery-container">
+      <div class="wrapper">
+        <Image
+          src={BøjetFisk}
+          alt="Fluefisker paa Grønland"
+          class="galleryIMG"
+        />
+      </div>
+      <div class="wrapper">
+        <Image src={Casper} alt="Fluefisker paa Grønland" class="galleryIMG" />
+      </div>
+      <div class="wrapper">
+        <Image
+          src={IsakHolderFisk}
+          alt="Fluefisker paa Grønland"
+          class="galleryIMG"
+        />
+      </div>
+      <div class="wrapper">
+        <Image
+          src={CampImage}
+          alt="Fluefisker paa Grønland"
+          class="galleryIMG"
+        />
+      </div>
+    </div>
 
-<!-- ------------------------------------------------------------------------------------ -->
-<section class="common">
-  <section class="gallery-container">
-    <div class="wrapper">
-      <Image src={BøjetFisk} alt="Fluefisker paa Grønland" class="galleryIMG" />
-    </div>
-    <div class="wrapper">
-      <Image src={Casper} alt="Fluefisker paa Grønland" class="galleryIMG" />
-    </div>
-    <div class="wrapper">
-      <Image
-        src={IsakHolderFisk}
-        alt="Fluefisker paa Grønland"
-        class="galleryIMG"
-      />
-    </div>
-    <div class="wrapper">
-      <Image src={CampImage} alt="Fluefisker paa Grønland" class="galleryIMG" />
+    <div class="gallery-container2">
+      <div class="wrapper2">
+        <Image
+          src={OverskyetElv}
+          alt="Fluefisker paa Grønland"
+          class="IMG galleryIMG"
+        />
+      </div>
+      <div class="wrapper2">
+        <Image
+          src={PigeFisk}
+          alt="Fluefisker paa Grønland"
+          class="IMG galleryIMG pigeFisk"
+        />
+      </div>
+      <div class="wrapper2">
+        <Image
+          src={UdvidetFisk}
+          alt="Fluefisker paa Grønland"
+          class="IMG galleryIMG presentFisk"
+        />
+      </div>
     </div>
   </section>
 
-  <section class="gallery-container2">
-    <div class="wrapper2">
-      <Image
-        src={OverskyetElv}
-        alt="Fluefisker paa Grønland"
-        class="IMG galleryIMG"
-      />
-    </div>
-    <div class="wrapper2">
-      <Image
-        src={PigeFisk}
-        alt="Fluefisker paa Grønland"
-        class="IMG galleryIMG pigeFisk"
-      />
-    </div>
-    <div class="wrapper2">
-      <Image
-        src={UdvidetFisk}
-        alt="Fluefisker paa Grønland"
-        class="IMG galleryIMG presentFisk"
-      />
-    </div>
-  </section>
-</section>
-
-<SectionCTA class="next-section" />
+  <SectionCTA class="next-section" />
 </BaseLayout>
 <style>
-  /* .testimonials-container {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-self: center;
-  }
-
-  .testimonial {
-    position: relative;
-    max-width: 900px;
-    width: 100%;
-    padding: 50px 0;
-    background-color: green;
-  }
-
-  .testi-content {
-    margin: var(--RA-size-32);
-  }
-
-  .testimonial .slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .slide p {
-    text-align: center;
-  }
-  .slide .quote-icon {
-    font-size: 7rem;
-  }
-  .slide .details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .details .name {
-    font-size: var(--RA-size-24);
-    font-weight: 600;
-    color: blue;
-  }
-  .details .job {
-    font-size: var(--RA-size-16);
-    font-weight: 400;
-    color: blue;
-  } */
   /*--------------------------- Hero Mobile ----------------------------*/
   .hero-image {
     position: absolute;
@@ -287,6 +245,7 @@ import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
     background-color: #ffeee6;
   }
   /* ------------------------------------------------------------------- */
+
   /*------------------------- Camp Qussuk section Mobile ------------------------*/
 
   .CQ-section {
@@ -356,6 +315,7 @@ import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
     max-width: 64ch;
   }
   /* ---------------------------------------------------------------- */
+
   /*--------------------------- Galleri Mobile ----------------------------*/
   .gallery-container,
   .gallery-container2 {
@@ -519,42 +479,7 @@ import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
       height: 4325px;
     }
     /* ---------------------------------------------------------------- */
-    /* -------------------------Testimonials--------------------------------------- */
-    /* 
-    .testimonials-container {
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-self: center;
-    }
 
-    .testimonial {
-      position: relative;
-
-      width: 100%;
-    }
-
-    .testi-content {
-      margin: var(--RA-size-32);
-    }
-
-    .testimonial .slide {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    .slide p {
-      text-align: center;
-    }
-
-    .slide.details {
-      display: flex;
-      flex-direction: ;
-    } */
-    /* ---------------------------------------------------------------- */
     /* ---------------------- Galleri ----------------------*/
     .common {
       display: flex;
