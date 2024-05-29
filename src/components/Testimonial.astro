@@ -1,5 +1,4 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import citat from "../assets/images/Citationstegn.png";
 ---
@@ -9,11 +8,7 @@ import citat from "../assets/images/Citationstegn.png";
   <div class="carousel-container">
     <div class="carousel">
       <div class="testimonial">
-        <Image
-          src={citat}
-          alt="billede1"
-          class="billede-grid image-order hidden2"
-        />
+        <Image src={citat} alt="billede1" />
         <p class="bodyDark">
           En uforglemmelig oplevelse! Arctic Flyfishing skabte magiske øjeblikke
           i den arktiske vildmark, som jeg vil huske for evigt.
@@ -24,11 +19,7 @@ import citat from "../assets/images/Citationstegn.png";
         </div>
       </div>
       <div class="testimonial">
-        <Image
-          src={citat}
-          alt="billede1"
-          class="billede-grid image-order hidden2"
-        />
+        <Image src={citat} alt="billede1" />
         <p class="bodyDark">
           Fantastisk service og ekspertise! Takket være Arctic Flyfishing
           oplevede jeg Grønlands enestående skønhed på en helt unik måde.
@@ -39,11 +30,7 @@ import citat from "../assets/images/Citationstegn.png";
         </div>
       </div>
       <div class="testimonial">
-        <Image
-          src={citat}
-          alt="billede1"
-          class="billede-grid image-order hidden2"
-        />
+        <Image src={citat} alt="billede1" />
         <p class="bodyDark">
           En drøm, der gik i opfyldelse! Arctic Flyfishing leverede en eksklusiv
           og eventyrlig rejse, der overgik alle forventninger.
@@ -55,11 +42,7 @@ import citat from "../assets/images/Citationstegn.png";
       </div>
 
       <div class="testimonial1">
-        <Image
-          src={citat}
-          alt="billede1"
-          class="billede-grid image-order hidden2"
-        />
+        <Image src={citat} alt="billede1" />
         <p class="bodyDark">
           En drøm, der gik i opfyldelse! Arctic Flyfishing leverede en eksklusiv
           og eventyrlig rejse, der overgik alle forventninger.
@@ -71,11 +54,7 @@ import citat from "../assets/images/Citationstegn.png";
       </div>
 
       <div class="testimonial1">
-        <Image
-          src={citat}
-          alt="billede1"
-          class="billede-grid image-order hidden2"
-        />
+        <Image src={citat} alt="billede1" />
         <p class="bodyDark">
           En drøm, der gik i opfyldelse! Arctic Flyfishing leverede en eksklusiv
           og eventyrlig rejse, der overgik alle forventninger.
@@ -92,6 +71,9 @@ import citat from "../assets/images/Citationstegn.png";
 </section>
 
 <style>
+  h2 {
+    padding-bottom: var(--RA-size-12);
+  }
   .carousel-section {
     position: relative;
     display: flex;
@@ -159,6 +141,9 @@ import citat from "../assets/images/Citationstegn.png";
 
   /* Tilpasninger til skærmstørrelse over 800px */
   @media (min-width: 800px) {
+    h2 {
+      padding-bottom: var(--RA-size-48);
+    }
     .carousel-section {
       align-items: flex-start;
       flex-direction: column;

@@ -17,7 +17,7 @@ import ScrollArrow from "../components/ScrollArrow.astro";
       <source src="/video/heroVideo.mp4" />
     </video>
 
-    <div class="hero-content">
+    <div class="hero-content appear">
       <h1>Fluefisk på unikke Grønland</h1>
       <p class="titelLight heroTitel">
         Uovertruffet fluefiskeri og nærvær i naturen
@@ -39,22 +39,22 @@ import ScrollArrow from "../components/ScrollArrow.astro";
   <!-- Om Raw Arctic -->
   <section class="max-width">
     <div class="RA-sekction">
-      <h2 class="blue RA-h2 smooth-appear">Hvem er RawArctic?</h2>
+      <h2 class="blue RA-h2">Hvem er RawArctic?</h2>
       <div class="RA-content-button">
         <div class="RA-content">
-          <div class="RA-card">
+          <div class="RA-card verticalAppear">
             <Image src={gronland} alt="billede1" class="RA-billede" />
             <div class="RA-text">
               <h3 class="titelDark">Lokal og autentisk natur</h3>
             </div>
           </div>
-          <div class="RA-card">
+          <div class="RA-card verticalAppear">
             <Image src={guides} alt="billede2" class="RA-billede" />
             <div class="RA-text">
               <h3 class="titelDark">Samarbejde med grønlandske guides</h3>
             </div>
           </div>
-          <div class="RA-card">
+          <div class="RA-card verticalAppear">
             <Image src={telt} alt="billede3" class="RA-billede" />
             <div class="RA-text">
               <h3 class="titelDark">Eksklusiv indkvartering og gastronomi</h3>
@@ -130,6 +130,7 @@ import ScrollArrow from "../components/ScrollArrow.astro";
   import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
 
+  /* Hero */
   gsap.to(".hero-video", {
     duration: 1,
     scrollTrigger: {
@@ -140,6 +141,24 @@ import ScrollArrow from "../components/ScrollArrow.astro";
       // markers: true,
     },
   });
+  /* --------- */
+
+  /* Animation */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      console.log(entry);
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  });
+  const hiddenElements = document.querySelectorAll(
+    ".hidden , .hidden2, .verticalAppear"
+  );
+  hiddenElements.forEach((el) => observer.observe(el));
+  /* -------------- */
 </script>
 
 <style>
@@ -276,17 +295,17 @@ import ScrollArrow from "../components/ScrollArrow.astro";
     }
 
     .emptyContainer {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-transform: translateY(-5%);
-  }
-  
-  .CTAer {
-    display: flex;
-    padding-top: var(--RA-size-48);
-    gap: var(--RA-size-8);
-  }
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      transform: translateY(-5%);
+    }
+
+    .CTAer {
+      display: flex;
+      padding-top: var(--RA-size-48);
+      gap: var(--RA-size-8);
+    }
     /* ------------ */
 
     /* Om RawArctic section */

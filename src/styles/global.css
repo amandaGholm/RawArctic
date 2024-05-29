@@ -137,6 +137,26 @@ h3 {
   line-height: 1.36rem;
 }
 
+
+
+.labelName {
+  font-family: "Open Sans";
+  color: var(--RA-blue400);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.labelDate {
+  font-family: "Open Sans";
+  color: var(--RA-blue400);
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* Animation */
 .smooth-appear {
   animation: smooth-appear 1s ease forwards;
   bottom: -100%;
@@ -157,24 +177,7 @@ h3 {
     opacity: 1;
   }
 }
-
-.labelName {
-  font-family: "Open Sans";
-  color: var(--RA-blue400);
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-.labelDate {
-  font-family: "Open Sans";
-  color: var(--RA-blue400);
-  font-size: 0.75rem;
-  font-style: italic;
-  font-weight: 400;
-  line-height: normal;
-}
-
+/* --------------- */
 @media (min-width: 600px) {
   h1 {
     font-size: 6rem;
