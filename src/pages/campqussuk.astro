@@ -16,6 +16,7 @@ import UdvidetFisk from "../assets/images/udvidetFisk.webp";
 import PresentFiskStor from "../assets/images/presentFiskStor.webp";
 import Stromflod from "../assets/images/stromflod.webp";
 import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
+
 ---
 
 <BaseLayout>
@@ -152,77 +153,6 @@ import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
   </section>
   <div class="emptyContainerCQ"></div>
   <!-------------------------------------------- Testimonials -------------------------------------------->
-
-  <section class="container-caroussel">
-    <div class="carousel-view">
-      <!-- Left Button -->
-      <div>
-        <Button
-          id="prev-btn"
-          class="knap prev-btn"
-          heref="/"
-          label="Læs mere"
-          style="secondary"
-        />
-      </div>
-
-      <!-- List Container -->
-      <div id="item-list" class="item-list">
-        <!-- Items -->
-        <div id="item" class="item">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            recusandae minus odit soluta nobis ex id, voluptas non optio.
-            Repellendus vitae enim amet dolores commodi cumque quos est aperiam
-            eum!
-          </p>
-          <div class="details">
-            <span class="profile">Peter, 45 - København</span>
-            <span class="trip"> August 2024 - Qussuk, 45 - København</span>
-          </div>
-        </div>
-      </div>
-      <div id="item-list" class="item-list">
-        <!-- Items -->
-        <div id="item" class="item">
-          <p>Hej Amanda</p>
-          <div class="details">
-            <span class="profile">Peter, 45 - København</span>
-            <span class="trip"> August 2024 - Qussuk, 45 - København</span>
-          </div>
-        </div>
-      </div>
-      <div id="item-list" class="item-list">
-        <!-- Items -->
-        <div id="item" class="item">
-          <p>Hej G</p>
-          <div class="details">
-            <span class="profile">Peter, 45 - København</span>
-            <span class="trip"> August 2024 - Qussuk, 45 - København</span>
-          </div>
-        </div>
-      </div>
-      <div id="item-list" class="item-list">
-        <!-- Items -->
-        <div id="item" class="item">
-          <p>Hej Lort</p>
-          <div class="details">
-            <span class="profile">Peter, 45 - København</span>
-            <span class="trip"> August 2024 - Qussuk, 45 - København</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Button -->
-      <Button
-        id="next-btn"
-        class="knap next-btn"
-        heref="/"
-        label="Læs mere"
-        style="secondary"
-      />
-    </div>
-  </section>
 </BaseLayout>
 
 <!-- ------------------------------------------------------------------------------------ -->
@@ -274,41 +204,6 @@ import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
 <SectionCTA class="next-section" />
 
 <style>
-  .container-carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-
-  .carousel-view {
-    display: flex;
-    align-items: center;
-  }
-
-  .item-list {
-    display: flex;
-    overflow: hidden; /* Skjul overskydende indhold */
-    width: 300px; /* Juster bredden efter behov */
-  }
-
-  .item {
-    flex: 0 0 100%; /* Vis kun ét element ad gangen */
-    transition: opacity 0.5s ease; /* Tilføj glidende overgang */
-    opacity: 0; /* Skjul som standard */
-  }
-
-  .item.active {
-    opacity: 1; /* Vis kun det aktive element */
-  }
-
-  button {
-    background-color: #ccc; /* Juster farver efter behov */
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-  }
-
   /* .testimonials-container {
     height: 100vh;
     width: 100%;
@@ -771,45 +666,6 @@ import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
     // markers: true,
   });
   // ----------------------------------------------------------------------------------------------------------------------
-
-  // -------------------------------------------------------- Testimonials --------------------------------------------------------
-  const prev = document.getElementById("prev-btn");
-  const nextslide = document.getElementById("next-btn");
-  const items = document.getElementById("item");
-  let currentIndex = 0;
-
-  prev.addEventListener("click", () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateCarousel();
-    }
-  });
-
-  nextslide.addEventListener("click", () => {
-    if (currentIndex < items.length - 1) {
-      currentIndex++;
-      updateCarousel();
-    }
-  });
-
-  function updateCarousel() {
-    items.forEach((item, index) => {
-      if (index === currentIndex) {
-        item.classList.add("active");
-      } else {
-        item.classList.remove("active");
-      }
-    });
-
-    // Opdater knaptilgængelighed
-    prev.disabled = currentIndex === 0;
-    nextslide.disabled = currentIndex === items.length - 1;
-  }
-
-  // Initialisering
-  updateCarousel();
-
-  // ----------------------------------------------------------------------------------------------------------------
 
   // -------------------------------------------------------- Gallery --------------------------------------------------------
 
