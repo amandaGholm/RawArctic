@@ -5,7 +5,6 @@ import SectionCTA from "../components/SectionCTA.astro";
 import { Image } from "astro:assets";
 import CampImage from "../assets/images/campsite.png";
 import HTImage from "../assets/images/heroTuren.webp";
-import OverskyetElv from "../assets/images/overskyetElv.webp";
 import OverskyetLandskab from "../assets/images/overskyetLandskab.webp";
 import Dinghy from "../assets/images/carroussel.png";
 import Casper from "../assets/images/casper.webp";
@@ -16,7 +15,7 @@ import UdvidetFisk from "../assets/images/udvidetFisk.webp";
 import PresentFiskStor from "../assets/images/presentFiskStor.webp";
 import Stromflod from "../assets/images/stromflod.webp";
 import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
-import Testimonials from "../components/Testimonial.astro";
+import Testimonial from "../components/Testimonial.astro";
 import ScrollArrow from "../components/ScrollArrow.astro";
 import CapserBagfra from "../assets/images/capserBagfra.webp";
 import Overskyet from "../assets/images/overskyetElv.webp";
@@ -160,7 +159,7 @@ import Overskyet from "../assets/images/overskyetElv.webp";
   <div class="emptyContainerCQ"></div>
   <!-------------------------------------------- Testimonials -------------------------------------------->
 
-  <Testimonials />
+  <Testimonial />
 
   <!-- ------------------------------------------------------------------------------------ -->
   <section class="common">
@@ -194,7 +193,7 @@ import Overskyet from "../assets/images/overskyetElv.webp";
     <div class="gallery-container2">
       <div class="wrapper2">
         <Image
-          src={OverskyetElv}
+          src={OverskyetLandskab}
           alt="Fluefisker paa Grønland"
           class="IMG galleryIMG"
         />
@@ -465,8 +464,6 @@ import Overskyet from "../assets/images/overskyetElv.webp";
       aspect-ratio: 9/16;
       height: 100%;
       overflow: hidden;
-      object-fit: none;
-      object-position: center top;
     }
 
     .line {
@@ -558,59 +555,60 @@ import Overskyet from "../assets/images/overskyetElv.webp";
   // -----------------------------------------------------------------------------------------------------------------------------
 
   // -------------------------------------------------------- Dagsprogram --------------------------------------------------------
-  var allSlides = gsap.utils.toArray(".slide"); // Samler alle elementer med klassen ".slide" i et array.
-  gsap.set(allSlides, { yPercent: 50 }); //   Indstiller startpositionen for alle slides til 50% y-akse
 
-  var allTextWrappers = gsap.utils.toArray(".line .text-wrapper"); //   Samler alle ".text-wrapper"-elementer indenfor ".line"-elementer i en array.
-  gsap.set(allTextWrappers, { yPercent: 0 }); //   Indstiller startpositionen for alle tekstwrappere til 100% y-akse (udenfor viewporten).
+  document.addEventListener("DOMContentLoaded", () => {
+    var allSlides = gsap.utils.toArray(".slide"); // Samler alle elementer med klassen ".slide" i et array.
+    gsap.set(allSlides, { yPercent: 50 }); //   Indstiller startpositionen for alle slides til 50% y-akse
 
-  gsap.set(".container-desktop", { autoAlpha: 1 }); //   Sætter ".container-desktop" til fuld synlighed (1) efter initialisering.
+    var allTextWrappers = gsap.utils.toArray(".line .text-wrapper"); //   Samler alle ".text-wrapper"-elementer indenfor ".line"-elementer i en array.
+    gsap.set(allTextWrappers, { yPercent: 0 }); //   Indstiller startpositionen for alle tekstwrappere til 100% y-akse (udenfor viewporten).
 
-  var dur = 1, //Varighed af en enkelt animation er 1 sek.
-    next = 1.5, //Tid mellem animationerne er 1.5 sek.
-    fade = 0.3, //Varighed af fade-effekter er 0.3 sek.
-    tt = 3500; // Total længde af scroll-animationen i px.
+    gsap.set(".container-desktop", { autoAlpha: 1 }); //   Sætter ".container-desktop" til fuld synlighed (1) efter initialisering.
 
-  //Opretter en GSAP-timeline til at koordinere flere animationer.
-  var action = gsap
-    .timeline({
-      defaults: {
-        // default variabler indstiller standardværdier for animationerne.
-        ease: "none", //Ingen easing på animationerne.
-        stagger: next, //Tidsforsinkelse mellem animationerne er next(1,5 sek).
-      },
-      paused: true, // Timeline er paused fra starten, så animationerne ikke kører automatisk
-    })
-    .to(allSlides, { yPercent: -50, duration: dur }) // Animerer og flytter slides op med -60% på y-aksen over varigheden dur(1 sek).
-    .to(
-      allTextWrappers,
-      { yPercent: 0, opacity: 1, duration: fade * 2 }, //Animerer og flytter tekstwrappere til 0% på y-akse og gør dem synlige over varigheden fade * 2 (0,6 sek).
-      dur - fade //Starter animationen dur (1 sek) - fade (0,3 sek) sekunder efter den forrige animation.
-    )
-    .to(
-      allTextWrappers,
-      { yPercent: -200, opacity: 0, duration: fade }, // Animerer ud og flytter tekstwrappere til -200% på y-akse og gør dem usynlige over varigheden fade(0,3 sek).
-      dur * 2 //Starter animationen dur * 2 sekunder efter den forrige animation.
+    var dur = 1, //Varighed af en enkelt animation er 1 sek.
+      next = 1.5, //Tid mellem animationerne er 1.5 sek.
+      fade = 0.3, //Varighed af fade-effekter er 0.3 sek.
+      tt = 3500; // Total længde af scroll-animationen i px.
+
+    //Opretter en GSAP-timeline til at koordinere flere animationer.
+    var action = gsap
+      .timeline({
+        defaults: {
+          // default variabler indstiller standardværdier for animationerne.
+          ease: "none", //Ingen easing på animationerne.
+          stagger: next, //Tidsforsinkelse mellem animationerne er next(1,5 sek).
+        },
+        paused: true, // Timeline er paused fra starten, så animationerne ikke kører automatisk
+      })
+      .to(allSlides, { yPercent: -50, duration: dur }) // Animerer og flytter slides op med -60% på y-aksen over varigheden dur(1 sek).
+      .to(
+        allTextWrappers,
+        { yPercent: 0, opacity: 1, duration: fade * 2 }, //Animerer og flytter tekstwrappere til 0% på y-akse og gør dem synlige over varigheden fade * 2 (0,6 sek).
+        dur - fade //Starter animationen dur (1 sek) - fade (0,3 sek) sekunder efter den forrige animation.
+      )
+      .to(
+        allTextWrappers,
+        { yPercent: -200, opacity: 0, duration: fade }, // Animerer ud og flytter tekstwrappere til -200% på y-akse og gør dem usynlige over varigheden fade(0,3 sek).
+        dur * 2 //Starter animationen dur * 2 sekunder efter den forrige animation.
+      );
+
+    // Animation som starter når det første staggered item er synligt og går igennem indtil det sidste item er fuldt synligt.
+    const slider = gsap.fromTo(
+      action,
+      { time: dur },
+      { time: action.duration() - dur, paused: true }
     );
 
-  // Animation som starter når det første staggered item er synligt og går igennem indtil det sidste item er fuldt synligt.
-  const slider = gsap.fromTo(
-    action,
-    { time: dur },
-    { time: action.duration() - dur, paused: true }
-  );
-
-  ScrollTrigger.create({
-    animation: slider, //binder slider animationen ovenover til scrolltrigger.
-    trigger: ".container-desktop", //Elementet der trigger animationen.
-    start: "top top", // Starter når toppen af .container-desktop elementet møder toppen af viewport.
-    end: "=+" + tt, // Slutter 4000px efter start
-    pin: true, //Pinner .container-desktop i viewport under animation
-    scrub: 0.3, // Synkroniserer animationen med scrolling (0,3 sek forsinkelse)
-    // markers: true,
+    ScrollTrigger.create({
+      animation: slider, //binder slider animationen ovenover til scrolltrigger.
+      trigger: ".container-desktop", //Elementet der trigger animationen.
+      start: "top top", // Starter når toppen af .container-desktop elementet møder toppen af viewport.
+      end: "=+" + tt, // Slutter 4000px efter start
+      pin: true, //Pinner .container-desktop i viewport under animation
+      scrub: 0.5, // Synkroniserer animationen med scrolling (0,3 sek forsinkelse)
+      // markers: true,
+    });
   });
-  // ----------------------------------------------------------------------------------------------------------------------
-
   // -------------------------------------------------------- Gallery --------------------------------------------------------
 
   document.addEventListener(
