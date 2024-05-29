@@ -16,6 +16,7 @@ import UdvidetFisk from "../assets/images/udvidetFisk.webp";
 import PresentFiskStor from "../assets/images/presentFiskStor.webp";
 import Stromflod from "../assets/images/stromflod.webp";
 import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
+import Testimonials from "../components/Testimonial.astro";
 ---
 
 <BaseLayout>
@@ -151,101 +152,13 @@ import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
     </div>
   </section>
   <div class="emptyContainerCQ"></div>
-  <!-- Testimonials -->
-  <section class="testimonials-container">
-    <div class="testimonial">
-      <div class="testi-content">
-        <div class="slide">
-          <Image src={Dinghy} alt="Fluefisker paa Grønland" class="IMG" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            recusandae minus odit soluta nobis ex id, voluptas non optio.
-            Repellendus vitae enim amet dolores commodi cumque quos est aperiam
-            eum!
-          </p>
+  <!-------------------------------------------- Testimonials -------------------------------------------->
 
-          <i class="bx bxs-quote-alt-left quote-icon"></i>
-          <div class="details">
-            <span class="profile">Peter, 45 - København</span>
-            <span class="trip"> August 2024 - Qussuk, 45 - København</span>
-          </div>
-        </div>
-        <div class="slide">
-          <Image src={Dinghy} alt="Fluefisker paa Grønland" class="IMG" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            recusandae minus odit soluta nobis ex id, voluptas non optio.
-            Repellendus vitae enim amet dolores commodi cumque quos est aperiam
-            eum!
-          </p>
+  <Testimonials />
 
-          <i class="bx bxs-quote-alt-left quote-icon"></i>
-          <div class="details">
-            <span class="profile">Peter, 45 - København</span>
-            <span class="trip"> August 2024 - Qussuk, 45 - København</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- The dots/circles -->
-  <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-  </div>
+  <!-- ------------------------------------------------------------------------------------ -->
   <section class="common">
-    <section class="gallery-container">
-      <div class="wrapper">
-        <Image
-          src={OverskyetElv}
-          alt="Fluefisker paa Grønland"
-          class="IMG galleryIMG"
-        />
-      </div>
-      <div class="wrapper">
-        <Image
-          src={Dinghy}
-          alt="Fluefisker paa Grønland"
-          class="IMG galleryIMG"
-        />
-      </div>
-      <div class="wrapper">
-        <Image
-          src={OverskyetLandskab}
-          alt="Fluefisker paa Grønland"
-          class="IMG galleryIMG"
-        />
-      </div>
-    </section>
-
-    <section class="gallery-container2">
-      <div class="wrapper2">
-        <Image
-          src={Dinghy}
-          alt="Fluefisker paa Grønland"
-          class="IMG galleryIMG"
-        />
-      </div>
-      <div class="wrapper2">
-        <Image
-          src={Dinghy}
-          alt="Fluefisker paa Grønland"
-          class="IMG galleryIMG"
-        />
-      </div>
-      <div class="wrapper2">
-        <Image
-          src={OverskyetLandskab}
-          alt="Fluefisker paa Grønland"
-          class="IMG galleryIMG"
-        />
-      </div>
-    </section>
-  </section>
-  <section class="common">
-    <section class="gallery-container">
+    <div class="gallery-container">
       <div class="wrapper">
         <Image
           src={BøjetFisk}
@@ -270,9 +183,9 @@ import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
           class="galleryIMG"
         />
       </div>
-    </section>
+    </div>
 
-    <section class="gallery-container2">
+    <div class="gallery-container2">
       <div class="wrapper2">
         <Image
           src={OverskyetElv}
@@ -294,230 +207,12 @@ import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
           class="IMG galleryIMG presentFisk"
         />
       </div>
-    </section>
+    </div>
   </section>
 
   <SectionCTA class="next-section" />
 </BaseLayout>
-
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
-
-  // -------------------------------------------------------- Hero --------------------------------------------------------
-  gsap.to(".hero-image", {
-    duration: 1,
-    scrollTrigger: {
-      trigger: ".hero-image",
-      start: "top top",
-      end: "+=750",
-      pin: true,
-      // markers: true,
-    },
-  });
-  // -----------------------------------------------------------------------------------------------------------------------------
-
-  // -------------------------------------------------------- Dagsprogram --------------------------------------------------------
-  var allSlides = gsap.utils.toArray(".slide"); // Samler alle elementer med klassen ".slide" i et array.
-  gsap.set(allSlides, { yPercent: 50 }); //   Indstiller startpositionen for alle slides til 50% y-akse
-
-  var allTextWrappers = gsap.utils.toArray(".line .text-wrapper"); //   Samler alle ".text-wrapper"-elementer indenfor ".line"-elementer i en array.
-  gsap.set(allTextWrappers, { yPercent: 0 }); //   Indstiller startpositionen for alle tekstwrappere til 100% y-akse (udenfor viewporten).
-
-  gsap.set(".container-desktop", { autoAlpha: 1 }); //   Sætter ".container-desktop" til fuld synlighed (1) efter initialisering.
-
-  var dur = 1, //Varighed af en enkelt animation er 1 sek.
-    next = 1.5, //Tid mellem animationerne er 1.5 sek.
-    fade = 0.3, //Varighed af fade-effekter er 0.3 sek.
-    tt = 3500; // Total længde af scroll-animationen i px.
-
-  //Opretter en GSAP-timeline til at koordinere flere animationer.
-  var action = gsap
-    .timeline({
-      defaults: {
-        // default variabler indstiller standardværdier for animationerne.
-        ease: "none", //Ingen easing på animationerne.
-        stagger: next, //Tidsforsinkelse mellem animationerne er next(1,5 sek).
-      },
-      paused: true, // Timeline er paused fra starten, så animationerne ikke kører automatisk
-    })
-    .to(allSlides, { yPercent: -50, duration: dur }) // Animerer og flytter slides op med -60% på y-aksen over varigheden dur(1 sek).
-    .to(
-      allTextWrappers,
-      { yPercent: 0, opacity: 1, duration: fade * 2 }, //Animerer og flytter tekstwrappere til 0% på y-akse og gør dem synlige over varigheden fade * 2 (0,6 sek).
-      dur - fade //Starter animationen dur (1 sek) - fade (0,3 sek) sekunder efter den forrige animation.
-    )
-    .to(
-      allTextWrappers,
-      { yPercent: -200, opacity: 0, duration: fade }, // Animerer ud og flytter tekstwrappere til -200% på y-akse og gør dem usynlige over varigheden fade(0,3 sek).
-      dur * 2 //Starter animationen dur * 2 sekunder efter den forrige animation.
-    );
-
-  // Animation som starter når det første staggered item er synligt og går igennem indtil det sidste item er fuldt synligt.
-  const slider = gsap.fromTo(
-    action,
-    { time: dur },
-    { time: action.duration() - dur, paused: true }
-  );
-
-  ScrollTrigger.create({
-    animation: slider, //binder slider animationen ovenover til scrolltrigger.
-    trigger: ".container-desktop", //Elementet der trigger animationen.
-    start: "top top", // Starter når toppen af .container-desktop elementet møder toppen af viewport.
-    end: "=+" + tt, // Slutter 4000px efter start
-    pin: true, //Pinner .container-desktop i viewport under animation
-    scrub: 0.3, // Synkroniserer animationen med scrolling (0,3 sek forsinkelse)
-    // markers: true,
-  });
-  // ----------------------------------------------------------------------------------------------------------------------
-
-  // -------------------------------------------------------- Testimonials --------------------------------------------------------
-
-  // ----------------------------------------------------------------------------------------------------------------
-
-  // -------------------------------------------------------- Gallery --------------------------------------------------------
-
-  document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-      const wrappers = document.querySelectorAll(".wrapper");
-      const wrapper2 = document.querySelectorAll(".wrapper2");
-
-      let totalWidth = 0;
-      let totalWidth2 = 0;
-      const windowWidth = window.innerWidth;
-      let scrollDistance;
-
-      if (windowWidth < 800) {
-        // Mobile
-        scrollDistance = 2000; // Set the scroll distance for mobile
-      } else {
-        // Desktop
-        scrollDistance = 3000;
-      }
-
-      // Udregning af den samlede bredde mellem content og viewport
-      wrappers.forEach((wrapper) => {
-        totalWidth += wrapper.offsetWidth;
-      });
-      wrapper2.forEach((wrapper) => {
-        totalWidth2 += wrapper.offsetWidth;
-      });
-
-      // Giver den rigtige længde animationen skal vare for at det passer med billeder
-      const amountToScroll = totalWidth - window.innerWidth;
-      const amountToScroll2 = totalWidth2 - window.innerWidth;
-
-      // Lave tween animation for wrappers
-      const tween = gsap.to(wrappers, {
-        x: -amountToScroll,
-        delay: 5,
-        ease: "none",
-      });
-      const tween2 = gsap.to(wrapper2, {
-        x: -amountToScroll2,
-        ease: "none",
-      });
-
-      //  Scrolltrigger for hver af containersne
-      ScrollTrigger.create({
-        animation: tween,
-        trigger: ".common",
-        start: "top top",
-        end: "+=" + scrollDistance,
-        scrub: 3,
-        pin: true,
-        // markers: true,
-        pinSpacing: true,
-      });
-      ScrollTrigger.create({
-        animation: tween2,
-        trigger: ".common",
-        start: "bottom bottom",
-        end: "+=" + scrollDistance,
-        scrub: 3,
-        pin: true,
-        pinSpacing: true,
-      });
-    }
-    // tester
-  );
-
-  // ----------------------------------------------------------------------------------------------------------------
-</script>
-
 <style>
-  /*--------------------------- Galleri Mobile ----------------------------*/
-  .gallery-container,
-  .gallery-container2 {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    position: relative;
-    margin: 0; /* Ingen margin i top og bund */
-    padding: 0; /* Ingen padding */
-  }
-
-  .wrapper,
-  .wrapper2 {
-    display: flex;
-    width: 100vw;
-    height: 50vh;
-    padding: 0;
-    margin: 0;
-    flex-shrink: 0;
-    overflow: hidden;
-  }
-
-  .galleryIMG {
-    display: block;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    object-fit: cover;
-  }
-
-  .presentFisk {
-    height: 120vh;
-    max-width: 80%;
-    object-fit: cover;
-  }
-
-  /*----------------------------------------------------------------------*/
-
-  /* .testimonials-container {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .testimonial {
-    position: relative;
-    width: 100%;
-  }
-
-  .testi-content {
-    margin: var(--RA-size-32);
-  }
-
-  .testimonial .slide {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .slide p {
-    text-align: center;
-  }
-
-  .slide.details {
-    display: flex;
-    flex-direction: ;
-  } */
   /*--------------------------- Hero Mobile ----------------------------*/
   .hero-image {
     position: absolute;
@@ -550,6 +245,7 @@ import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
     background-color: #ffeee6;
   }
   /* ------------------------------------------------------------------- */
+
   /*------------------------- Camp Qussuk section Mobile ------------------------*/
 
   .CQ-section {
@@ -620,6 +316,43 @@ import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
   }
   /* ---------------------------------------------------------------- */
 
+  /*--------------------------- Galleri Mobile ----------------------------*/
+  .gallery-container,
+  .gallery-container2 {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+    margin: 0; /* Ingen margin i top og bund */
+    padding: 0; /* Ingen padding */
+  }
+
+  .wrapper,
+  .wrapper2 {
+    display: flex;
+    width: 100vw;
+    height: 50vh;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .galleryIMG {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  .presentFisk {
+    height: 120vh;
+    max-width: 80%;
+    object-fit: cover;
+  }
+
+  /*----------------------------------------------------------------------*/
   @media (min-width: 800px) {
     /*--------------------------- Hero ----------------------------*/
     .hero-image {
@@ -745,8 +478,9 @@ import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
       display: block;
       height: 4325px;
     }
+    /* ---------------------------------------------------------------- */
 
-    /* ---------------------- Galleri */
+    /* ---------------------- Galleri ----------------------*/
     .common {
       display: flex;
       flex-direction: column;
@@ -786,6 +520,148 @@ import IsakHolderFisk from "../assets/images/isakHolderFisk.webp";
       justify-content: center;
       align-items: center;
     }
+    /* ---------------------------------------------------------------- */
   }
-  /* ---------------------------------------------------------------- */
-</style>-->
+</style>
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  // -------------------------------------------------------- Hero --------------------------------------------------------
+  gsap.to(".hero-image", {
+    duration: 1,
+    scrollTrigger: {
+      trigger: ".hero-image",
+      start: "top top",
+      end: "+=750",
+      pin: true,
+      // markers: true,
+    },
+  });
+  // -----------------------------------------------------------------------------------------------------------------------------
+
+  // -------------------------------------------------------- Dagsprogram --------------------------------------------------------
+  var allSlides = gsap.utils.toArray(".slide"); // Samler alle elementer med klassen ".slide" i et array.
+  gsap.set(allSlides, { yPercent: 50 }); //   Indstiller startpositionen for alle slides til 50% y-akse
+
+  var allTextWrappers = gsap.utils.toArray(".line .text-wrapper"); //   Samler alle ".text-wrapper"-elementer indenfor ".line"-elementer i en array.
+  gsap.set(allTextWrappers, { yPercent: 0 }); //   Indstiller startpositionen for alle tekstwrappere til 100% y-akse (udenfor viewporten).
+
+  gsap.set(".container-desktop", { autoAlpha: 1 }); //   Sætter ".container-desktop" til fuld synlighed (1) efter initialisering.
+
+  var dur = 1, //Varighed af en enkelt animation er 1 sek.
+    next = 1.5, //Tid mellem animationerne er 1.5 sek.
+    fade = 0.3, //Varighed af fade-effekter er 0.3 sek.
+    tt = 3500; // Total længde af scroll-animationen i px.
+
+  //Opretter en GSAP-timeline til at koordinere flere animationer.
+  var action = gsap
+    .timeline({
+      defaults: {
+        // default variabler indstiller standardværdier for animationerne.
+        ease: "none", //Ingen easing på animationerne.
+        stagger: next, //Tidsforsinkelse mellem animationerne er next(1,5 sek).
+      },
+      paused: true, // Timeline er paused fra starten, så animationerne ikke kører automatisk
+    })
+    .to(allSlides, { yPercent: -50, duration: dur }) // Animerer og flytter slides op med -60% på y-aksen over varigheden dur(1 sek).
+    .to(
+      allTextWrappers,
+      { yPercent: 0, opacity: 1, duration: fade * 2 }, //Animerer og flytter tekstwrappere til 0% på y-akse og gør dem synlige over varigheden fade * 2 (0,6 sek).
+      dur - fade //Starter animationen dur (1 sek) - fade (0,3 sek) sekunder efter den forrige animation.
+    )
+    .to(
+      allTextWrappers,
+      { yPercent: -200, opacity: 0, duration: fade }, // Animerer ud og flytter tekstwrappere til -200% på y-akse og gør dem usynlige over varigheden fade(0,3 sek).
+      dur * 2 //Starter animationen dur * 2 sekunder efter den forrige animation.
+    );
+
+  // Animation som starter når det første staggered item er synligt og går igennem indtil det sidste item er fuldt synligt.
+  const slider = gsap.fromTo(
+    action,
+    { time: dur },
+    { time: action.duration() - dur, paused: true }
+  );
+
+  ScrollTrigger.create({
+    animation: slider, //binder slider animationen ovenover til scrolltrigger.
+    trigger: ".container-desktop", //Elementet der trigger animationen.
+    start: "top top", // Starter når toppen af .container-desktop elementet møder toppen af viewport.
+    end: "=+" + tt, // Slutter 4000px efter start
+    pin: true, //Pinner .container-desktop i viewport under animation
+    scrub: 0.3, // Synkroniserer animationen med scrolling (0,3 sek forsinkelse)
+    // markers: true,
+  });
+  // ----------------------------------------------------------------------------------------------------------------------
+
+  // -------------------------------------------------------- Gallery --------------------------------------------------------
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+      const wrappers = document.querySelectorAll(".wrapper");
+      const wrapper2 = document.querySelectorAll(".wrapper2");
+
+      let totalWidth = 0;
+      let totalWidth2 = 0;
+      const windowWidth = window.innerWidth;
+      let scrollDistance;
+
+      if (windowWidth < 800) {
+        // Mobile
+        scrollDistance = 2000; // Set the scroll distance for mobile
+      } else {
+        // Desktop
+        scrollDistance = 3000;
+      }
+
+      // Udregning af den samlede bredde mellem content og viewport
+      wrappers.forEach((wrapper) => {
+        totalWidth += wrapper.offsetWidth;
+      });
+      wrapper2.forEach((wrapper) => {
+        totalWidth2 += wrapper.offsetWidth;
+      });
+
+      // Giver den rigtige længde animationen skal vare for at det passer med billeder
+      const amountToScroll = totalWidth - window.innerWidth;
+      const amountToScroll2 = totalWidth2 - window.innerWidth;
+
+      // Lave tween animation for wrappers
+      const tween = gsap.to(wrappers, {
+        x: -amountToScroll,
+        delay: 5,
+        ease: "none",
+      });
+      const tween2 = gsap.to(wrapper2, {
+        x: -amountToScroll2,
+        ease: "none",
+      });
+
+      //  Scrolltrigger for hver af containersne
+      ScrollTrigger.create({
+        animation: tween,
+        trigger: ".common",
+        start: "top top",
+        end: "+=" + scrollDistance,
+        scrub: 3,
+        pin: true,
+        // markers: true,
+        pinSpacing: true,
+      });
+      ScrollTrigger.create({
+        animation: tween2,
+        trigger: ".common",
+        start: "bottom bottom",
+        end: "+=" + scrollDistance,
+        scrub: 3,
+        pin: true,
+        pinSpacing: true,
+      });
+    }
+    // tester
+  );
+
+  // ----------------------------------------------------------------------------------------------------------------
+</script>
