@@ -8,6 +8,7 @@ import telt from "../assets/images/iconTelt.svg";
 import webfeatur from "../assets/images/overskyetLandskab.webp";
 import SectionCTA from "../components/SectionCTA.astro";
 import ScrollArrow from "../components/ScrollArrow.astro";
+import Malik from "../assets/images/Malik.png";
 ---
 
 <BaseLayout>
@@ -100,22 +101,25 @@ import ScrollArrow from "../components/ScrollArrow.astro";
   <!-- Webfeatur -->
   <section class="WEB-section">
     <Image
-      src={webfeatur}
+      src={Malik}
       alt="Her skal der stå en alt tekst"
       class="WEB-billede"
     />
     <div class="WEB-content">
-      <h2 class="WEB-h2 white">Med grønlandske guides</h2>
+      <h2 class="WEB-h2 white">
+        Fra trawl til flue: Malik deler i dag ud af sin passion
+      </h2>
       <p class="bodyLight WEB-text">
-        Dyk ned i Iviks historie og opdag, hvordan den lokale grønlandske
-        befolkning spiller en central rolle i at skabe en uforglemmelig
-        fiskeoplevelse med Raw Arctic.
+        Malik, der opvoksede med fiskeri på Grønland, skippede uddannelsen for
+        at arbejde på en fisketrawler. Arctic Flyfishing blev stedet, hvor han
+        fandt formål og personlig udvikling, hvilket illustrerer, hvordan lokal
+        arbejdskraft bidrager til at styrke både samfundet og virksomheden.
       </p>
       <div>
         <Button
           class="knap"
           heref="/"
-          label="Læs mere om turen"
+          label="Læs historien"
           style="secondary"
         />
       </div>
@@ -171,13 +175,18 @@ import ScrollArrow from "../components/ScrollArrow.astro";
     display: flex;
     flex-direction: column;
     gap: var(--RA-size-16);
-    place-self: start center;
-    padding-top: var(--RA-size-56);
+    padding: var(--RA-size-56);
     max-width: 740px;
+    z-index: 2;
   }
 
   .WEB-billede {
     height: auto;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1);
+    z-index: 1;
   }
   .WEB-text {
     color: var(--RA-blue25);
