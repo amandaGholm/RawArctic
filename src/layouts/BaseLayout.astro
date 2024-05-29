@@ -3,6 +3,7 @@ import Nav from "../components/Nav.astro";
 import "../styles/global.css";
 import "../styles/animation.css";
 import Footer from "../components/Footer.astro";
+const { ArcticFlyfishing } = Astro.props;
 ---
 
 <html lang="dk">
@@ -17,6 +18,16 @@ import Footer from "../components/Footer.astro";
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
     />
+    <meta
+      name="description"
+      content="Arctic Flyfishing tilbyder unikke rejser til Grønland.
+       Oplev fluefiskeri og nærvær i den grønlandske natur"
+    />
+    <meta
+      name="keywords"
+      content="fluefisker, grønland, Flyfishing, rejse, all-inklusiv,  "
+    />
+    <title>{ArcticFlyfishing} ArcticFlyfishing</title>
   </head>
 
   <body>

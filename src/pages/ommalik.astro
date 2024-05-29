@@ -1,0 +1,24 @@
+---
+import Button from "../components/Button.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <section>
+    <h1>Læs om Maliks historie</h1>
+    <p class="titelLight">Siden under ombygning, se prototypen her i figma</p>
+    <div>
+      <Button class="knap" heref="/" label="Figma Link" style="secondary" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--RA-blue400);
+    padding: var(--RA-size-120);
+    gap: var(--RA-size-20);
+  }
+</style>
