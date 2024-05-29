@@ -5,6 +5,45 @@ import OverskyetLandskab from "../assets/images/overskyetLandskab.webp";
 import CampImage from "../assets/images/campsite.png";
 ---
 
+<!-- Mobil -->
+<section class="container-mobile">
+  <div class="card">
+    <div class="text-wrapper">
+      <h2>Dag 1</h2>
+      <h2>Indlogering</h2>
+
+      <p class="bodyDark p-scrollTrigger">
+        Afgang fra Danmark og 4 timer senere ankomst i Grønland. Transport fra
+        Nuuk til Camp Qussuk.
+      </p>
+    </div>
+    <Image src={CampImage} alt="Fluefisker paa Grønland" class="IMG" />
+  </div>
+  <div class="card">
+    <div class="text-wrapper">
+      <h2>Dag 2-6</h2>
+      <h2>Camp Qussuk</h2>
+      <p class="bodyDark p-scrollTrigger">
+        Fluefiskeri i uberørte floder og elve, efterfulgt af luksuriøs
+        overnatning i førsteklasses glampingtelte og en professionel kulinarisk
+        oplevelse hver dag.
+      </p>
+    </div>
+    <Image src={OverskyetLandskab} alt="Fluefisker paa Grønland" class="IMG" />
+  </div>
+  <div class="card">
+    <div class="text-wrapper">
+      <h2>Dag 7</h2>
+      <h2>Hjemrejse</h2>
+      <p class="bodyDark p-scrollTrigger">
+        Transport fra Camp Qussuk til Nuuk. Afgang fra Grønland og 4 timer
+        senere ankomst i CPH-Lufthavn.
+      </p>
+    </div>
+    <Image src={Dinghy} alt="Fluefisker paa Grønland" class="IMG" />
+  </div>
+</section>
+<!-- Desktop -->
 <section class="container-desktop">
   <div class="slide IMG">
     <Image src={CampImage} alt="Fluefisker paa Grønland" class="IMG" />
@@ -49,59 +88,96 @@ import CampImage from "../assets/images/campsite.png";
 
 <style>
   .container-mobile {
-    display: none;
-  }
-  .container-desktop {
     display: block;
-    position: absolute;
     width: 100%;
-    height: 100vh;
-    visibility: hidden;
+    height: 100%;
     background-color: #ffeee6;
   }
 
-  .slide {
-    position: absolute;
-    top: 50%;
-    width: 50vw;
+  .container-desktop {
+    display: none;
+  }
+
+  .card {
+    width: 100vw;
     max-height: 100vh;
-    margin-left: 50%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    padding-top: var(--RA-size-64);
   }
 
   .IMG {
     max-width: 100vw;
-    aspect-ratio: 9/16;
     height: 100%;
     overflow: hidden;
   }
 
-  .line {
-    position: absolute;
-    top: 30vh;
-    left: 0;
-    width: 40vw;
-    height: 50px;
-  }
-
   .text-wrapper {
-    position: absolute;
-    top: 0px;
-    left: 20px;
-    width: 100%;
-    opacity: 0;
-    padding-left: var(--RA-size-56);
+    width: 90vw;
+    padding-left: var(--RA-size-32);
+    padding-bottom: var(--RA-size-32);
   }
 
   .p-scrollTrigger {
-    max-width: 50ch;
+    max-width: 64ch;
   }
+  /* ---------------------------------------------------------------- */
+  @media (min-width: 800px) {
+    /* ------------------------- Dagsprogram desktop ------------------------- */
+    .container-mobile {
+      display: none;
+    }
+    .container-desktop {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      visibility: hidden;
+      background-color: #ffeee6;
+    }
 
-  .emptyContainerCQ {
-    display: block;
-    height: 4325px;
+    .slide {
+      position: absolute;
+      top: 50%;
+      width: 50vw;
+      max-height: 100vh;
+      margin-left: 50%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .IMG {
+      max-width: 100vw;
+      aspect-ratio: 9/16;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .line {
+      position: absolute;
+      top: 30vh;
+      left: 0;
+      width: 40vw;
+      height: 50px;
+    }
+
+    .text-wrapper {
+      position: absolute;
+      top: 0px;
+      left: 20px;
+      width: 100%;
+      opacity: 0;
+      padding-left: var(--RA-size-56);
+    }
+
+    .p-scrollTrigger {
+      max-width: 50ch;
+    }
+
+    .emptyContainerCQ {
+      display: block;
+      height: 4325px;
+    }
+    /* ---------------------------------------------------------------- */
   }
 </style>
 
