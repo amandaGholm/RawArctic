@@ -6,24 +6,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout>
   <section>
     <h1>Læs om Maliks historie</h1>
-    <p class="titelLight">Siden under ombygning, se prototypen her i figma</p>
+    <p class="titelLight">
+      Siden under ombygning, se prototypen her i figma, gør skærmen større ved
+      at klikke i højre hjørne af skærmen nedenunder
+    </p>
     <div>
-      <Button
-        class="knap"
-        href="https://www.figma.com/design/xViofmcVimHpazLngrj3fA/Prototype%2FSoMe?node-id=0-1&t=WNN8QvpXXMeeAzDj-1"
-        label="Figma Link"
-        style="secondary"
-      />
+      <iframe
+        style="border: 1px solid rgba(0, 0, 0, 0.1);"
+        width="800"
+        height="450"
+        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FdcGQTnu52uyURSCTKGJI5X%2FWebfeatur%3Fpage-id%3D0%253A1%26node-id%3D1-618%26viewport%3D412%252C963%252C0.16%26t%3DhiN5ulmWbpKCkXwc-1%26scaling%3Dmin-zoom%26starting-point-node-id%3D1%253A618"
+        allowfullscreen></iframe>
     </div>
   </section>
-</BaseLayout>
 
-<style>
-  section {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--RA-blue400);
-    padding: var(--RA-size-120);
-    gap: var(--RA-size-20);
-  }
-</style>
+  <style>
+    section {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--RA-blue400);
+      padding: var(--RA-size-120);
+      gap: var(--RA-size-20);
+    }
+  </style>
+</BaseLayout>

@@ -29,7 +29,7 @@ const { style, label, href } = Astro.props;
     min-width: 135px;
     border-radius: 1.25rem;
     height: 40px;
-    padding: 0 12px;
+    padding: 0 var(--RA-size-20);
   }
   [style-variant="primary"]:hover {
     background-color: var(--RA-orange400);
@@ -85,7 +85,6 @@ const { style, label, href } = Astro.props;
     font-size: 1rem;
     font-style: normal;
     font-weight: 600;
-    
   }
   [label-variant="tertiary"]:hover {
     text-decoration: underline;

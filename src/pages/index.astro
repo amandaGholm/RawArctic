@@ -24,18 +24,23 @@ import ScrollArrow from "../components/ScrollArrow.astro";
         Uovertruffet fluefiskeri og nærvær i naturen
       </p>
       <div class="CTAer">
-        <Button
-          class="knap"
-          href="/kontakt/"
-          label="Reservér din rejse"
-          style="primary"
-        />
-        <Button
-          class="knap"
-          href="/campqussuk/"
-          label="Læs mere om turen"
-          style="secondary"
-        />
+        <div>
+          <Button
+            class="knap"
+            href="/kontakt/"
+            label="Reservér din rejse"
+            style="primary"
+          />
+        </div>
+
+        <div>
+          <Button
+            class="knap"
+            href="/campqussuk/"
+            label="Læs mere om turen"
+            style="secondary"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -156,7 +161,6 @@ import ScrollArrow from "../components/ScrollArrow.astro";
       start: "top top",
       end: "+=700",
       pin: true,
-      // markers: true,
     },
   });
   /* --------- */
@@ -329,6 +333,7 @@ import ScrollArrow from "../components/ScrollArrow.astro";
 
     .CTAer {
       display: flex;
+      flex-direction: column;
       padding-top: var(--RA-size-48);
       gap: var(--RA-size-8);
     }
