@@ -45,33 +45,34 @@ import ScrollArrow from "../components/ScrollArrow.astro";
   <!-- Om Raw Arctic -->
   <section class="max-width">
     <div class="RA-sekction" id="RA">
-      <h2 class="blue RA-h2">Hvem er RawArctic?</h2>
+      <h2 class="blue RA-h2">Arctic Flyfishing er...</h2>
       <div class="RA-content-button">
         <div class="RA-content">
           <div class="RA-card verticalAppear">
-            <Image src={gronland} alt="ikon af grønland" class="RA-billede" />
+            <Image
+              src={telt}
+              alt=" ikon af et glampingtelt "
+              class="RA-billede"
+            />
+
+            <div class="RA-text">
+              <h3 class="titelDark">Eksklusiv indkvartering og gastronomi</h3>
+            </div>
+          </div>
+          <div class="RA-card verticalAppear">
+            <Image
+              src={gronland}
+              alt="ikon af 2 personer som giver higfive"
+              class="RA-billede"
+            />
             <div class="RA-text">
               <h3 class="titelDark">Lokal og autentisk natur</h3>
             </div>
           </div>
           <div class="RA-card verticalAppear">
-            <Image
-              src={guides}
-              alt="ikon af 2 personer som giver higfive"
-              class="RA-billede"
-            />
+            <Image src={guides} alt="ikon af grønland" class="RA-billede" />
             <div class="RA-text">
               <h3 class="titelDark">Samarbejde med grønlandske guides</h3>
-            </div>
-          </div>
-          <div class="RA-card verticalAppear">
-            <Image
-              src={telt}
-              alt="ikon af et glampingtelt"
-              class="RA-billede"
-            />
-            <div class="RA-text">
-              <h3 class="titelDark">Eksklusiv indkvartering og gastronomi</h3>
             </div>
           </div>
         </div>
@@ -93,14 +94,14 @@ import ScrollArrow from "../components/ScrollArrow.astro";
     <div class="TUR-content">
       <h2 class="blue">Oplev komfort i vildmarken</h2>
       <p class="bodyDark TUR-text">
-        Nyd en uforglemmelig uge langs Grønlands elve og overnat under bekvemme
-        forhold
+        Syv dage med afslappende fluefiskeri om dagen og luksuriøse faciliteter
+        om aftenen
       </p>
       <div>
         <Button
           class="knap"
-          heref="/"
-          label="Læs mere om turen"
+          href="/campqussuk/"
+          label="Læs mere om Camp Qussuk"
           style="secondary"
         />
       </div>
