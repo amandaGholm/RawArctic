@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import Casper from "../assets/images/casper.webp";
+import casper from "../assets/images/casper.webp";
 import CampImage from "../assets/images/campsite.png";
 import OverskyetLandskab from "../assets/images/overskyetLandskab.webp";
 import PigeFisk from "../assets/images/pigeFisk.webp";
@@ -10,55 +10,57 @@ import BøjetFisk from "../assets/images/BøjetFisk.webp";
 ---
 
 <section class="common">
-  <div class="gallery-container">
+  <section class="gallery-container">
     <div class="wrapper">
-      <Image src={BøjetFisk} alt="Fluefisker paa Grønland" class="galleryIMG" />
+      <Image src={casper} alt="Fluefisker paa Grønland" class="galleryIMG" />
     </div>
     <div class="wrapper">
-      <Image src={Casper} alt="Fluefisker paa Grønland" class="galleryIMG" />
+      <Image src={casper} alt="Fluefisker paa Grønland" class="galleryIMG" />
     </div>
     <div class="wrapper">
-      <Image
-        src={IsakHolderFisk}
-        alt="Fluefisker paa Grønland"
-        class="galleryIMG"
-      />
+      <Image src={casper} alt="Fluefisker paa Grønland" class="galleryIMG" />
     </div>
     <div class="wrapper">
-      <Image src={CampImage} alt="Fluefisker paa Grønland" class="galleryIMG" />
+      <Image src={casper} alt="Fluefisker paa Grønland" class="galleryIMG" />
     </div>
-  </div>
+  </section>
 
-  <div class="gallery-container2">
+  <section class="gallery-container2">
     <div class="wrapper2">
       <Image
-        src={OverskyetLandskab}
+        src={casper}
         alt="Fluefisker paa Grønland"
         class="IMG galleryIMG"
       />
     </div>
     <div class="wrapper2">
       <Image
-        src={PigeFisk}
+        src={casper}
         alt="Fluefisker paa Grønland"
         class="IMG galleryIMG pigeFisk"
       />
     </div>
     <div class="wrapper2">
       <Image
-        src={UdvidetFisk}
+        src={casper}
         alt="Fluefisker paa Grønland"
         class="IMG galleryIMG presentFisk"
       />
     </div>
-  </div>
+    <div class="wrapper2">
+      <Image
+        src={casper}
+        alt="Fluefisker paa Grønland"
+        class="IMG galleryIMG presentFisk"
+      />
+    </div>
+  </section>
 </section>
 
 <script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { gsap } from "gsap/dist/gsap";
+  import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
-  // -------------------------------------------------------- Gallery --------------------------------------------------------
 
   document.addEventListener(
     "DOMContentLoaded",
@@ -68,6 +70,7 @@ import BøjetFisk from "../assets/images/BøjetFisk.webp";
 
       let totalWidth = 0;
       let totalWidth2 = 0;
+
       const windowWidth = window.innerWidth;
       let scrollDistance;
 
@@ -81,10 +84,10 @@ import BøjetFisk from "../assets/images/BøjetFisk.webp";
 
       // Udregning af den samlede bredde mellem content og viewport
       wrappers.forEach((wrapper) => {
-        totalWidth += (wrapper as HTMLElement).offsetWidth;
+        totalWidth += wrapper.offsetWidth;
       });
       wrapper2.forEach((wrapper) => {
-        totalWidth2 += (wrapper as HTMLElement).offsetWidth;
+        totalWidth2 += wrapper.offsetWidth;
       });
 
       // Giver den rigtige længde animationen skal vare for at det passer med billeder
@@ -118,7 +121,7 @@ import BøjetFisk from "../assets/images/BøjetFisk.webp";
         trigger: ".common",
         start: "bottom bottom",
         end: "+=" + scrollDistance,
-        scrub: 3,
+        scrub: 5,
         pin: true,
         pinSpacing: true,
       });
@@ -158,12 +161,11 @@ import BøjetFisk from "../assets/images/BøjetFisk.webp";
     object-fit: cover;
   }
 
-  .presentFisk {
+  /* .presentFisk {
     height: 120vh;
     max-width: 80%;
     object-fit: cover;
-  }
-
+  } */
   @media (min-width: 800px) {
     /* ---------------------- Galleri Desktop ----------------------*/
     .common {
@@ -198,13 +200,12 @@ import BøjetFisk from "../assets/images/BøjetFisk.webp";
       height: 50vh;
       object-fit: cover;
     }
-    .next-section {
+    /* .next-section {
       height: 100vh;
       background-color: #f0f0f0;
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-    /* ---------------------------------------------------------------- */
+    } */
   }
 </style>
