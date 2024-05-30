@@ -200,7 +200,7 @@ import Dinghy from "../assets/images/carroussel.webp";
     var dur = 1, //Varighed af en enkelt animation er 1 sek.
       next = 1.5, //Tid mellem animationerne er 1.5 sek.
       fade = 0.3, //Varighed af fade-effekter er 0.3 sek.
-      tt = 3500; // Total længde af scroll-animationen i px.
+      tl = 3500; // Total længde af scroll-animationen i px.
 
     //Opretter en GSAP-timeline til at koordinere flere animationer.
     var action = gsap
@@ -235,7 +235,7 @@ import Dinghy from "../assets/images/carroussel.webp";
       animation: slider, //binder slider animationen ovenover til scrolltrigger.
       trigger: ".container-desktop", //Elementet der trigger animationen.
       start: "top top", // Starter når toppen af .container-desktop elementet møder toppen af viewport.
-      end: "=+" + tt, // Slutter 4000px efter start
+      end: "=+" + tl, // Slutter 4000px efter start
       pin: true, //Pinner .container-desktop i viewport under animation
       scrub: 0.5, // Synkroniserer animationen med scrolling (0,3 sek forsinkelse)
       // markers: true,
