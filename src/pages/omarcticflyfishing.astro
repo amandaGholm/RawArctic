@@ -1,19 +1,17 @@
 ---
-import Button from "../components/Button.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { Image } from "astro:assets";
-import camp from "../assets/images/campsite.png";
-import flod from "../assets/images/stromflod.webp";
 import hero from "../assets/images/solnedgang.webp";
-import fisk from "../assets/images/bøjetFisk.webp";
+import stromflod from "../assets/images/stromflod.webp";
+import bojetFisk from "../assets/images/bøjetFisk.webp";
+import campsite from "../assets/images/campsite.webp";
 import casperstang from "../assets/images/casperFiskStang.webp";
 import zoomFisk from "../assets/images/zoomFiskBlink.webp";
 import casper from "../assets/images/casper.webp";
 import isak from "../assets/images/isakHolderFisk.webp";
 import rasmus from "../assets/images/rasmus.webp";
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionCTA from "../components/SectionCTA.astro";
 import ScrollArrow from "../components/ScrollArrow.astro";
-
 ---
 
 <BaseLayout>
@@ -53,7 +51,7 @@ import ScrollArrow from "../components/ScrollArrow.astro";
         </p>
       </div>
       <Image
-        src={flod}
+        src={stromflod}
         alt="En vandrer med en stor rygsæk står på et klippefyldt terræn ved siden af en hurtigtflydende blå flod, omgivet af kampesten og grønt græs."
         class="billede-grid image-order hidden2"
       />
@@ -61,13 +59,13 @@ import ScrollArrow from "../components/ScrollArrow.astro";
 
     <div class="second-grid">
       <Image
-        src={fisk}
+        src={bojetFisk}
         alt="Person i en grå jakke står på klipper ved en flod og renser en fisk med en kniv. Bjergagtig baggrund og klart vand er synlige."
         class="om-slide billede-grid hidden-image hidden"
       />
 
       <Image
-        src={camp}
+        src={campsite}
         alt="Glampingtelte i grønlands natur ved solnedgang, glødende under den orange himmel, omgivet af naturens skønhed."
         class="om-slide billede-grid hidden"
       />
@@ -82,7 +80,7 @@ import ScrollArrow from "../components/ScrollArrow.astro";
     </div>
     <div class="third-grid">
       <div class="grid-tekst hidden2 om-slide">
-        <h3 class="blue">Kulturel Berigelse</h3>
+        <h3 class="blue">Med grønlandsk ophav</h3>
         <p class="bodyDark">
           Vores guides er alle med grønlandsk oprindelse, og de sikrer, med
           deres dybdegående lokale kendskab til naturen, de mest optimale
